@@ -18,3 +18,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-06 | Implement and Test a Stable Topological Sort (2 PFT) | [`stable-topological-sort/`](stable-topological-sort/) |
 | 2026-08-06 | Implement and Test a Stable Indexed Priority Queue (3 PFT) | [`stable-priority-queue/`](stable-priority-queue/) |
 | 2026-08-06 | Implement and Test a Least-Frequently-Used Cache (3 PFT) | [`lfu-cache/`](lfu-cache/) |
+| 2026-08-06 | Implement and Test a Rollback Disjoint-Set Union (3 PFT) | [`rollback-disjoint-set/`](rollback-disjoint-set/) |
