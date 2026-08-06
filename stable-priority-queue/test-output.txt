@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: empty queue: size 0, has() false, peek()/pop() return undefined
+ok 1 - empty queue: size 0, has() false, peek()/pop() return undefined
+  ---
+  duration_ms: 1.675479
+  type: 'test'
+  ...
+# Subtest: pop() returns entries in strictly increasing priority order
+ok 2 - pop() returns entries in strictly increasing priority order
+  ---
+  duration_ms: 1.691995
+  type: 'test'
+  ...
+# Subtest: equal priorities pop in original insertion order (stability)
+ok 3 - equal priorities pop in original insertion order (stability)
+  ---
+  duration_ms: 0.289965
+  type: 'test'
+  ...
+# Subtest: updating a key to a lower priority (upward move) is reflected immediately
+ok 4 - updating a key to a lower priority (upward move) is reflected immediately
+  ---
+  duration_ms: 0.35632
+  type: 'test'
+  ...
+# Subtest: updating a key to a higher priority (downward move) is reflected immediately
+ok 5 - updating a key to a higher priority (downward move) is reflected immediately
+  ---
+  duration_ms: 1.241516
+  type: 'test'
+  ...
+# Subtest: delete() on the root (current minimum) promotes the correct next minimum
+ok 6 - delete() on the root (current minimum) promotes the correct next minimum
+  ---
+  duration_ms: 0.254237
+  type: 'test'
+  ...
+# Subtest: delete() on a middle key and on the most-recently-inserted key both preserve the rest
+ok 7 - delete() on a middle key and on the most-recently-inserted key both preserve the rest
+  ---
+  duration_ms: 0.225262
+  type: 'test'
+  ...
+# Subtest: delete() on an absent key returns false and does not change size
+ok 8 - delete() on an absent key returns false and does not change size
+  ---
+  duration_ms: 0.201323
+  type: 'test'
+  ...
+# Subtest: repeated upsert on the same key updates in place without duplicating it
+ok 9 - repeated upsert on the same key updates in place without duplicating it
+  ---
+  duration_ms: 0.391304
+  type: 'test'
+  ...
+# Subtest: deleting then re-upserting a key gives it a fresh (later) tie-break order
+ok 10 - deleting then re-upserting a key gives it a fresh (later) tie-break order
+  ---
+  duration_ms: 0.600892
+  type: 'test'
+  ...
+# Subtest: negative and fractional priorities are ordered correctly
+ok 11 - negative and fractional priorities are ordered correctly
+  ---
+  duration_ms: 0.265267
+  type: 'test'
+  ...
+# Subtest: invalid upsert/delete inputs throw TypeError and never mutate the queue
+ok 12 - invalid upsert/delete inputs throw TypeError and never mutate the queue
+  ---
+  duration_ms: 0.845786
+  type: 'test'
+  ...
+# Subtest: deterministic mixed-operation sequence matches a simple reference-model implementation
+ok 13 - deterministic mixed-operation sequence matches a simple reference-model implementation
+  ---
+  duration_ms: 0.843422
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 127.674176
