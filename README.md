@@ -16,3 +16,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 |------|------|-----------|
 | 2026-08-06 | (repo initialized) | — |
 | 2026-08-06 | Implement and Test a Stable Topological Sort (2 PFT) | [`stable-topological-sort/`](stable-topological-sort/) |
+| 2026-08-06 | Implement and Test a Stable Indexed Priority Queue (3 PFT) | [`stable-priority-queue/`](stable-priority-queue/) |
