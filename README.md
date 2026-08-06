@@ -19,3 +19,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-06 | Implement and Test a Stable Indexed Priority Queue (3 PFT) | [`stable-priority-queue/`](stable-priority-queue/) |
 | 2026-08-06 | Implement and Test a Least-Frequently-Used Cache (3 PFT) | [`lfu-cache/`](lfu-cache/) |
 | 2026-08-06 | Implement and Test a Rollback Disjoint-Set Union (3 PFT) | [`rollback-disjoint-set/`](rollback-disjoint-set/) |
+| 2026-08-06 | Implement and Test an Aho-Corasick String Matcher (2.75 PFT) | [`aho-corasick/`](aho-corasick/) |
