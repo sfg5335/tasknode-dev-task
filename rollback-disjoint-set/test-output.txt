@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: constructor rejects invalid sizes
+ok 1 - constructor rejects invalid sizes
+  ---
+  duration_ms: 2.777232
+  type: 'test'
+  ...
+# Subtest: empty set (size 0): componentCount is 0, any index access throws
+ok 2 - empty set (size 0): componentCount is 0, any index access throws
+  ---
+  duration_ms: 0.681909
+  type: 'test'
+  ...
+# Subtest: singleton set (size 1): one component, self-connected, union(0,0) is a no-op
+ok 3 - singleton set (size 1): one component, self-connected, union(0,0) is a no-op
+  ---
+  duration_ms: 0.447202
+  type: 'test'
+  ...
+# Subtest: every index starts as its own singleton component
+ok 4 - every index starts as its own singleton component
+  ---
+  duration_ms: 0.455578
+  type: 'test'
+  ...
+# Subtest: union() merges components, connected()/componentSize()/componentCount update, returns true
+ok 5 - union() merges components, connected()/componentSize()/componentCount update, returns true
+  ---
+  duration_ms: 6.237285
+  type: 'test'
+  ...
+# Subtest: self-union and duplicate unions are no-ops returning false, without changing componentCount
+ok 6 - self-union and duplicate unions are no-ops returning false, without changing componentCount
+  ---
+  duration_ms: 0.191543
+  type: 'test'
+  ...
+# Subtest: deterministic tie-breaking: on an exact size tie, the first argument's root wins
+ok 7 - deterministic tie-breaking: on an exact size tie, the first argument's root wins
+  ---
+  duration_ms: 0.281416
+  type: 'test'
+  ...
+# Subtest: union() by size: the larger component always absorbs the smaller one, regardless of argument order
+ok 8 - union() by size: the larger component always absorbs the smaller one, regardless of argument order
+  ---
+  duration_ms: 0.248263
+  type: 'test'
+  ...
+# Subtest: snapshot()/rollback() restore parents, sizes, and componentCount to exactly the captured point
+ok 9 - snapshot()/rollback() restore parents, sizes, and componentCount to exactly the captured point
+  ---
+  duration_ms: 0.453699
+  type: 'test'
+  ...
+# Subtest: nested snapshots: rolling back to an inner snapshot only undoes operations after it
+ok 10 - nested snapshots: rolling back to an inner snapshot only undoes operations after it
+  ---
+  duration_ms: 0.558299
+  type: 'test'
+  ...
+# Subtest: repeated rollbacks to the same token are idempotent and restore counts/sizes correctly
+ok 11 - repeated rollbacks to the same token are idempotent and restore counts/sizes correctly
+  ---
+  duration_ms: 0.231108
+  type: 'test'
+  ...
+# Subtest: rollback() rejects invalid or already-invalidated snapshot tokens without mutating state
+ok 12 - rollback() rejects invalid or already-invalidated snapshot tokens without mutating state
+  ---
+  duration_ms: 1.866979
+  type: 'test'
+  ...
+# Subtest: find()/union()/connected()/componentSize() reject invalid indices without mutating state
+ok 13 - find()/union()/connected()/componentSize() reject invalid indices without mutating state
+  ---
+  duration_ms: 0.470001
+  type: 'test'
+  ...
+# Subtest: deterministic multi-operation sequence matches an independent reference-model implementation
+ok 14 - deterministic multi-operation sequence matches an independent reference-model implementation
+  ---
+  duration_ms: 0.81774
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 152.780786
