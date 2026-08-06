@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: constructor rejects invalid patterns arguments
+ok 1 - constructor rejects invalid patterns arguments
+  ---
+  duration_ms: 2.726791
+  type: 'test'
+  ...
+# Subtest: constructor rejects duplicate patterns
+ok 2 - constructor rejects duplicate patterns
+  ---
+  duration_ms: 0.467885
+  type: 'test'
+  ...
+# Subtest: empty patterns array is valid: search() always returns no matches
+ok 3 - empty patterns array is valid: search() always returns no matches
+  ---
+  duration_ms: 2.29923
+  type: 'test'
+  ...
+# Subtest: search() rejects a non-string text argument
+ok 4 - search() rejects a non-string text argument
+  ---
+  duration_ms: 1.704797
+  type: 'test'
+  ...
+# Subtest: empty text input: search() returns no matches regardless of patterns
+ok 5 - empty text input: search() returns no matches regardless of patterns
+  ---
+  duration_ms: 0.452797
+  type: 'test'
+  ...
+# Subtest: no patterns occur in text: search() returns no matches
+ok 6 - no patterns occur in text: search() returns no matches
+  ---
+  duration_ms: 0.295074
+  type: 'test'
+  ...
+# Subtest: canonical multi-pattern matching example (classic Aho-Corasick textbook case)
+ok 7 - canonical multi-pattern matching example (classic Aho-Corasick textbook case)
+  ---
+  duration_ms: 0.58754
+  type: 'test'
+  ...
+# Subtest: end-exclusive indices: match.end - match.start === pattern.length, and text.slice(start,end) === pattern
+ok 8 - end-exclusive indices: match.end - match.start === pattern.length, and text.slice(start,end) === pattern
+  ---
+  duration_ms: 0.322005
+  type: 'test'
+  ...
+# Subtest: overlapping matches of the same repeating pattern are all reported
+ok 9 - overlapping matches of the same repeating pattern are all reported
+  ---
+  duration_ms: 0.517666
+  type: 'test'
+  ...
+# Subtest: overlapping matches of different patterns at the same position are all reported
+ok 10 - overlapping matches of different patterns at the same position are all reported
+  ---
+  duration_ms: 0.549982
+  type: 'test'
+  ...
+# Subtest: suffix matches: a pattern that is a proper suffix of another match is reported via the output-link chain
+ok 11 - suffix matches: a pattern that is a proper suffix of another match is reported via the output-link chain
+  ---
+  duration_ms: 0.241264
+  type: 'test'
+  ...
+# Subtest: repeated searches on the same instance are stable and side-effect-free (no state leakage between calls)
+ok 12 - repeated searches on the same instance are stable and side-effect-free (no state leakage between calls)
+  ---
+  duration_ms: 0.215381
+  type: 'test'
+  ...
+# Subtest: deterministic ordering: matches are ordered by start index, then by original pattern-array order on ties
+ok 13 - deterministic ordering: matches are ordered by start index, then by original pattern-array order on ties
+  ---
+  duration_ms: 0.332795
+  type: 'test'
+  ...
+# Subtest: multiple distinct match positions across a longer text are all found, ordered by start
+ok 14 - multiple distinct match positions across a longer text are all found, ordered by start
+  ---
+  duration_ms: 0.150368
+  type: 'test'
+  ...
+# Subtest: single-character patterns and a pattern equal to the entire text both work
+ok 15 - single-character patterns and a pattern equal to the entire text both work
+  ---
+  duration_ms: 0.143902
+  type: 'test'
+  ...
+# Subtest: deterministic cross-check against an independent brute-force reference implementation
+ok 16 - deterministic cross-check against an independent brute-force reference implementation
+  ---
+  duration_ms: 0.648934
+  type: 'test'
+  ...
+# Subtest: unicode/multi-byte-ish characters are handled consistently between construction and search (code-unit based)
+ok 17 - unicode/multi-byte-ish characters are handled consistently between construction and search (code-unit based)
+  ---
+  duration_ms: 0.17423
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 125.052001
