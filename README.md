@@ -15,3 +15,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | Date | Task | Directory |
 |------|------|-----------|
 | 2026-08-06 | (repo initialized) | — |
+| 2026-08-06 | Implement and Test a Stable Topological Sort (2 PFT) | [`stable-topological-sort/`](stable-topological-sort/) |
