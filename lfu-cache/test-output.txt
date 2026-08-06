@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: constructor rejects invalid capacity
+ok 1 - constructor rejects invalid capacity
+  ---
+  duration_ms: 1.635044
+  type: 'test'
+  ...
+# Subtest: capacity 0: put() is always a no-op, get() always misses, size stays 0
+ok 2 - capacity 0: put() is always a no-op, get() always misses, size stays 0
+  ---
+  duration_ms: 0.387315
+  type: 'test'
+  ...
+# Subtest: capacity 1: inserting a second key evicts the first
+ok 3 - capacity 1: inserting a second key evicts the first
+  ---
+  duration_ms: 0.324547
+  type: 'test'
+  ...
+# Subtest: get() on a missing key returns null
+ok 4 - get() on a missing key returns null
+  ---
+  duration_ms: 0.228533
+  type: 'test'
+  ...
+# Subtest: get() with a non-string or empty-string key is a lenient miss, never throws
+ok 5 - get() with a non-string or empty-string key is a lenient miss, never throws
+  ---
+  duration_ms: 0.229876
+  type: 'test'
+  ...
+# Subtest: put() on an existing key updates its value without growing size or duplicating it
+ok 6 - put() on an existing key updates its value without growing size or duplicating it
+  ---
+  duration_ms: 0.325845
+  type: 'test'
+  ...
+# Subtest: put()/get() reject invalid key or value without mutating the cache
+ok 7 - put()/get() reject invalid key or value without mutating the cache
+  ---
+  duration_ms: 2.164499
+  type: 'test'
+  ...
+# Subtest: frequency-based eviction: the least-frequently-used key is evicted first
+ok 8 - frequency-based eviction: the least-frequently-used key is evicted first
+  ---
+  duration_ms: 0.244261
+  type: 'test'
+  ...
+# Subtest: recency tie-breaking: among equal frequencies, the least-recently-used key is evicted
+ok 9 - recency tie-breaking: among equal frequencies, the least-recently-used key is evicted
+  ---
+  duration_ms: 0.41997
+  type: 'test'
+  ...
+# Subtest: size tracks insertions and evictions correctly
+ok 10 - size tracks insertions and evictions correctly
+  ---
+  duration_ms: 0.460698
+  type: 'test'
+  ...
+# Subtest: get() changes access order/eviction risk (touching a key protects it from eviction)
+ok 11 - get() changes access order/eviction risk (touching a key protects it from eviction)
+  ---
+  duration_ms: 0.2649
+  type: 'test'
+  ...
+# Subtest: an update via put() also counts as an access for both frequency and recency
+ok 12 - an update via put() also counts as an access for both frequency and recency
+  ---
+  duration_ms: 0.137434
+  type: 'test'
+  ...
+# Subtest: deterministic mixed-operation sequence matches a simple reference-model implementation
+ok 13 - deterministic mixed-operation sequence matches a simple reference-model implementation
+  ---
+  duration_ms: 0.603398
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 127.669683
