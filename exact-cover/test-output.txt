@@ -1,0 +1,136 @@
+TAP version 13
+# Subtest: Knuth's classic exact-cover example has exactly one solution: {B, D, F}
+ok 1 - Knuth's classic exact-cover example has exactly one solution: {B, D, F}
+  ---
+  duration_ms: 2.736274
+  type: 'test'
+  ...
+# Subtest: empty columns and empty rows: the empty selection is the one trivial solution
+ok 2 - empty columns and empty rows: the empty selection is the one trivial solution
+  ---
+  duration_ms: 1.685805
+  type: 'test'
+  ...
+# Subtest: empty columns with non-empty rows: still just the empty selection (no column ever needs covering)
+ok 3 - empty columns with non-empty rows: still just the empty selection (no column ever needs covering)
+  ---
+  duration_ms: 0.17677
+  type: 'test'
+  ...
+# Subtest: non-empty columns with zero rows: unsatisfiable, no solutions
+ok 4 - non-empty columns with zero rows: unsatisfiable, no solutions
+  ---
+  duration_ms: 0.131377
+  type: 'test'
+  ...
+# Subtest: unsatisfiable: a column no row covers yields no solutions
+ok 5 - unsatisfiable: a column no row covers yields no solutions
+  ---
+  duration_ms: 0.209599
+  type: 'test'
+  ...
+# Subtest: single-solution case with extra unusable rows still finds exactly one solution
+ok 6 - single-solution case with extra unusable rows still finds exactly one solution
+  ---
+  duration_ms: 0.38716
+  type: 'test'
+  ...
+# Subtest: multiple-solution case: all valid exact covers are returned
+ok 7 - multiple-solution case: all valid exact covers are returned
+  ---
+  duration_ms: 0.290482
+  type: 'test'
+  ...
+# Subtest: options.limit caps the number of solutions collected
+ok 8 - options.limit caps the number of solutions collected
+  ---
+  duration_ms: 0.171551
+  type: 'test'
+  ...
+# Subtest: options.limit is respected even across many candidate rows in a single column
+ok 9 - options.limit is respected even across many candidate rows in a single column
+  ---
+  duration_ms: 0.504262
+  type: 'test'
+  ...
+# Subtest: deterministic ordering: ties are broken by column input order, not by name/value
+ok 10 - deterministic ordering: ties are broken by column input order, not by name/value
+  ---
+  duration_ms: 0.500603
+  type: 'test'
+  ...
+# Subtest: deterministic ordering: candidate rows within a column are tried in row input order
+ok 11 - deterministic ordering: candidate rows within a column are tried in row input order
+  ---
+  duration_ms: 0.233374
+  type: 'test'
+  ...
+# Subtest: repeated calls with the same inputs produce identical results every time
+ok 12 - repeated calls with the same inputs produce identical results every time
+  ---
+  duration_ms: 0.169252
+  type: 'test'
+  ...
+# Subtest: does not mutate columns, rows, or anything nested inside them
+ok 13 - does not mutate columns, rows, or anything nested inside them
+  ---
+  duration_ms: 0.274561
+  type: 'test'
+  ...
+# Subtest: malformed inputs: duplicate column names throw TypeError
+ok 14 - malformed inputs: duplicate column names throw TypeError
+  ---
+  duration_ms: 0.375455
+  type: 'test'
+  ...
+# Subtest: malformed inputs: duplicate row ids throw TypeError
+ok 15 - malformed inputs: duplicate row ids throw TypeError
+  ---
+  duration_ms: 0.131905
+  type: 'test'
+  ...
+# Subtest: malformed inputs: a row referencing an unknown column throws TypeError
+ok 16 - malformed inputs: a row referencing an unknown column throws TypeError
+  ---
+  duration_ms: 0.099858
+  type: 'test'
+  ...
+# Subtest: malformed inputs: a row listing the same column twice throws TypeError
+ok 17 - malformed inputs: a row listing the same column twice throws TypeError
+  ---
+  duration_ms: 0.094417
+  type: 'test'
+  ...
+# Subtest: malformed inputs: non-array columns/rows throw TypeError
+ok 18 - malformed inputs: non-array columns/rows throw TypeError
+  ---
+  duration_ms: 0.136143
+  type: 'test'
+  ...
+# Subtest: malformed inputs: non-string column names, row ids, and row.cols entries throw TypeError
+ok 19 - malformed inputs: non-string column names, row ids, and row.cols entries throw TypeError
+  ---
+  duration_ms: 1.563358
+  type: 'test'
+  ...
+# Subtest: malformed inputs: options.limit must be a positive integer or Infinity
+ok 20 - malformed inputs: options.limit must be a positive integer or Infinity
+  ---
+  duration_ms: 0.374318
+  type: 'test'
+  ...
+# Subtest: malformed inputs: a non-object options argument throws TypeError
+ok 21 - malformed inputs: a non-object options argument throws TypeError
+  ---
+  duration_ms: 0.12521
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 119.147133
