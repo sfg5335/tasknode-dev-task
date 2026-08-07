@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: empty tree: size 0, nearest null, kNearest/range empty
+ok 1 - empty tree: size 0, nearest null, kNearest/range empty
+  ---
+  duration_ms: 4.007947
+  type: 'test'
+  ...
+# Subtest: singleton tree: every query resolves to the one point
+ok 2 - singleton tree: every query resolves to the one point
+  ---
+  duration_ms: 0.753783
+  type: 'test'
+  ...
+# Subtest: duplicate coordinates are all preserved as distinct points
+ok 3 - duplicate coordinates are all preserved as distinct points
+  ---
+  duration_ms: 0.689559
+  type: 'test'
+  ...
+# Subtest: duplicates mixed with distinct points behave correctly under kNearest
+ok 4 - duplicates mixed with distinct points behave correctly under kNearest
+  ---
+  duration_ms: 0.33516
+  type: 'test'
+  ...
+# Subtest: nearest tie-breaks by x, then y, then insertion order
+ok 5 - nearest tie-breaks by x, then y, then insertion order
+  ---
+  duration_ms: 0.272743
+  type: 'test'
+  ...
+# Subtest: kNearest preserves the full tie-break order across many equidistant points
+ok 6 - kNearest preserves the full tie-break order across many equidistant points
+  ---
+  duration_ms: 0.228784
+  type: 'test'
+  ...
+# Subtest: range is inclusive on all four edges of the box
+ok 7 - range is inclusive on all four edges of the box
+  ---
+  duration_ms: 0.23305
+  type: 'test'
+  ...
+# Subtest: degenerate zero-width/zero-height range boxes work
+ok 8 - degenerate zero-width/zero-height range boxes work
+  ---
+  duration_ms: 0.160433
+  type: 'test'
+  ...
+# Subtest: negative coordinates work throughout
+ok 9 - negative coordinates work throughout
+  ---
+  duration_ms: 0.402646
+  type: 'test'
+  ...
+# Subtest: fractional coordinates are handled exactly
+ok 10 - fractional coordinates are handled exactly
+  ---
+  duration_ms: 0.470095
+  type: 'test'
+  ...
+# Subtest: constructor validates points array and point shape
+ok 11 - constructor validates points array and point shape
+  ---
+  duration_ms: 0.707136
+  type: 'test'
+  ...
+# Subtest: nearest validates x/y
+ok 12 - nearest validates x/y
+  ---
+  duration_ms: 0.20261
+  type: 'test'
+  ...
+# Subtest: kNearest validates x/y/k
+ok 13 - kNearest validates x/y/k
+  ---
+  duration_ms: 0.3997
+  type: 'test'
+  ...
+# Subtest: range validates all four bounds, including reversed ranges
+ok 14 - range validates all four bounds, including reversed ranges
+  ---
+  duration_ms: 0.307912
+  type: 'test'
+  ...
+# Subtest: kNearest with k = 0 returns an empty array without error
+ok 15 - kNearest with k = 0 returns an empty array without error
+  ---
+  duration_ms: 0.103452
+  type: 'test'
+  ...
+# Subtest: kNearest with k larger than size returns every point, not an error
+ok 16 - kNearest with k larger than size returns every point, not an error
+  ---
+  duration_ms: 0.142988
+  type: 'test'
+  ...
+# Subtest: constructor never mutates the input array or its point objects
+ok 17 - constructor never mutates the input array or its point objects
+  ---
+  duration_ms: 1.398641
+  type: 'test'
+  ...
+# Subtest: mutating the caller-owned input array after construction does not affect the tree
+ok 18 - mutating the caller-owned input array after construction does not affect the tree
+  ---
+  duration_ms: 0.165822
+  type: 'test'
+  ...
+# Subtest: repeated identical queries return identical results (no hidden mutation)
+ok 19 - repeated identical queries return identical results (no hidden mutation)
+  ---
+  duration_ms: 1.987278
+  type: 'test'
+  ...
+# Subtest: nearest/kNearest visit far fewer nodes than the total point count on a large random set
+ok 20 - nearest/kNearest visit far fewer nodes than the total point count on a large random set
+  ---
+  duration_ms: 109.675657
+  type: 'test'
+  ...
+# Subtest: differential: many random point sets (integer coords, duplicates) vs brute-force
+ok 21 - differential: many random point sets (integer coords, duplicates) vs brute-force
+  ---
+  duration_ms: 46.433818
+  type: 'test'
+  ...
+# Subtest: differential: fractional-coordinate random point sets vs brute-force
+ok 22 - differential: fractional-coordinate random point sets vs brute-force
+  ---
+  duration_ms: 7.749611
+  type: 'test'
+  ...
+# Subtest: differential: small integer grids with duplicates, exact-tie emphasis, vs brute-force
+ok 23 - differential: small integer grids with duplicates, exact-tie emphasis, vs brute-force
+  ---
+  duration_ms: 7.39973
+  type: 'test'
+  ...
+# Subtest: differential: range queries including degenerate boxes vs brute-force
+ok 24 - differential: range queries including degenerate boxes vs brute-force
+  ---
+  duration_ms: 5.938867
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 303.490362
