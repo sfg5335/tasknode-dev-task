@@ -1,0 +1,38 @@
+=== Doom Index: prudent_adjustment_pct_gdp reproduction ===
+as_of_date: 2026-08-05 | program_gap_vintage: 2026
+funding_horizon_years: 75 | real_discount_rate_pct: 2.3
+
+Derived GDP (trillions): 32.475210   [from current_receipts_trillions / current_receipts_pct_gdp]
+Annuity factor (%):      2.8106656668   [r/(1-(1+r)^-n)]
+
+reasonable_residual_gap_trillions (reproduced):  32.47521  vs published 32.47521
+program_gap_pv_reduction_trillions (reproduced): 62.12479  vs published 62.12479
+annual_program_gap_funding_trillions (repro):    1.746120143  vs published 1.746120143099339
+target_deficit_trillions (reproduced):           0.974256300  vs published 0.9742562999999999
+annual_deficit_correction_trillions (repro):     0.830251615  vs published 0.8302516153382099
+total_annual_adjustment_trillions (reproduced):  2.576371758  vs published 2.5763717584375487
+
+REPRODUCED total_annual_adjustment_pct_gdp: 7.933349032808558
+PUBLISHED  total_annual_adjustment_pct_gdp: 7.933349032808561
+Discrepancy (reproduced - published):       -2.6645352591003757e-15
+
+CSV row (fiscal-sustainability-scenarios.csv, "Prudent course" row) total_annual_adjustment_pct_gdp: 7.933349032808561
+Matches published value exactly: true
+
+=== Narrative-vs-data discrepancy ===
+static/doom-thesis/doom-index-framework.json:128 (components[3].claims[1].note) says:
+  "Across seven major laws with contemporaneous CBO/JCT scores since 2011, none reaches the 8.33%-of-GDP recurring prudent ..."
+  -> cites 8.33% as the recurring prudent adjustment.
+Live computed/published value (this run): 7.93%
+STALE TEXT DISCREPANCY: 0.40 percentage points — the prose in doom-index-framework.json was not updated when the data files were refreshed by commit 5d7e729 ("Make Doom Index inputs current through 2026").
+
+=== Inputs used, classified sourced vs. model-assumption ===
+- as_of_date = 2026-08-05  [timestamp]
+- program_gap_vintage = 2026  [timestamp (SSA/CMS Trustees report vintage year)]
+- current_program_gap_trillions = 94.6  [sourced]  source: SSA/CMS Trustees + Treasury Statement of Social Insurance (registry source label, doom-index-indicator-registry.json for program_gap_pct_gdp)
+- current_receipts_trillions = 5.37776021537561  [sourced]  source: Treasury Monthly Treasury Statement (trailing 12mo), per registry source label for deficit_pct_gdp
+- reasonable_residual_gap_pct_gdp = 100  [MODEL ASSUMPTION (not a government-published number)]  note: the "prudent course" scenario choice: cap the residual 75yr program gap at 100% of GDP. CSV has 4 other scenarios (0%, 50%, 100%, 200%, uncapped) -- 100% is the model author's policy pick, not a CBO/Trustees figure.
+- real_discount_rate_pct = 2.3  [MODEL ASSUMPTION (not directly a single published CBO/Trustees rate in these files)]  note: 2.3% real discount rate used for the 75-year annuitization; not individually cited to a specific CBO/Trustees publication in the files this repo publishes.
+- funding_horizon_years = 75  [sourced (convention)]  source: matches the standard SSA/CMS Trustees 75-year actuarial projection window
+- baseline_deficit_trillions = 1.8045079153382098  [sourced]  source: Treasury MTS FY2026 unified deficit run-rate (per registry source label for deficit_pct_gdp)
+- target_deficit_pct_gdp = 3  [MODEL ASSUMPTION (not a government-published number)]  note: the "reduce the unified deficit to 3% of GDP" target is the model's own policy definition (data.json sustainability.summary.definition), not sourced to a specific CBO/Trustees target.

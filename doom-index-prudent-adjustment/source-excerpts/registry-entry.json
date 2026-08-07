@@ -1,0 +1,15 @@
+{
+  "_source_file": "static/doom-thesis/doom-index-indicator-registry.json",
+  "_source_line": 16,
+  "registry_entry": {
+    "id": "prudent_adjustment_pct_gdp",
+    "label": "Recurring prudent-course adjustment / GDP",
+    "weight": 15,
+    "unit": "%",
+    "low": 1,
+    "high": 10,
+    "direction": "increasing",
+    "frequency": "CBO/Trustees vintage",
+    "source": "Doom fiscal sustainability model"
+  }
+}

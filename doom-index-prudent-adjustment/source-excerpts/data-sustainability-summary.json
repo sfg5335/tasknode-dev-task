@@ -1,0 +1,32 @@
+{
+  "_source_file": "static/doom-thesis/data.json",
+  "_source_key_path": "sustainability.summary",
+  "_source_line_start": 2034,
+  "sustainability_summary": {
+    "as_of_date": "2026-08-05",
+    "fiscal_flow_observation_date": "2026-06-30",
+    "gdp_observation_date": "2026-04-01",
+    "program_gap_vintage": 2026,
+    "definition": "Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the combined Social Security and Medicare 75-year present-value funding gap to no more than one year of current GDP.",
+    "current_program_gap_trillions": 94.6,
+    "current_program_gap_pct_gdp": 291.29911708038225,
+    "current_receipts_trillions": 5.37776021537561,
+    "current_receipts_pct_gdp": 16.5595856512571,
+    "reasonable_residual_gap_trillions": 32.47521,
+    "reasonable_residual_gap_pct_gdp": 100.0,
+    "program_gap_pv_reduction_trillions": 62.12479,
+    "real_discount_rate_pct": 2.3,
+    "funding_horizon_years": 75,
+    "annuity_factor_pct": 2.810665666796361,
+    "baseline_deficit_trillions": 1.8045079153382098,
+    "target_deficit_trillions": 0.9742562999999999,
+    "target_deficit_pct_gdp": 3.0,
+    "annual_deficit_correction_trillions": 0.8302516153382099,
+    "annual_program_gap_funding_trillions": 1.746120143099339,
+    "total_annual_adjustment_trillions": 2.5763717584375487,
+    "total_annual_adjustment_pct_gdp": 7.933349032808561,
+    "tax_only_required_receipts_pct_gdp": 24.49293468406566,
+    "tax_only_annual_adjustment_per_household": 19113.968086931884,
+    "warning": "Social Security and Medicare funding gaps overlap with future unified-budget deficits. This construction combines a current-year deficit target with prospective prefunding; it must not be added again to a full 75-year unified-deficit present value. The reform shares are present-value financing sensitivities, not specified benefit cuts or independently scored policy packages."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "_source_file": "static/doom-thesis/doom-index-framework.json",
+  "_source_line": 128,
+  "_source_key_path": "components[3].claims[1]",
+  "stale_claim": {
+    "status": "warranted",
+    "text": "The prudent adjustment is far larger than selected recent enacted precedents.",
+    "note": "Across seven major laws with contemporaneous CBO/JCT scores since 2011, none reaches the 8.33%-of-GDP recurring prudent adjustment on a simple annualized budget-window basis. The largest deficit-reducing precedent, the 2011 Budget Control Act, is about 1.33% of enactment-year GDP\u2014roughly one-sixth of the required scale\u2014and later laws modified its caps."
+  }
+}
