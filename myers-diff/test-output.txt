@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: rejects non-array inputs with TypeError
+ok 1 - rejects non-array inputs with TypeError
+  ---
+  duration_ms: 5.885181
+  type: 'test'
+  ...
+# Subtest: both empty arrays: no operations
+ok 2 - both empty arrays: no operations
+  ---
+  duration_ms: 2.795178
+  type: 'test'
+  ...
+# Subtest: identical non-empty arrays: all equal operations, in order
+ok 3 - identical non-empty arrays: all equal operations, in order
+  ---
+  duration_ms: 0.624955
+  type: 'test'
+  ...
+# Subtest: pure insertion: before empty, after non-empty
+ok 4 - pure insertion: before empty, after non-empty
+  ---
+  duration_ms: 0.52988
+  type: 'test'
+  ...
+# Subtest: pure deletion: before non-empty, after empty
+ok 5 - pure deletion: before non-empty, after empty
+  ---
+  duration_ms: 0.65632
+  type: 'test'
+  ...
+# Subtest: insertion in the middle of an otherwise-identical array
+ok 6 - insertion in the middle of an otherwise-identical array
+  ---
+  duration_ms: 0.453004
+  type: 'test'
+  ...
+# Subtest: deletion in the middle of an otherwise-identical array
+ok 7 - deletion in the middle of an otherwise-identical array
+  ---
+  duration_ms: 0.413147
+  type: 'test'
+  ...
+# Subtest: replacement (mix of delete and insert) in the middle
+ok 8 - replacement (mix of delete and insert) in the middle
+  ---
+  duration_ms: 0.516685
+  type: 'test'
+  ...
+# Subtest: completely disjoint arrays of the same length: no equal operations
+ok 9 - completely disjoint arrays of the same length: no equal operations
+  ---
+  duration_ms: 0.920312
+  type: 'test'
+  ...
+# Subtest: repeated values: minimal edit script accounts for multiplicity correctly
+ok 10 - repeated values: minimal edit script accounts for multiplicity correctly
+  ---
+  duration_ms: 0.952875
+  type: 'test'
+  ...
+# Subtest: repeated values with an insertion: before has two 1s, after has three
+ok 11 - repeated values with an insertion: before has two 1s, after has three
+  ---
+  duration_ms: 0.452065
+  type: 'test'
+  ...
+# Subtest: NaN is treated as equal to NaN (Object.is semantics, unlike ===)
+ok 12 - NaN is treated as equal to NaN (Object.is semantics, unlike ===)
+  ---
+  duration_ms: 0.269446
+  type: 'test'
+  ...
+# Subtest: NaN in a longer array with other equal elements
+ok 13 - NaN in a longer array with other equal elements
+  ---
+  duration_ms: 0.221742
+  type: 'test'
+  ...
+# Subtest: +0 and -0 are treated as NOT equal (Object.is semantics, unlike ===)
+ok 14 - +0 and -0 are treated as NOT equal (Object.is semantics, unlike ===)
+  ---
+  duration_ms: 0.302035
+  type: 'test'
+  ...
+# Subtest: -0 vs -0 and +0 vs +0 are each treated as equal
+ok 15 - -0 vs -0 and +0 vs +0 are each treated as equal
+  ---
+  duration_ms: 0.491218
+  type: 'test'
+  ...
+# Subtest: deterministic tie-breaking: prefers delete over insert when equal-cost paths exist
+ok 16 - deterministic tie-breaking: prefers delete over insert when equal-cost paths exist
+  ---
+  duration_ms: 0.135639
+  type: 'test'
+  ...
+# Subtest: deterministic tie-breaking is stable across repeated calls (same inputs -> same output)
+ok 17 - deterministic tie-breaking is stable across repeated calls (same inputs -> same output)
+  ---
+  duration_ms: 0.201229
+  type: 'test'
+  ...
+# Subtest: does not mutate either input array
+ok 18 - does not mutate either input array
+  ---
+  duration_ms: 1.31679
+  type: 'test'
+  ...
+# Subtest: reconstruction round-trip holds for a moderately long mixed-edit case
+ok 19 - reconstruction round-trip holds for a moderately long mixed-edit case
+  ---
+  duration_ms: 0.12934
+  type: 'test'
+  ...
+# Subtest: bounded seeded cross-check: reconstruction + edit count match a DP oracle
+ok 20 - bounded seeded cross-check: reconstruction + edit count match a DP oracle
+  ---
+  duration_ms: 5.000123
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 170.517281
