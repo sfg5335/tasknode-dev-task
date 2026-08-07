@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: empty text
+ok 1 - empty text
+  ---
+  duration_ms: 3.785427
+  type: 'test'
+  ...
+# Subtest: single-character text
+ok 2 - single-character text
+  ---
+  duration_ms: 0.594417
+  type: 'test'
+  ...
+# Subtest: repeated characters
+ok 3 - repeated characters
+  ---
+  duration_ms: 0.767883
+  type: 'test'
+  ...
+# Subtest: overlapping matches are all reported
+ok 4 - overlapping matches are all reported
+  ---
+  duration_ms: 6.245135
+  type: 'test'
+  ...
+# Subtest: absent patterns return empty array
+ok 5 - absent patterns return empty array
+  ---
+  duration_ms: 0.55181
+  type: 'test'
+  ...
+# Subtest: full-string match
+ok 6 - full-string match
+  ---
+  duration_ms: 0.278421
+  type: 'test'
+  ...
+# Subtest: whitespace handling
+ok 7 - whitespace handling
+  ---
+  duration_ms: 0.689284
+  type: 'test'
+  ...
+# Subtest: BMP Unicode handling
+ok 8 - BMP Unicode handling
+  ---
+  duration_ms: 0.855593
+  type: 'test'
+  ...
+# Subtest: astral (surrogate-pair) characters use UTF-16 code-unit semantics
+ok 9 - astral (surrogate-pair) characters use UTF-16 code-unit semantics
+  ---
+  duration_ms: 1.109376
+  type: 'test'
+  ...
+# Subtest: invalid constructor input throws TypeError
+ok 10 - invalid constructor input throws TypeError
+  ---
+  duration_ms: 1.512949
+  type: 'test'
+  ...
+# Subtest: invalid search input throws TypeError
+ok 11 - invalid search input throws TypeError
+  ---
+  duration_ms: 0.88451
+  type: 'test'
+  ...
+# Subtest: repeated calls are deterministic and idempotent
+ok 12 - repeated calls are deterministic and idempotent
+  ---
+  duration_ms: 0.346924
+  type: 'test'
+  ...
+# Subtest: returned arrays are fresh copies (mutation does not affect the index)
+ok 13 - returned arrays are fresh copies (mutation does not affect the index)
+  ---
+  duration_ms: 0.415471
+  type: 'test'
+  ...
+# Subtest: deterministic comparison against naive oracle, fixed set of strings
+ok 14 - deterministic comparison against naive oracle, fixed set of strings
+  ---
+  duration_ms: 5.951841
+  type: 'test'
+  ...
+# Subtest: fixed-seed randomized comparison against naive oracle
+ok 15 - fixed-seed randomized comparison against naive oracle
+  ---
+  duration_ms: 6.403163
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 163.039266

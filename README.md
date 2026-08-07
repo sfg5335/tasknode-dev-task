@@ -29,3 +29,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-07 | Implement and Test a Persistent Range-Sum Segment Tree (2.5 PFT) | [`persistent-segment-tree/`](persistent-segment-tree/) |
 | 2026-08-07 | Implement and Test a Deterministic Suffix Automaton (2.5 PFT) | [`suffix-automaton/`](suffix-automaton/) |
 | 2026-08-07 | Implement and Test a Deterministic Wavelet Matrix (2.5 PFT) | [`wavelet-matrix/`](wavelet-matrix/) |
+| 2026-08-07 | Implement and Test a Deterministic Suffix Array Index (2.5 PFT) | [`suffix-array-index/`](suffix-array-index/) |
