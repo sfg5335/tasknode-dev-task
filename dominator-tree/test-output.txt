@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: single vertex: its own entry, no other vertices
+ok 1 - single vertex: its own entry, no other vertices
+  ---
+  duration_ms: 4.399882
+  type: 'test'
+  ...
+# Subtest: single vertex with a self-loop is still trivially its own idom
+ok 2 - single vertex with a self-loop is still trivially its own idom
+  ---
+  duration_ms: 0.312835
+  type: 'test'
+  ...
+# Subtest: simple chain: each vertex is dominated by its unique predecessor
+ok 3 - simple chain: each vertex is dominated by its unique predecessor
+  ---
+  duration_ms: 0.497363
+  type: 'test'
+  ...
+# Subtest: diamond: the merge point is dominated by the shared ancestor, not either branch
+ok 4 - diamond: the merge point is dominated by the shared ancestor, not either branch
+  ---
+  duration_ms: 0.485865
+  type: 'test'
+  ...
+# Subtest: cycle with a back edge: dominance follows the forward structure, not the cycle
+ok 5 - cycle with a back edge: dominance follows the forward structure, not the cycle
+  ---
+  duration_ms: 0.372544
+  type: 'test'
+  ...
+# Subtest: irreducible-style loop with two entries into the cycle body
+ok 6 - irreducible-style loop with two entries into the cycle body
+  ---
+  duration_ms: 0.286357
+  type: 'test'
+  ...
+# Subtest: duplicate edges do not change the result
+ok 7 - duplicate edges do not change the result
+  ---
+  duration_ms: 0.154854
+  type: 'test'
+  ...
+# Subtest: self-loops are accepted and have no effect on the result
+ok 8 - self-loops are accepted and have no effect on the result
+  ---
+  duration_ms: 0.191343
+  type: 'test'
+  ...
+# Subtest: vertices unreachable from start get null, reachable ones are unaffected
+ok 9 - vertices unreachable from start get null, reachable ones are unaffected
+  ---
+  duration_ms: 0.316919
+  type: 'test'
+  ...
+# Subtest: a vertex reachable only via a self-loop is unreachable from start
+ok 10 - a vertex reachable only via a self-loop is unreachable from start
+  ---
+  duration_ms: 0.372186
+  type: 'test'
+  ...
+# Subtest: nonzero start: only vertices reachable from the actual start are dominated
+ok 11 - nonzero start: only vertices reachable from the actual start are dominated
+  ---
+  duration_ms: 0.215503
+  type: 'test'
+  ...
+# Subtest: shuffled input edge order produces an identical result
+ok 12 - shuffled input edge order produces an identical result
+  ---
+  duration_ms: 0.174098
+  type: 'test'
+  ...
+# Subtest: a deep chain (50,000 vertices) does not overflow the call stack
+ok 13 - a deep chain (50,000 vertices) does not overflow the call stack
+  ---
+  duration_ms: 205.253696
+  type: 'test'
+  ...
+# Subtest: a deep diamond-chain (dense predecessor sets) also does not overflow the call stack
+ok 14 - a deep diamond-chain (dense predecessor sets) also does not overflow the call stack
+  ---
+  duration_ms: 290.007843
+  type: 'test'
+  ...
+# Subtest: repeated calls on the same graph always agree
+ok 15 - repeated calls on the same graph always agree
+  ---
+  duration_ms: 0.43751
+  type: 'test'
+  ...
+# Subtest: does not mutate the edges array or any edge object
+ok 16 - does not mutate the edges array or any edge object
+  ---
+  duration_ms: 0.260399
+  type: 'test'
+  ...
+# Subtest: does not mutate edges across multiple calls with the same array
+ok 17 - does not mutate edges across multiple calls with the same array
+  ---
+  duration_ms: 0.226187
+  type: 'test'
+  ...
+# Subtest: vertexCount must be a safe integer
+ok 18 - vertexCount must be a safe integer
+  ---
+  duration_ms: 0.588274
+  type: 'test'
+  ...
+# Subtest: vertexCount must be at least 1
+ok 19 - vertexCount must be at least 1
+  ---
+  duration_ms: 0.126086
+  type: 'test'
+  ...
+# Subtest: edges must be an array
+ok 20 - edges must be an array
+  ---
+  duration_ms: 0.384247
+  type: 'test'
+  ...
+# Subtest: start must be a safe integer within [0, vertexCount)
+ok 21 - start must be a safe integer within [0, vertexCount)
+  ---
+  duration_ms: 0.418753
+  type: 'test'
+  ...
+# Subtest: each edge must be a well-formed object
+ok 22 - each edge must be a well-formed object
+  ---
+  duration_ms: 0.173813
+  type: 'test'
+  ...
+# Subtest: edge.from and edge.to must be safe integers within [0, vertexCount)
+ok 23 - edge.from and edge.to must be safe integers within [0, vertexCount)
+  ---
+  duration_ms: 0.314628
+  type: 'test'
+  ...
+# Subtest: seeded random small graphs match an exhaustive dominator-set oracle
+ok 24 - seeded random small graphs match an exhaustive dominator-set oracle
+  ---
+  duration_ms: 13.006571
+  type: 'test'
+  ...
+# Subtest: seeded random denser graphs (more cycles and cross edges) match the oracle
+ok 25 - seeded random denser graphs (more cycles and cross edges) match the oracle
+  ---
+  duration_ms: 38.016641
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 710.330944
