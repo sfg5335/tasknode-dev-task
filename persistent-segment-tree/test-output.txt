@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: construction: version 0 exactly represents the input array
+ok 1 - construction: version 0 exactly represents the input array
+  ---
+  duration_ms: 1.326926
+  type: 'test'
+  ...
+# Subtest: empty input: length 0, one version, any query or update is out of range
+ok 2 - empty input: length 0, one version, any query or update is out of range
+  ---
+  duration_ms: 0.540652
+  type: 'test'
+  ...
+# Subtest: singleton input: full-range query and update work at the one valid index
+ok 3 - singleton input: full-range query and update work at the one valid index
+  ---
+  duration_ms: 0.177026
+  type: 'test'
+  ...
+# Subtest: update returns the new version number, and versionCount tracks it exactly
+ok 4 - update returns the new version number, and versionCount tracks it exactly
+  ---
+  duration_ms: 0.155133
+  type: 'test'
+  ...
+# Subtest: branching updates: two versions built from the same base version are independent
+ok 5 - branching updates: two versions built from the same base version are independent
+  ---
+  duration_ms: 1.225384
+  type: 'test'
+  ...
+# Subtest: unchanged historical versions: a chain of updates leaves every earlier version intact
+ok 6 - unchanged historical versions: a chain of updates leaves every earlier version intact
+  ---
+  duration_ms: 0.275275
+  type: 'test'
+  ...
+# Subtest: boundary ranges: single-element ranges at both ends and the full range
+ok 7 - boundary ranges: single-element ranges at both ends and the full range
+  ---
+  duration_ms: 0.250396
+  type: 'test'
+  ...
+# Subtest: negative and fractional values are summed correctly
+ok 8 - negative and fractional values are summed correctly
+  ---
+  duration_ms: 0.162461
+  type: 'test'
+  ...
+# Subtest: repeated queries return the same result every time (no mutation from querying)
+ok 9 - repeated queries return the same result every time (no mutation from querying)
+  ---
+  duration_ms: 0.312259
+  type: 'test'
+  ...
+# Subtest: does not mutate or retain the caller's input array
+ok 10 - does not mutate or retain the caller's input array
+  ---
+  duration_ms: 0.473029
+  type: 'test'
+  ...
+# Subtest: invalid constructor inputs throw TypeError
+ok 11 - invalid constructor inputs throw TypeError
+  ---
+  duration_ms: 0.461992
+  type: 'test'
+  ...
+# Subtest: invalid update() arguments throw the appropriate error type
+ok 12 - invalid update() arguments throw the appropriate error type
+  ---
+  duration_ms: 0.473427
+  type: 'test'
+  ...
+# Subtest: invalid query() arguments throw the appropriate error type
+ok 13 - invalid query() arguments throw the appropriate error type
+  ---
+  duration_ms: 0.343712
+  type: 'test'
+  ...
+# Subtest: fixed multi-version sequence, checked at every step against plain-array shadows
+ok 14 - fixed multi-version sequence, checked at every step against plain-array shadows
+  ---
+  duration_ms: 0.81403
+  type: 'test'
+  ...
+# Subtest: randomized cross-check against a plain-array reference model (fixed seed)
+ok 15 - randomized cross-check against a plain-array reference model (fixed seed)
+  ---
+  duration_ms: 20.18016
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 132.481899
