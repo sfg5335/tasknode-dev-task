@@ -31,3 +31,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-07 | Implement and Test a Deterministic Wavelet Matrix (2.5 PFT) | [`wavelet-matrix/`](wavelet-matrix/) |
 | 2026-08-07 | Implement and Test a Deterministic Suffix Array Index (2.5 PFT) | [`suffix-array-index/`](suffix-array-index/) |
 | 2026-08-07 | Implement and Test a Deterministic Hopcroft-Karp Matcher (2.5 PFT) | [`hopcroft-karp-matcher/`](hopcroft-karp-matcher/) |
+| 2026-08-07 | Implement and Test a Deterministic Link-Cut Forest (3.25 PFT) | [`link-cut-forest/`](link-cut-forest/) |

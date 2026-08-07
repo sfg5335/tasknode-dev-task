@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: singleton vertex
+ok 1 - singleton vertex
+  ---
+  duration_ms: 1.479999
+  type: 'test'
+  ...
+# Subtest: empty forest
+ok 2 - empty forest
+  ---
+  duration_ms: 0.568244
+  type: 'test'
+  ...
+# Subtest: chain: link builds a path, pathSum works both directions and for sub-ranges
+ok 3 - chain: link builds a path, pathSum works both directions and for sub-ranges
+  ---
+  duration_ms: 3.089791
+  type: 'test'
+  ...
+# Subtest: star: pathSum through the center for every leaf pair
+ok 4 - star: pathSum through the center for every leaf pair
+  ---
+  duration_ms: 2.778966
+  type: 'test'
+  ...
+# Subtest: rerooting: pathSum is independent of which endpoint access starts from
+ok 5 - rerooting: pathSum is independent of which endpoint access starts from
+  ---
+  duration_ms: 0.543991
+  type: 'test'
+  ...
+# Subtest: cut splits a tree into two independent components
+ok 6 - cut splits a tree into two independent components
+  ---
+  duration_ms: 0.303695
+  type: 'test'
+  ...
+# Subtest: cut then relink reconnects (possibly differently) and queries stay correct
+ok 7 - cut then relink reconnects (possibly differently) and queries stay correct
+  ---
+  duration_ms: 0.326002
+  type: 'test'
+  ...
+# Subtest: setValue updates are reflected in subsequent pathSum/queries, including repeated updates
+ok 8 - setValue updates are reflected in subsequent pathSum/queries, including repeated updates
+  ---
+  duration_ms: 0.237012
+  type: 'test'
+  ...
+# Subtest: repeated queries are deterministic
+ok 9 - repeated queries are deterministic
+  ---
+  duration_ms: 0.530326
+  type: 'test'
+  ...
+# Subtest: invalid operations throw the documented error types
+ok 10 - invalid operations throw the documented error types
+  ---
+  duration_ms: 0.962434
+  type: 'test'
+  ...
+# Subtest: setValue accepts any finite number including non-integers and negatives
+ok 11 - setValue accepts any finite number including non-integers and negatives
+  ---
+  duration_ms: 0.289525
+  type: 'test'
+  ...
+# Subtest: self-links and self-cuts are rejected
+ok 12 - self-links and self-cuts are rejected
+  ---
+  duration_ms: 0.188141
+  type: 'test'
+  ...
+# Subtest: cycle-forming links are rejected in both argument orders
+ok 13 - cycle-forming links are rejected in both argument orders
+  ---
+  duration_ms: 0.153591
+  type: 'test'
+  ...
+# Subtest: non-edge cuts are rejected, including between disconnected vertices and indirectly-connected vertices
+ok 14 - non-edge cuts are rejected, including between disconnected vertices and indirectly-connected vertices
+  ---
+  duration_ms: 0.187742
+  type: 'test'
+  ...
+# Subtest: pathSum on disconnected vertices throws RangeError
+ok 15 - pathSum on disconnected vertices throws RangeError
+  ---
+  duration_ms: 0.136578
+  type: 'test'
+  ...
+# Subtest: deterministic differential comparison against a naive adjacency-list forest, fixed operation sequence
+ok 16 - deterministic differential comparison against a naive adjacency-list forest, fixed operation sequence
+  ---
+  duration_ms: 1.066234
+  type: 'test'
+  ...
+# Subtest: fixed-seed randomized differential stress test against a naive adjacency-list forest
+ok 17 - fixed-seed randomized differential stress test against a naive adjacency-list forest
+  ---
+  duration_ms: 49.264832
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 159.491035
