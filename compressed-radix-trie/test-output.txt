@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: empty trie: size 0, get/has/delete/longestPrefixOf report absence, entriesWithPrefix is empty
+ok 1 - empty trie: size 0, get/has/delete/longestPrefixOf report absence, entriesWithPrefix is empty
+  ---
+  duration_ms: 2.942815
+  type: 'test'
+  ...
+# Subtest: single key round-trips through set/get/has, including the empty-string key
+ok 2 - single key round-trips through set/get/has, including the empty-string key
+  ---
+  duration_ms: 2.088965
+  type: 'test'
+  ...
+# Subtest: set() returns `this`, enabling chaining
+ok 3 - set() returns `this`, enabling chaining
+  ---
+  duration_ms: 0.273053
+  type: 'test'
+  ...
+# Subtest: overwriting an existing key updates the value without changing size
+ok 4 - overwriting an existing key updates the value without changing size
+  ---
+  duration_ms: 0.229072
+  type: 'test'
+  ...
+# Subtest: shared-prefix insertion causes edge splitting, preserving both keys
+ok 5 - shared-prefix insertion causes edge splitting, preserving both keys
+  ---
+  duration_ms: 0.244087
+  type: 'test'
+  ...
+# Subtest: branching: many keys sharing various prefixes all remain independently retrievable
+ok 6 - branching: many keys sharing various prefixes all remain independently retrievable
+  ---
+  duration_ms: 0.400577
+  type: 'test'
+  ...
+# Subtest: empty string key coexists correctly with non-empty keys sharing no special treatment
+ok 7 - empty string key coexists correctly with non-empty keys sharing no special treatment
+  ---
+  duration_ms: 0.4188
+  type: 'test'
+  ...
+# Subtest: Unicode keys, including surrogate-pair (astral) characters, are supported
+ok 8 - Unicode keys, including surrogate-pair (astral) characters, are supported
+  ---
+  duration_ms: 0.42663
+  type: 'test'
+  ...
+# Subtest: delete() returns false for absent keys and does not affect size or other keys
+ok 9 - delete() returns false for absent keys and does not affect size or other keys
+  ---
+  duration_ms: 0.434889
+  type: 'test'
+  ...
+# Subtest: deleting a leaf key removes it and re-merges (compresses) the remaining single-child chain
+ok 10 - deleting a leaf key removes it and re-merges (compresses) the remaining single-child chain
+  ---
+  duration_ms: 0.505037
+  type: 'test'
+  ...
+# Subtest: deleting an internal (non-leaf) end-of-key node keeps its children intact
+ok 11 - deleting an internal (non-leaf) end-of-key node keeps its children intact
+  ---
+  duration_ms: 0.303125
+  type: 'test'
+  ...
+# Subtest: deleting every key restores an empty trie with no leftover structure
+ok 12 - deleting every key restores an empty trie with no leftover structure
+  ---
+  duration_ms: 0.240326
+  type: 'test'
+  ...
+# Subtest: deleting the empty-string key only clears it, leaving other keys untouched
+ok 13 - deleting the empty-string key only clears it, leaving other keys untouched
+  ---
+  duration_ms: 0.134881
+  type: 'test'
+  ...
+# Subtest: entriesWithPrefix returns matches in JavaScript lexicographic order, including exact-key and mid-edge prefixes
+ok 14 - entriesWithPrefix returns matches in JavaScript lexicographic order, including exact-key and mid-edge prefixes
+  ---
+  duration_ms: 0.40475
+  type: 'test'
+  ...
+# Subtest: entriesWithPrefix("") returns every entry in the trie, sorted
+ok 15 - entriesWithPrefix("") returns every entry in the trie, sorted
+  ---
+  duration_ms: 0.171424
+  type: 'test'
+  ...
+# Subtest: longestPrefixOf finds the longest stored key that prefixes the input, or null
+ok 16 - longestPrefixOf finds the longest stored key that prefixes the input, or null
+  ---
+  duration_ms: 0.15427
+  type: 'test'
+  ...
+# Subtest: longestPrefixOf: the empty-string key counts as a prefix of everything once set
+ok 17 - longestPrefixOf: the empty-string key counts as a prefix of everything once set
+  ---
+  duration_ms: 0.111968
+  type: 'test'
+  ...
+# Subtest: longestPrefixOf stops correctly on a partial mid-edge mismatch
+ok 18 - longestPrefixOf stops correctly on a partial mid-edge mismatch
+  ---
+  duration_ms: 0.105106
+  type: 'test'
+  ...
+# Subtest: set/get/has/delete/entriesWithPrefix/longestPrefixOf all reject non-string arguments with TypeError
+ok 19 - set/get/has/delete/entriesWithPrefix/longestPrefixOf all reject non-string arguments with TypeError
+  ---
+  duration_ms: 2.791933
+  type: 'test'
+  ...
+# Subtest: fixed-seed cross-check: 3000 random set/get/has/delete/prefix ops match a Map reference model
+ok 20 - fixed-seed cross-check: 3000 random set/get/has/delete/prefix ops match a Map reference model
+  ---
+  duration_ms: 24.142072
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 186.673983
