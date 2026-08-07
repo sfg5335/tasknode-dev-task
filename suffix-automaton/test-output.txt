@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: empty text: has/occurrences/countDistinctSubstrings/longestCommonSubstring all behave per spec
+ok 1 - empty text: has/occurrences/countDistinctSubstrings/longestCommonSubstring all behave per spec
+  ---
+  duration_ms: 1.530075
+  type: 'test'
+  ...
+# Subtest: non-empty text against an empty `other`: longestCommonSubstring is always empty
+ok 2 - non-empty text against an empty `other`: longestCommonSubstring is always empty
+  ---
+  duration_ms: 0.264613
+  type: 'test'
+  ...
+# Subtest: single-character text
+ok 3 - single-character text
+  ---
+  duration_ms: 0.345504
+  type: 'test'
+  ...
+# Subtest: unique-character text: every substring occurs exactly once
+ok 4 - unique-character text: every substring occurs exactly once
+  ---
+  duration_ms: 0.352956
+  type: 'test'
+  ...
+# Subtest: repeated and overlapping occurrences are counted correctly
+ok 5 - repeated and overlapping occurrences are counted correctly
+  ---
+  duration_ms: 0.416547
+  type: 'test'
+  ...
+# Subtest: absent patterns: has() is false and occurrences() is 0
+ok 6 - absent patterns: has() is false and occurrences() is 0
+  ---
+  duration_ms: 0.193404
+  type: 'test'
+  ...
+# Subtest: Unicode: operates on UTF-16 code units, so an astral character (surrogate pair) is two units
+ok 7 - Unicode: operates on UTF-16 code units, so an astral character (surrogate pair) is two units
+  ---
+  duration_ms: 0.477578
+  type: 'test'
+  ...
+# Subtest: longestCommonSubstring: tie-breaking picks the earliest position in `other`
+ok 8 - longestCommonSubstring: tie-breaking picks the earliest position in `other`
+  ---
+  duration_ms: 0.160786
+  type: 'test'
+  ...
+# Subtest: longestCommonSubstring: basic correctness beyond the tie-break case
+ok 9 - longestCommonSubstring: basic correctness beyond the tie-break case
+  ---
+  duration_ms: 0.318248
+  type: 'test'
+  ...
+# Subtest: invalid constructor input throws TypeError
+ok 10 - invalid constructor input throws TypeError
+  ---
+  duration_ms: 0.933844
+  type: 'test'
+  ...
+# Subtest: invalid method arguments throw TypeError
+ok 11 - invalid method arguments throw TypeError
+  ---
+  duration_ms: 0.636832
+  type: 'test'
+  ...
+# Subtest: repeated calls are side-effect-free and always agree with each other
+ok 12 - repeated calls are side-effect-free and always agree with each other
+  ---
+  duration_ms: 1.581827
+  type: 'test'
+  ...
+# Subtest: fixed deterministic comparisons against brute-force results for short strings
+ok 13 - fixed deterministic comparisons against brute-force results for short strings
+  ---
+  duration_ms: 4.391782
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 112.690771

@@ -27,3 +27,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-07 | Implement and Test a Deterministic B-Tree Map (2.5 PFT) | [`btree-map/`](btree-map/) |
 | 2026-08-07 | Implement and Test a Deterministic Exact-Cover Solver (3 PFT) | [`exact-cover/`](exact-cover/) |
 | 2026-08-07 | Implement and Test a Persistent Range-Sum Segment Tree (2.5 PFT) | [`persistent-segment-tree/`](persistent-segment-tree/) |
+| 2026-08-07 | Implement and Test a Deterministic Suffix Automaton (2.5 PFT) | [`suffix-automaton/`](suffix-automaton/) |
