@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: triangle with one heavy edge: min cut isolates the middle-weight vertex
+ok 1 - triangle with one heavy edge: min cut isolates the middle-weight vertex
+  ---
+  duration_ms: 4.997701
+  type: 'test'
+  ...
+# Subtest: 4-cycle with two weak opposite edges: min cut isolates the two weak edges together
+ok 2 - 4-cycle with two weak opposite edges: min cut isolates the two weak edges together
+  ---
+  duration_ms: 0.555247
+  type: 'test'
+  ...
+# Subtest: classic Stoer-Wagner paper example (8 vertices, unique min cut of weight 4)
+ok 3 - classic Stoer-Wagner paper example (8 vertices, unique min cut of weight 4)
+  ---
+  duration_ms: 0.945128
+  type: 'test'
+  ...
+# Subtest: two-vertex graph: min cut is just the single edge weight
+ok 4 - two-vertex graph: min cut is just the single edge weight
+  ---
+  duration_ms: 0.233025
+  type: 'test'
+  ...
+# Subtest: disconnected graph: min cut is 0, isolating a whole component
+ok 5 - disconnected graph: min cut is 0, isolating a whole component
+  ---
+  duration_ms: 0.262319
+  type: 'test'
+  ...
+# Subtest: three separate components: min cut is still 0
+ok 6 - three separate components: min cut is still 0
+  ---
+  duration_ms: 0.28264
+  type: 'test'
+  ...
+# Subtest: graph with no edges at all: min cut is 0 for any vertexCount >= 2
+ok 7 - graph with no edges at all: min cut is 0 for any vertexCount >= 2
+  ---
+  duration_ms: 0.202295
+  type: 'test'
+  ...
+# Subtest: fully connected graph where every edge has weight 0: min cut is 0
+ok 8 - fully connected graph where every edge has weight 0: min cut is 0
+  ---
+  duration_ms: 0.195015
+  type: 'test'
+  ...
+# Subtest: parallel edges between the same pair are summed before cutting
+ok 9 - parallel edges between the same pair are summed before cutting
+  ---
+  duration_ms: 0.422525
+  type: 'test'
+  ...
+# Subtest: many parallel edges collapse to the same effective weight as one summed edge
+ok 10 - many parallel edges collapse to the same effective weight as one summed edge
+  ---
+  duration_ms: 1.478831
+  type: 'test'
+  ...
+# Subtest: self-loops are ignored (they cannot affect any cut)
+ok 11 - self-loops are ignored (they cannot affect any cut)
+  ---
+  duration_ms: 0.26183
+  type: 'test'
+  ...
+# Subtest: self-loops are still validated even though they end up ignored
+ok 12 - self-loops are still validated even though they end up ignored
+  ---
+  duration_ms: 0.532726
+  type: 'test'
+  ...
+# Subtest: multiple self-loops on different vertices are all ignored
+ok 13 - multiple self-loops on different vertices are all ignored
+  ---
+  duration_ms: 0.115527
+  type: 'test'
+  ...
+# Subtest: repeated calls on the same graph return an identical result (deterministic)
+ok 14 - repeated calls on the same graph return an identical result (deterministic)
+  ---
+  duration_ms: 0.328133
+  type: 'test'
+  ...
+# Subtest: tied minimum-weight cuts: the lexicographically smaller partition wins, deterministically
+ok 15 - tied minimum-weight cuts: the lexicographically smaller partition wins, deterministically
+  ---
+  duration_ms: 0.127445
+  type: 'test'
+  ...
+# Subtest: all-zero-weight graph (maximal tie): partition is still fully deterministic across repeats
+ok 16 - all-zero-weight graph (maximal tie): partition is still fully deterministic across repeats
+  ---
+  duration_ms: 0.301957
+  type: 'test'
+  ...
+# Subtest: does not mutate the edges array or any edge sub-array
+ok 17 - does not mutate the edges array or any edge sub-array
+  ---
+  duration_ms: 0.117077
+  type: 'test'
+  ...
+# Subtest: does not mutate edges across multiple calls with the same array
+ok 18 - does not mutate edges across multiple calls with the same array
+  ---
+  duration_ms: 0.166912
+  type: 'test'
+  ...
+# Subtest: vertexCount must be an integer
+ok 19 - vertexCount must be an integer
+  ---
+  duration_ms: 0.194663
+  type: 'test'
+  ...
+# Subtest: vertexCount must be at least 2
+ok 20 - vertexCount must be at least 2
+  ---
+  duration_ms: 0.323753
+  type: 'test'
+  ...
+# Subtest: edges must be an array
+ok 21 - edges must be an array
+  ---
+  duration_ms: 0.159359
+  type: 'test'
+  ...
+# Subtest: each edge must be a well-formed [u, v, weight] triple
+ok 22 - each edge must be a well-formed [u, v, weight] triple
+  ---
+  duration_ms: 0.33541
+  type: 'test'
+  ...
+# Subtest: u and v must be integers
+ok 23 - u and v must be integers
+  ---
+  duration_ms: 0.2053
+  type: 'test'
+  ...
+# Subtest: u and v must be within [0, vertexCount)
+ok 24 - u and v must be within [0, vertexCount)
+  ---
+  duration_ms: 0.164575
+  type: 'test'
+  ...
+# Subtest: weight must be a finite number
+ok 25 - weight must be a finite number
+  ---
+  duration_ms: 0.231353
+  type: 'test'
+  ...
+# Subtest: weight must be non-negative
+ok 26 - weight must be non-negative
+  ---
+  duration_ms: 0.110843
+  type: 'test'
+  ...
+# Subtest: weight of exactly 0 is valid (not an error)
+ok 27 - weight of exactly 0 is valid (not an error)
+  ---
+  duration_ms: 0.294819
+  type: 'test'
+  ...
+# Subtest: seeded random small graphs: weight and partition validity match exhaustive enumeration
+ok 28 - seeded random small graphs: weight and partition validity match exhaustive enumeration
+  ---
+  duration_ms: 32.437319
+  type: 'test'
+  ...
+# Subtest: seeded random small graphs: repeated calls stay identical (no hidden nondeterminism)
+ok 29 - seeded random small graphs: repeated calls stay identical (no hidden nondeterminism)
+  ---
+  duration_ms: 5.822874
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 172.814628
