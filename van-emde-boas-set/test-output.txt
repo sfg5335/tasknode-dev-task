@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: a freshly constructed set is empty
+ok 1 - a freshly constructed set is empty
+  ---
+  duration_ms: 1.451091
+  type: 'test'
+  ...
+# Subtest: universeSize = 2 (the base-case leaf) supports both of its values
+ok 2 - universeSize = 2 (the base-case leaf) supports both of its values
+  ---
+  duration_ms: 5.996398
+  type: 'test'
+  ...
+# Subtest: universeSize = 2^32 constructs instantly and supports values near both ends
+ok 3 - universeSize = 2^32 constructs instantly and supports values near both ends
+  ---
+  duration_ms: 0.48872
+  type: 'test'
+  ...
+# Subtest: odd universe exponent (universeSize = 8, k=3 -> upperSize=4, lowerSize=2)
+ok 4 - odd universe exponent (universeSize = 8, k=3 -> upperSize=4, lowerSize=2)
+  ---
+  duration_ms: 0.562753
+  type: 'test'
+  ...
+# Subtest: even universe exponent (universeSize = 16, k=4 -> upperSize=4, lowerSize=4)
+ok 5 - even universe exponent (universeSize = 16, k=4 -> upperSize=4, lowerSize=4)
+  ---
+  duration_ms: 0.326438
+  type: 'test'
+  ...
+# Subtest: inserting an already-present value is a harmless idempotent no-op
+ok 6 - inserting an already-present value is a harmless idempotent no-op
+  ---
+  duration_ms: 0.146858
+  type: 'test'
+  ...
+# Subtest: deleting an already-absent value is a harmless idempotent no-op
+ok 7 - deleting an already-absent value is a harmless idempotent no-op
+  ---
+  duration_ms: 0.124727
+  type: 'test'
+  ...
+# Subtest: deleting from an empty set is a harmless idempotent no-op
+ok 8 - deleting from an empty set is a harmless idempotent no-op
+  ---
+  duration_ms: 0.203898
+  type: 'test'
+  ...
+# Subtest: deleting the minimum promotes the next-smallest element
+ok 9 - deleting the minimum promotes the next-smallest element
+  ---
+  duration_ms: 0.561962
+  type: 'test'
+  ...
+# Subtest: deleting the maximum demotes to the next-largest element
+ok 10 - deleting the maximum demotes to the next-largest element
+  ---
+  duration_ms: 0.445733
+  type: 'test'
+  ...
+# Subtest: deleting the only element empties the set
+ok 11 - deleting the only element empties the set
+  ---
+  duration_ms: 0.233618
+  type: 'test'
+  ...
+# Subtest: deleting the min when it is the sole remaining element after prior deletions
+ok 12 - deleting the min when it is the sole remaining element after prior deletions
+  ---
+  duration_ms: 0.124905
+  type: 'test'
+  ...
+# Subtest: deleting the min whose cluster becomes empty picks the new min from the next non-empty cluster
+ok 13 - deleting the min whose cluster becomes empty picks the new min from the next non-empty cluster
+  ---
+  duration_ms: 0.095959
+  type: 'test'
+  ...
+# Subtest: predecessor and successor are strict (never return x itself, even if x is a member)
+ok 14 - predecessor and successor are strict (never return x itself, even if x is a member)
+  ---
+  duration_ms: 0.139235
+  type: 'test'
+  ...
+# Subtest: predecessor/successor at the universe boundaries return null when nothing qualifies
+ok 15 - predecessor/successor at the universe boundaries return null when nothing qualifies
+  ---
+  duration_ms: 0.098164
+  type: 'test'
+  ...
+# Subtest: predecessor/successor work for a query value that is not itself a member
+ok 16 - predecessor/successor work for a query value that is not itself a member
+  ---
+  duration_ms: 0.144514
+  type: 'test'
+  ...
+# Subtest: universeSize must be a safe integer
+ok 17 - universeSize must be a safe integer
+  ---
+  duration_ms: 0.493207
+  type: 'test'
+  ...
+# Subtest: universeSize must be a power of two in [2, 2^32]
+ok 18 - universeSize must be a power of two in [2, 2^32]
+  ---
+  duration_ms: 0.350602
+  type: 'test'
+  ...
+# Subtest: element arguments must be safe integers, TypeError otherwise
+ok 19 - element arguments must be safe integers, TypeError otherwise
+  ---
+  duration_ms: 2.070262
+  type: 'test'
+  ...
+# Subtest: element arguments must be within [0, universeSize), RangeError otherwise
+ok 20 - element arguments must be within [0, universeSize), RangeError otherwise
+  ---
+  duration_ms: 0.415772
+  type: 'test'
+  ...
+# Subtest: fixed-seed differential test against a native Set across small universe sizes
+ok 21 - fixed-seed differential test against a native Set across small universe sizes
+  ---
+  duration_ms: 49.296002
+  type: 'test'
+  ...
+# Subtest: fixed-seed differential test against a native Set on larger universe sizes
+ok 22 - fixed-seed differential test against a native Set on larger universe sizes
+  ---
+  duration_ms: 24.183788
+  type: 'test'
+  ...
+# Subtest: fixed-seed differential test sweeping every universe exponent from 2^1 to 2^14
+ok 23 - fixed-seed differential test sweeping every universe exponent from 2^1 to 2^14
+  ---
+  duration_ms: 22.673415
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 222.585383
