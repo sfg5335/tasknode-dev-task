@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: single path: flow limited by the tightest edge, cost is additive
+ok 1 - single path: flow limited by the tightest edge, cost is additive
+  ---
+  duration_ms: 3.920608
+  type: 'test'
+  ...
+# Subtest: two independent parallel paths: max flow uses both, cheaper path preferred first
+ok 2 - two independent parallel paths: max flow uses both, cheaper path preferred first
+  ---
+  duration_ms: 0.781684
+  type: 'test'
+  ...
+# Subtest: unreachable sink: zero flow, zero cost, not an error
+ok 3 - unreachable sink: zero flow, zero cost, not an error
+  ---
+  duration_ms: 0.27476
+  type: 'test'
+  ...
+# Subtest: sink reachable only via zero-capacity edges: zero flow
+ok 4 - sink reachable only via zero-capacity edges: zero flow
+  ---
+  duration_ms: 0.256308
+  type: 'test'
+  ...
+# Subtest: flowLimit caps the pushed flow below the true max flow
+ok 5 - flowLimit caps the pushed flow below the true max flow
+  ---
+  duration_ms: 0.336966
+  type: 'test'
+  ...
+# Subtest: flowLimit of 0 returns immediately with zero flow and cost
+ok 6 - flowLimit of 0 returns immediately with zero flow and cost
+  ---
+  duration_ms: 0.166748
+  type: 'test'
+  ...
+# Subtest: flowLimit above the true max flow has no effect (capped at true max)
+ok 7 - flowLimit above the true max flow has no effect (capped at true max)
+  ---
+  duration_ms: 0.213207
+  type: 'test'
+  ...
+# Subtest: parallel edges between the same pair are tracked independently in edgeFlows
+ok 8 - parallel edges between the same pair are tracked independently in edgeFlows
+  ---
+  duration_ms: 0.208283
+  type: 'test'
+  ...
+# Subtest: negative-cost edges (with no reachable negative cycle) can drive total cost below zero
+ok 9 - negative-cost edges (with no reachable negative cycle) can drive total cost below zero
+  ---
+  duration_ms: 0.354164
+  type: 'test'
+  ...
+# Subtest: a negative-cost cycle NOT reachable from source is ignored, not exploited or rejected
+ok 10 - a negative-cost cycle NOT reachable from source is ignored, not exploited or rejected
+  ---
+  duration_ms: 0.398467
+  type: 'test'
+  ...
+# Subtest: a reachable negative-cost cycle is rejected with RangeError
+ok 11 - a reachable negative-cost cycle is rejected with RangeError
+  ---
+  duration_ms: 0.518624
+  type: 'test'
+  ...
+# Subtest: a reachable negative-cost self-loop (a length-1 cycle) is rejected with RangeError
+ok 12 - a reachable negative-cost self-loop (a length-1 cycle) is rejected with RangeError
+  ---
+  duration_ms: 0.144784
+  type: 'test'
+  ...
+# Subtest: a zero-capacity edge can never make an otherwise-negative cycle "reachable"
+ok 13 - a zero-capacity edge can never make an otherwise-negative cycle "reachable"
+  ---
+  duration_ms: 0.269624
+  type: 'test'
+  ...
+# Subtest: deterministic ties: repeated calls on a graph with equal-cost alternative paths always agree
+ok 14 - deterministic ties: repeated calls on a graph with equal-cost alternative paths always agree
+  ---
+  duration_ms: 0.364815
+  type: 'test'
+  ...
+# Subtest: reverse-edge rerouting is required to reach true max flow, and the solver finds it
+ok 15 - reverse-edge rerouting is required to reach true max flow, and the solver finds it
+  ---
+  duration_ms: 1.302018
+  type: 'test'
+  ...
+# Subtest: does not mutate the edges array or any edge object
+ok 16 - does not mutate the edges array or any edge object
+  ---
+  duration_ms: 0.219551
+  type: 'test'
+  ...
+# Subtest: does not mutate edges across multiple calls with the same array
+ok 17 - does not mutate edges across multiple calls with the same array
+  ---
+  duration_ms: 0.199
+  type: 'test'
+  ...
+# Subtest: vertexCount must be a safe integer
+ok 18 - vertexCount must be a safe integer
+  ---
+  duration_ms: 0.405048
+  type: 'test'
+  ...
+# Subtest: vertexCount must be at least 1
+ok 19 - vertexCount must be at least 1
+  ---
+  duration_ms: 0.126269
+  type: 'test'
+  ...
+# Subtest: edges must be an array
+ok 20 - edges must be an array
+  ---
+  duration_ms: 0.197481
+  type: 'test'
+  ...
+# Subtest: source and sink must be safe integers within [0, vertexCount)
+ok 21 - source and sink must be safe integers within [0, vertexCount)
+  ---
+  duration_ms: 0.151061
+  type: 'test'
+  ...
+# Subtest: source and sink must be distinct
+ok 22 - source and sink must be distinct
+  ---
+  duration_ms: 0.07659
+  type: 'test'
+  ...
+# Subtest: each edge must be a well-formed object
+ok 23 - each edge must be a well-formed object
+  ---
+  duration_ms: 0.23793
+  type: 'test'
+  ...
+# Subtest: edge.from and edge.to must be safe integers within [0, vertexCount)
+ok 24 - edge.from and edge.to must be safe integers within [0, vertexCount)
+  ---
+  duration_ms: 0.209983
+  type: 'test'
+  ...
+# Subtest: edge.capacity must be a non-negative safe integer
+ok 25 - edge.capacity must be a non-negative safe integer
+  ---
+  duration_ms: 0.18546
+  type: 'test'
+  ...
+# Subtest: a capacity of exactly 0 is valid, not an error
+ok 26 - a capacity of exactly 0 is valid, not an error
+  ---
+  duration_ms: 0.097679
+  type: 'test'
+  ...
+# Subtest: edge.cost must be a safe integer (any sign is otherwise valid)
+ok 27 - edge.cost must be a safe integer (any sign is otherwise valid)
+  ---
+  duration_ms: 0.172356
+  type: 'test'
+  ...
+# Subtest: flowLimit, when provided, must be a non-negative safe integer
+ok 28 - flowLimit, when provided, must be a non-negative safe integer
+  ---
+  duration_ms: 0.263887
+  type: 'test'
+  ...
+# Subtest: omitting flowLimit (undefined) means "no limit", not zero
+ok 29 - omitting flowLimit (undefined) means "no limit", not zero
+  ---
+  duration_ms: 0.235952
+  type: 'test'
+  ...
+# Subtest: seeded random small graphs: flow, cost, and edgeFlows validity match an exhaustive brute-force oracle
+ok 30 - seeded random small graphs: flow, cost, and edgeFlows validity match an exhaustive brute-force oracle
+  ---
+  duration_ms: 8.4576
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 141.332401
