@@ -38,3 +38,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-07 | Implement and Test a Deterministic Dominator Tree (3.25 PFT) | [`dominator-tree/`](dominator-tree/) |
 | 2026-08-07 | Implement and Test a Van Emde Boas Integer Set (3 PFT) | [`van-emde-boas-set/`](van-emde-boas-set/) |
 | 2026-08-07 | Implement and Test a Balanced JavaScript Rope (3 PFT) | [`rope/`](rope/) |
+| 2026-08-07 | Implement and Test a Deterministic Li Chao Tree (3 PFT) | [`li-chao-tree/`](li-chao-tree/) |

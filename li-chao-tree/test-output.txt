@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: empty tree returns null for every query
+ok 1 - empty tree returns null for every query
+  ---
+  duration_ms: 2.919328
+  type: 'test'
+  ...
+# Subtest: single-point domain works
+ok 2 - single-point domain works
+  ---
+  duration_ms: 1.88383
+  type: 'test'
+  ...
+# Subtest: size tracks number of addLine/addSegment calls
+ok 3 - size tracks number of addLine/addSegment calls
+  ---
+  duration_ms: 0.292205
+  type: 'test'
+  ...
+# Subtest: crossing lines: minimum switches sides at the intersection
+ok 4 - crossing lines: minimum switches sides at the intersection
+  ---
+  duration_ms: 0.163308
+  type: 'test'
+  ...
+# Subtest: parallel lines: the lower one always wins, never the higher
+ok 5 - parallel lines: the lower one always wins, never the higher
+  ---
+  duration_ms: 0.492348
+  type: 'test'
+  ...
+# Subtest: three mutually-crossing lines pick the true lower envelope
+ok 6 - three mutually-crossing lines pick the true lower envelope
+  ---
+  duration_ms: 0.30682
+  type: 'test'
+  ...
+# Subtest: exact tie at a single point breaks by insertion order
+ok 7 - exact tie at a single point breaks by insertion order
+  ---
+  duration_ms: 0.19767
+  type: 'test'
+  ...
+# Subtest: duplicate identical lines: earliest insertion always wins, everywhere
+ok 8 - duplicate identical lines: earliest insertion always wins, everywhere
+  ---
+  duration_ms: 0.281511
+  type: 'test'
+  ...
+# Subtest: duplicate lines inserted out of "value order" still resolve by insertion order, not value
+ok 9 - duplicate lines inserted out of "value order" still resolve by insertion order, not value
+  ---
+  duration_ms: 0.389294
+  type: 'test'
+  ...
+# Subtest: many lines tying at exactly one shared point resolve to the earliest
+ok 10 - many lines tying at exactly one shared point resolve to the earliest
+  ---
+  duration_ms: 0.484857
+  type: 'test'
+  ...
+# Subtest: addSegment only affects its declared sub-range
+ok 11 - addSegment only affects its declared sub-range
+  ---
+  duration_ms: 0.22753
+  type: 'test'
+  ...
+# Subtest: addSegment with startX === endX affects only that single point
+ok 12 - addSegment with startX === endX affects only that single point
+  ---
+  duration_ms: 0.127102
+  type: 'test'
+  ...
+# Subtest: overlapping segments compose correctly (lower one wins in overlap)
+ok 13 - overlapping segments compose correctly (lower one wins in overlap)
+  ---
+  duration_ms: 0.100012
+  type: 'test'
+  ...
+# Subtest: addLine is equivalent to addSegment over the full domain
+ok 14 - addLine is equivalent to addSegment over the full domain
+  ---
+  duration_ms: 0.106384
+  type: 'test'
+  ...
+# Subtest: domain boundary queries at minX and maxX work
+ok 15 - domain boundary queries at minX and maxX work
+  ---
+  duration_ms: 0.125476
+  type: 'test'
+  ...
+# Subtest: segment exactly matching the full domain equals addLine
+ok 16 - segment exactly matching the full domain equals addLine
+  ---
+  duration_ms: 0.119561
+  type: 'test'
+  ...
+# Subtest: segment touching only the domain boundary point
+ok 17 - segment touching only the domain boundary point
+  ---
+  duration_ms: 1.378718
+  type: 'test'
+  ...
+# Subtest: fully negative domain works throughout
+ok 18 - fully negative domain works throughout
+  ---
+  duration_ms: 0.143454
+  type: 'test'
+  ...
+# Subtest: domain and segment bounds spanning negative to positive
+ok 19 - domain and segment bounds spanning negative to positive
+  ---
+  duration_ms: 0.218043
+  type: 'test'
+  ...
+# Subtest: fractional slope and intercept are evaluated exactly (within float precision)
+ok 20 - fractional slope and intercept are evaluated exactly (within float precision)
+  ---
+  duration_ms: 0.104534
+  type: 'test'
+  ...
+# Subtest: fractional lines cross and select correctly like integer ones
+ok 21 - fractional lines cross and select correctly like integer ones
+  ---
+  duration_ms: 0.133826
+  type: 'test'
+  ...
+# Subtest: constructor validates minX/maxX types and ordering
+ok 22 - constructor validates minX/maxX types and ordering
+  ---
+  duration_ms: 0.530231
+  type: 'test'
+  ...
+# Subtest: addLine validates slope/intercept
+ok 23 - addLine validates slope/intercept
+  ---
+  duration_ms: 0.294427
+  type: 'test'
+  ...
+# Subtest: addSegment validates coefficients, coordinate types, ordering, and domain containment
+ok 24 - addSegment validates coefficients, coordinate types, ordering, and domain containment
+  ---
+  duration_ms: 0.282945
+  type: 'test'
+  ...
+# Subtest: query validates x type and domain containment
+ok 25 - query validates x type and domain containment
+  ---
+  duration_ms: 0.206795
+  type: 'test'
+  ...
+# Subtest: addLine/addSegment do not increment size or mutate state when validation throws
+ok 26 - addLine/addSegment do not increment size or mutate state when validation throws
+  ---
+  duration_ms: 0.10838
+  type: 'test'
+  ...
+# Subtest: differential: many small random domains, mixed addLine/addSegment, full-domain query sweep
+ok 27 - differential: many small random domains, mixed addLine/addSegment, full-domain query sweep
+  ---
+  duration_ms: 24.94832
+  type: 'test'
+  ...
+# Subtest: differential: duplicate-line-heavy sequences (small distinct-line pool, many repeats)
+ok 28 - differential: duplicate-line-heavy sequences (small distinct-line pool, many repeats)
+  ---
+  duration_ms: 13.103159
+  type: 'test'
+  ...
+# Subtest: differential: many lines deliberately crossing at exactly one shared checkpoint, random insertion order
+ok 29 - differential: many lines deliberately crossing at exactly one shared checkpoint, random insertion order
+  ---
+  duration_ms: 6.812976
+  type: 'test'
+  ...
+# Subtest: differential: wide domain with fractional coefficients, sparse point sampling
+ok 30 - differential: wide domain with fractional coefficients, sparse point sampling
+  ---
+  duration_ms: 7.709979
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 170.663274
