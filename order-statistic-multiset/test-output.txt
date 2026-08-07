@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: empty multiset: size 0, count/rank are 0, delete returns false, select throws
+ok 1 - empty multiset: size 0, count/rank are 0, delete returns false, select throws
+  ---
+  duration_ms: 1.507786
+  type: 'test'
+  ...
+# Subtest: add() rejects non-finite or non-number values with TypeError
+ok 2 - add() rejects non-finite or non-number values with TypeError
+  ---
+  duration_ms: 0.342837
+  type: 'test'
+  ...
+# Subtest: delete()/count()/rank() also reject non-finite or non-number values with TypeError
+ok 3 - delete()/count()/rank() also reject non-finite or non-number values with TypeError
+  ---
+  duration_ms: 0.291798
+  type: 'test'
+  ...
+# Subtest: select() throws RangeError for a non-integer or out-of-bounds index
+ok 4 - select() throws RangeError for a non-integer or out-of-bounds index
+  ---
+  duration_ms: 0.436902
+  type: 'test'
+  ...
+# Subtest: duplicates: add() the same value multiple times increments count and size without adding extra tree nodes
+ok 5 - duplicates: add() the same value multiple times increments count and size without adding extra tree nodes
+  ---
+  duration_ms: 1.426546
+  type: 'test'
+  ...
+# Subtest: delete() decrements duplicate count before removing the node entirely, and returns true/false correctly
+ok 6 - delete() decrements duplicate count before removing the node entirely, and returns true/false correctly
+  ---
+  duration_ms: 0.168857
+  type: 'test'
+  ...
+# Subtest: all four AVL rotation patterns produce a correctly balanced, correctly ordered 3-node tree
+ok 7 - all four AVL rotation patterns produce a correctly balanced, correctly ordered 3-node tree
+  ---
+  duration_ms: 1.697402
+  type: 'test'
+  ...
+# Subtest: leaf deletion removes the node directly and rebalances correctly
+ok 8 - leaf deletion removes the node directly and rebalances correctly
+  ---
+  duration_ms: 0.149959
+  type: 'test'
+  ...
+# Subtest: two-child deletion (including deleting the root) replaces the value via the in-order successor and rebalances
+ok 9 - two-child deletion (including deleting the root) replaces the value via the in-order successor and rebalances
+  ---
+  duration_ms: 0.53029
+  type: 'test'
+  ...
+# Subtest: rank() and select() are consistent inverses, and select() correctly spans duplicate runs
+ok 10 - rank() and select() are consistent inverses, and select() correctly spans duplicate runs
+  ---
+  duration_ms: 0.529277
+  type: 'test'
+  ...
+# Subtest: deterministic mixed-operation sequence matches a sorted-array reference implementation
+ok 11 - deterministic mixed-operation sequence matches a sorted-array reference implementation
+  ---
+  duration_ms: 0.963337
+  type: 'test'
+  ...
+# Subtest: size getter reflects insertions, duplicate increments, and deletions accurately throughout
+ok 12 - size getter reflects insertions, duplicate increments, and deletions accurately throughout
+  ---
+  duration_ms: 0.112686
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 100.039772
