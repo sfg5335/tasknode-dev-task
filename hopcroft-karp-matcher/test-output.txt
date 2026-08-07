@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: empty graph (0 left, 0 right, no edges)
+ok 1 - empty graph (0 left, 0 right, no edges)
+  ---
+  duration_ms: 2.735888
+  type: 'test'
+  ...
+# Subtest: non-empty partitions with no edges
+ok 2 - non-empty partitions with no edges
+  ---
+  duration_ms: 0.491085
+  type: 'test'
+  ...
+# Subtest: disconnected graph (two separate components)
+ok 3 - disconnected graph (two separate components)
+  ---
+  duration_ms: 0.469757
+  type: 'test'
+  ...
+# Subtest: perfect matching (complete bipartite K(3,3))
+ok 4 - perfect matching (complete bipartite K(3,3))
+  ---
+  duration_ms: 1.520706
+  type: 'test'
+  ...
+# Subtest: partial matching (more left vertices than can be matched)
+ok 5 - partial matching (more left vertices than can be matched)
+  ---
+  duration_ms: 0.251531
+  type: 'test'
+  ...
+# Subtest: duplicate edges are deduplicated (no effect on matching)
+ok 6 - duplicate edges are deduplicated (no effect on matching)
+  ---
+  duration_ms: 0.336395
+  type: 'test'
+  ...
+# Subtest: permuted edge order produces identical output
+ok 7 - permuted edge order produces identical output
+  ---
+  duration_ms: 0.236923
+  type: 'test'
+  ...
+# Subtest: isolated vertices on both sides
+ok 8 - isolated vertices on both sides
+  ---
+  duration_ms: 0.163386
+  type: 'test'
+  ...
+# Subtest: multiple-optimum graph (several maximum matchings exist)
+ok 9 - multiple-optimum graph (several maximum matchings exist)
+  ---
+  duration_ms: 0.448919
+  type: 'test'
+  ...
+# Subtest: invalid inputs throw TypeError or RangeError as appropriate
+ok 10 - invalid inputs throw TypeError or RangeError as appropriate
+  ---
+  duration_ms: 2.046396
+  type: 'test'
+  ...
+# Subtest: caller data is preserved (no mutation of edges array or its elements)
+ok 11 - caller data is preserved (no mutation of edges array or its elements)
+  ---
+  duration_ms: 0.342504
+  type: 'test'
+  ...
+# Subtest: repeated calls are deterministic
+ok 12 - repeated calls are deterministic
+  ---
+  duration_ms: 0.172918
+  type: 'test'
+  ...
+# Subtest: deterministic comparison against a brute-force oracle, fixed small graphs
+ok 13 - deterministic comparison against a brute-force oracle, fixed small graphs
+  ---
+  duration_ms: 0.608793
+  type: 'test'
+  ...
+# Subtest: fixed-seed randomized comparison against a brute-force oracle
+ok 14 - fixed-seed randomized comparison against a brute-force oracle
+  ---
+  duration_ms: 4.454037
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 104.974686
