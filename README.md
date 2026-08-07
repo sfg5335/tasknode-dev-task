@@ -33,3 +33,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-07 | Implement and Test a Deterministic Hopcroft-Karp Matcher (2.5 PFT) | [`hopcroft-karp-matcher/`](hopcroft-karp-matcher/) |
 | 2026-08-07 | Implement and Test a Deterministic Link-Cut Forest (3.25 PFT) | [`link-cut-forest/`](link-cut-forest/) |
 | 2026-08-07 | Implement and Test Deterministic Stoer-Wagner Min-Cut (3 PFT) | [`stoer-wagner-min-cut/`](stoer-wagner-min-cut/) |
+| 2026-08-07 | Implement and Test Deterministic Minimum Arborescence (3.25 PFT) | [`minimum-arborescence/`](minimum-arborescence/) |

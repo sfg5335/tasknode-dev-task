@@ -1,0 +1,208 @@
+TAP version 13
+# Subtest: single-vertex graph: trivial arborescence with no edges
+ok 1 - single-vertex graph: trivial arborescence with no edges
+  ---
+  duration_ms: 8.09289
+  type: 'test'
+  ...
+# Subtest: single-vertex graph with an ignored self-loop still resolves trivially
+ok 2 - single-vertex graph with an ignored self-loop still resolves trivially
+  ---
+  duration_ms: 0.59209
+  type: 'test'
+  ...
+# Subtest: already-a-tree graph: every edge is selected, in original order
+ok 3 - already-a-tree graph: every edge is selected, in original order
+  ---
+  duration_ms: 0.697203
+  type: 'test'
+  ...
+# Subtest: star graph rooted at the center
+ok 4 - star graph rooted at the center
+  ---
+  duration_ms: 0.620974
+  type: 'test'
+  ...
+# Subtest: picks the cheaper of two direct edges when both endpoints are already reachable from root directly
+ok 5 - picks the cheaper of two direct edges when both endpoints are already reachable from root directly
+  ---
+  duration_ms: 0.926513
+  type: 'test'
+  ...
+# Subtest: impossible: a non-root vertex has no incoming edge at all
+ok 6 - impossible: a non-root vertex has no incoming edge at all
+  ---
+  duration_ms: 0.337196
+  type: 'test'
+  ...
+# Subtest: impossible: a component is entirely disconnected from root
+ok 7 - impossible: a component is entirely disconnected from root
+  ---
+  duration_ms: 0.40597
+  type: 'test'
+  ...
+# Subtest: impossible: only self-loops point at a non-root vertex
+ok 8 - impossible: only self-loops point at a non-root vertex
+  ---
+  duration_ms: 0.268228
+  type: 'test'
+  ...
+# Subtest: feasible for every non-root vertex individually is not sufficient if it requires a cycle-only component
+ok 9 - feasible for every non-root vertex individually is not sufficient if it requires a cycle-only component
+  ---
+  duration_ms: 0.852886
+  type: 'test'
+  ...
+# Subtest: parallel edges: the cheaper of two edges on the same pair wins
+ok 10 - parallel edges: the cheaper of two edges on the same pair wins
+  ---
+  duration_ms: 1.341408
+  type: 'test'
+  ...
+# Subtest: tied edges: the smallest original index wins deterministically
+ok 11 - tied edges: the smallest original index wins deterministically
+  ---
+  duration_ms: 0.550245
+  type: 'test'
+  ...
+# Subtest: tied edges through a contraction: the resolved entry point still respects original-index tie-breaking
+ok 12 - tied edges through a contraction: the resolved entry point still respects original-index tie-breaking
+  ---
+  duration_ms: 0.852678
+  type: 'test'
+  ...
+# Subtest: negative weights are fully supported and can lower the total below zero
+ok 13 - negative weights are fully supported and can lower the total below zero
+  ---
+  duration_ms: 0.189656
+  type: 'test'
+  ...
+# Subtest: negative weights inside a contracted cycle still net out correctly
+ok 14 - negative weights inside a contracted cycle still net out correctly
+  ---
+  duration_ms: 0.628501
+  type: 'test'
+  ...
+# Subtest: a single 2-cycle requires exactly one contraction
+ok 15 - a single 2-cycle requires exactly one contraction
+  ---
+  duration_ms: 2.598885
+  type: 'test'
+  ...
+# Subtest: a 3-cycle requires exactly one contraction
+ok 16 - a 3-cycle requires exactly one contraction
+  ---
+  duration_ms: 0.239253
+  type: 'test'
+  ...
+# Subtest: nested contraction: contracting one cycle exposes a second cycle that itself needs contracting
+ok 17 - nested contraction: contracting one cycle exposes a second cycle that itself needs contracting
+  ---
+  duration_ms: 0.165992
+  type: 'test'
+  ...
+# Subtest: repeated calls on the same graph return an identical result
+ok 18 - repeated calls on the same graph return an identical result
+  ---
+  duration_ms: 0.202443
+  type: 'test'
+  ...
+# Subtest: does not mutate the edges array or any edge object
+ok 19 - does not mutate the edges array or any edge object
+  ---
+  duration_ms: 0.387439
+  type: 'test'
+  ...
+# Subtest: does not mutate edges across multiple calls with the same array
+ok 20 - does not mutate edges across multiple calls with the same array
+  ---
+  duration_ms: 0.143465
+  type: 'test'
+  ...
+# Subtest: vertexCount must be an integer
+ok 21 - vertexCount must be an integer
+  ---
+  duration_ms: 0.416777
+  type: 'test'
+  ...
+# Subtest: vertexCount must be at least 1
+ok 22 - vertexCount must be at least 1
+  ---
+  duration_ms: 0.109044
+  type: 'test'
+  ...
+# Subtest: edges must be an array
+ok 23 - edges must be an array
+  ---
+  duration_ms: 0.152743
+  type: 'test'
+  ...
+# Subtest: root must be an integer
+ok 24 - root must be an integer
+  ---
+  duration_ms: 0.161333
+  type: 'test'
+  ...
+# Subtest: root must be within [0, vertexCount)
+ok 25 - root must be within [0, vertexCount)
+  ---
+  duration_ms: 0.348347
+  type: 'test'
+  ...
+# Subtest: each edge must be a well-formed object
+ok 26 - each edge must be a well-formed object
+  ---
+  duration_ms: 0.143994
+  type: 'test'
+  ...
+# Subtest: edge.from and edge.to must be integers
+ok 27 - edge.from and edge.to must be integers
+  ---
+  duration_ms: 0.165003
+  type: 'test'
+  ...
+# Subtest: edge.from and edge.to must be within [0, vertexCount)
+ok 28 - edge.from and edge.to must be within [0, vertexCount)
+  ---
+  duration_ms: 0.164295
+  type: 'test'
+  ...
+# Subtest: edge.weight must be a number
+ok 29 - edge.weight must be a number
+  ---
+  duration_ms: 0.139524
+  type: 'test'
+  ...
+# Subtest: edge.weight must be finite (non-finite numbers are RangeError, not TypeError)
+ok 30 - edge.weight must be finite (non-finite numbers are RangeError, not TypeError)
+  ---
+  duration_ms: 0.129711
+  type: 'test'
+  ...
+# Subtest: a weight of exactly 0, or a negative weight, is valid (not an error)
+ok 31 - a weight of exactly 0, or a negative weight, is valid (not an error)
+  ---
+  duration_ms: 0.180956
+  type: 'test'
+  ...
+# Subtest: seeded random small graphs: feasibility and weight match an exhaustive brute-force oracle
+ok 32 - seeded random small graphs: feasibility and weight match an exhaustive brute-force oracle
+  ---
+  duration_ms: 34.462732
+  type: 'test'
+  ...
+# Subtest: seeded random small graphs: repeated calls stay identical (no hidden nondeterminism)
+ok 33 - seeded random small graphs: repeated calls stay identical (no hidden nondeterminism)
+  ---
+  duration_ms: 1.526236
+  type: 'test'
+  ...
+1..33
+# tests 33
+# suites 0
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 193.690855
