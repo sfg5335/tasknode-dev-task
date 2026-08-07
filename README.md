@@ -22,3 +22,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-06 | Implement and Test an Aho-Corasick String Matcher (2.75 PFT) | [`aho-corasick/`](aho-corasick/) |
 | 2026-08-07 | Implement and Test an AVL Order-Statistic Multiset (2.75 PFT) | [`order-statistic-multiset/`](order-statistic-multiset/) |
 | 2026-08-07 | Trace and Reproduce the Doom Index Fiscal Input (500 PFT) | [`doom-index-prudent-adjustment/`](doom-index-prudent-adjustment/) |
+| 2026-08-07 | Implement and Test a Deterministic Myers Diff (3 PFT) | [`myers-diff/`](myers-diff/) |
