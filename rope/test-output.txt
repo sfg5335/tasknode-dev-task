@@ -1,0 +1,232 @@
+TAP version 13
+# Subtest: an empty rope has length 0 and stringifies to the empty string
+ok 1 - an empty rope has length 0 and stringifies to the empty string
+  ---
+  duration_ms: 1.505081
+  type: 'test'
+  ...
+# Subtest: inserting into an empty rope, at index 0, works
+ok 2 - inserting into an empty rope, at index 0, works
+  ---
+  duration_ms: 0.366796
+  type: 'test'
+  ...
+# Subtest: inserting at index === length appends at the end
+ok 3 - inserting at index === length appends at the end
+  ---
+  duration_ms: 0.173646
+  type: 'test'
+  ...
+# Subtest: inserting an empty string is a harmless no-op
+ok 4 - inserting an empty string is a harmless no-op
+  ---
+  duration_ms: 0.147233
+  type: 'test'
+  ...
+# Subtest: delete with start === end is a harmless empty-range no-op
+ok 5 - delete with start === end is a harmless empty-range no-op
+  ---
+  duration_ms: 0.247831
+  type: 'test'
+  ...
+# Subtest: delete(0, length) empties the rope
+ok 6 - delete(0, length) empties the rope
+  ---
+  duration_ms: 0.12857
+  type: 'test'
+  ...
+# Subtest: substring with start === end returns the empty string
+ok 7 - substring with start === end returns the empty string
+  ---
+  duration_ms: 0.219898
+  type: 'test'
+  ...
+# Subtest: substring(0, length) returns the whole content
+ok 8 - substring(0, length) returns the whole content
+  ---
+  duration_ms: 0.173608
+  type: 'test'
+  ...
+# Subtest: charAt at the first and last valid indexes
+ok 9 - charAt at the first and last valid indexes
+  ---
+  duration_ms: 0.334088
+  type: 'test'
+  ...
+# Subtest: substring spanning multiple leaves built up via separate inserts
+ok 10 - substring spanning multiple leaves built up via separate inserts
+  ---
+  duration_ms: 0.640835
+  type: 'test'
+  ...
+# Subtest: insert into the middle of a multi-node rope, splitting an existing leaf
+ok 11 - insert into the middle of a multi-node rope, splitting an existing leaf
+  ---
+  duration_ms: 0.328929
+  type: 'test'
+  ...
+# Subtest: delete spanning multiple leaves removes exactly the requested range
+ok 12 - delete spanning multiple leaves removes exactly the requested range
+  ---
+  duration_ms: 0.25391
+  type: 'test'
+  ...
+# Subtest: charAt across a node boundary resolves to the correct leaf
+ok 13 - charAt across a node boundary resolves to the correct leaf
+  ---
+  duration_ms: 0.099407
+  type: 'test'
+  ...
+# Subtest: length and indexing use UTF-16 code units, not code points (surrogate pairs count as 2)
+ok 14 - length and indexing use UTF-16 code units, not code points (surrogate pairs count as 2)
+  ---
+  duration_ms: 0.107005
+  type: 'test'
+  ...
+# Subtest: substring can split a surrogate pair, matching native string slicing exactly
+ok 15 - substring can split a surrogate pair, matching native string slicing exactly
+  ---
+  duration_ms: 0.161741
+  type: 'test'
+  ...
+# Subtest: inserting text containing a surrogate pair across a node boundary preserves it intact
+ok 16 - inserting text containing a surrogate pair across a node boundary preserves it intact
+  ---
+  duration_ms: 0.152592
+  type: 'test'
+  ...
+# Subtest: insert and delete both return `this`, enabling method chaining
+ok 17 - insert and delete both return `this`, enabling method chaining
+  ---
+  duration_ms: 1.342647
+  type: 'test'
+  ...
+# Subtest: constructor rejects a non-string initial value
+ok 18 - constructor rejects a non-string initial value
+  ---
+  duration_ms: 0.496208
+  type: 'test'
+  ...
+# Subtest: insert rejects non-string text with TypeError
+ok 19 - insert rejects non-string text with TypeError
+  ---
+  duration_ms: 0.133888
+  type: 'test'
+  ...
+# Subtest: insert rejects a non-integer index with TypeError
+ok 20 - insert rejects a non-integer index with TypeError
+  ---
+  duration_ms: 0.199649
+  type: 'test'
+  ...
+# Subtest: insert rejects an out-of-range index with RangeError
+ok 21 - insert rejects an out-of-range index with RangeError
+  ---
+  duration_ms: 0.160493
+  type: 'test'
+  ...
+# Subtest: delete and substring reject non-integer start/end with TypeError
+ok 22 - delete and substring reject non-integer start/end with TypeError
+  ---
+  duration_ms: 0.35579
+  type: 'test'
+  ...
+# Subtest: delete and substring reject reversed (start > end) ranges with RangeError
+ok 23 - delete and substring reject reversed (start > end) ranges with RangeError
+  ---
+  duration_ms: 0.176071
+  type: 'test'
+  ...
+# Subtest: delete and substring reject out-of-range start/end with RangeError
+ok 24 - delete and substring reject out-of-range start/end with RangeError
+  ---
+  duration_ms: 0.155557
+  type: 'test'
+  ...
+# Subtest: charAt rejects a non-integer index with TypeError
+ok 25 - charAt rejects a non-integer index with TypeError
+  ---
+  duration_ms: 0.165531
+  type: 'test'
+  ...
+# Subtest: charAt rejects an out-of-range index with RangeError, including index === length
+ok 26 - charAt rejects an out-of-range index with RangeError, including index === length
+  ---
+  duration_ms: 0.218222
+  type: 'test'
+  ...
+# Subtest: checkInvariants rejects a non-Rope argument with TypeError
+ok 27 - checkInvariants rejects a non-Rope argument with TypeError
+  ---
+  duration_ms: 0.200225
+  type: 'test'
+  ...
+# Subtest: checkInvariants passes on a freshly constructed rope of any size
+ok 28 - checkInvariants passes on a freshly constructed rope of any size
+  ---
+  duration_ms: 0.139807
+  type: 'test'
+  ...
+# Subtest: 5,000 sequential single-character appends stay logarithmic height (no degenerate linked-list tree)
+ok 29 - 5,000 sequential single-character appends stay logarithmic height (no degenerate linked-list tree)
+  ---
+  duration_ms: 40.13954
+  type: 'test'
+  ...
+# Subtest: 5,000 sequential single-character prepends also stay balanced
+ok 30 - 5,000 sequential single-character prepends also stay balanced
+  ---
+  duration_ms: 14.556382
+  type: 'test'
+  ...
+# Subtest: checkInvariants catches a hand-corrupted cached length
+ok 31 - checkInvariants catches a hand-corrupted cached length
+  ---
+  duration_ms: 0.265495
+  type: 'test'
+  ...
+# Subtest: checkInvariants catches a hand-corrupted cached height
+ok 32 - checkInvariants catches a hand-corrupted cached height
+  ---
+  duration_ms: 0.22904
+  type: 'test'
+  ...
+# Subtest: checkInvariants catches an artificially unbalanced tree
+ok 33 - checkInvariants catches an artificially unbalanced tree
+  ---
+  duration_ms: 0.250731
+  type: 'test'
+  ...
+# Subtest: adversarial alternating prepend/append with interleaved deletes stays correct and balanced
+ok 34 - adversarial alternating prepend/append with interleaved deletes stays correct and balanced
+  ---
+  duration_ms: 21.176639
+  type: 'test'
+  ...
+# Subtest: adversarial repeated middle-insertion-then-deletion at the same position stays correct
+ok 35 - adversarial repeated middle-insertion-then-deletion at the same position stays correct
+  ---
+  duration_ms: 1.312099
+  type: 'test'
+  ...
+# Subtest: fixed-seed differential test against a native string, starting empty
+ok 36 - fixed-seed differential test against a native string, starting empty
+  ---
+  duration_ms: 30.174451
+  type: 'test'
+  ...
+# Subtest: fixed-seed differential test against a native string, starting from random nonempty content
+ok 37 - fixed-seed differential test against a native string, starting from random nonempty content
+  ---
+  duration_ms: 20.609484
+  type: 'test'
+  ...
+1..37
+# tests 37
+# suites 0
+# pass 37
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 289.569639
