@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: empty tree: size 0, get/has/delete report absence, entries() is empty
+ok 1 - empty tree: size 0, get/has/delete report absence, entries() is empty
+  ---
+  duration_ms: 2.39233
+  type: 'test'
+  ...
+# Subtest: set() returns `this`, enabling chaining; basic get/has round-trip
+ok 2 - set() returns `this`, enabling chaining; basic get/has round-trip
+  ---
+  duration_ms: 0.387068
+  type: 'test'
+  ...
+# Subtest: overwriting an existing key updates the value without changing size
+ok 3 - overwriting an existing key updates the value without changing size
+  ---
+  duration_ms: 0.156025
+  type: 'test'
+  ...
+# Subtest: negative and fractional keys are stored and ordered correctly
+ok 4 - negative and fractional keys are stored and ordered correctly
+  ---
+  duration_ms: 1.429055
+  type: 'test'
+  ...
+# Subtest: -0 and 0 are treated as the same key (matching === / Map SameValueZero semantics)
+ok 5 - -0 and 0 are treated as the same key (matching === / Map SameValueZero semantics)
+  ---
+  duration_ms: 0.28274
+  type: 'test'
+  ...
+# Subtest: set/get/has/delete all reject non-finite or non-numeric keys with TypeError
+ok 6 - set/get/has/delete all reject non-finite or non-numeric keys with TypeError
+  ---
+  duration_ms: 1.018462
+  type: 'test'
+  ...
+# Subtest: delete() returns false for absent keys without affecting size or other keys
+ok 7 - delete() returns false for absent keys without affecting size or other keys
+  ---
+  duration_ms: 0.245813
+  type: 'test'
+  ...
+# Subtest: repeated deletion: deleting the same key twice returns true then false, and every key can be removed in sequence
+ok 8 - repeated deletion: deleting the same key twice returns true then false, and every key can be removed in sequence
+  ---
+  duration_ms: 0.520081
+  type: 'test'
+  ...
+# Subtest: structural: inserting the 4th key into a 3-key leaf root triggers a root split
+ok 9 - structural: inserting the 4th key into a 3-key leaf root triggers a root split
+  ---
+  duration_ms: 0.420918
+  type: 'test'
+  ...
+# Subtest: structural: deleting from an underfull leaf borrows from a right sibling with spare keys
+ok 10 - structural: deleting from an underfull leaf borrows from a right sibling with spare keys
+  ---
+  duration_ms: 0.561597
+  type: 'test'
+  ...
+# Subtest: structural: deleting from an underfull leaf borrows from a left sibling with spare keys
+ok 11 - structural: deleting from an underfull leaf borrows from a left sibling with spare keys
+  ---
+  duration_ms: 0.359276
+  type: 'test'
+  ...
+# Subtest: structural: deleting from two underfull leaf siblings with no spare keys merges them
+ok 12 - structural: deleting from two underfull leaf siblings with no spare keys merges them
+  ---
+  duration_ms: 0.24888
+  type: 'test'
+  ...
+# Subtest: structural: merging the last two children of a 1-key root contracts the root back to a leaf
+ok 13 - structural: merging the last two children of a 1-key root contracts the root back to a leaf
+  ---
+  duration_ms: 0.300501
+  type: 'test'
+  ...
+# Subtest: structural: deleting a key stored in an internal (non-leaf) node uses predecessor/successor replacement
+ok 14 - structural: deleting a key stored in an internal (non-leaf) node uses predecessor/successor replacement
+  ---
+  duration_ms: 0.395973
+  type: 'test'
+  ...
+# Subtest: fixed-seed differential cross-check: 4000 random set/get/has/delete ops match a Map reference model
+ok 15 - fixed-seed differential cross-check: 4000 random set/get/has/delete ops match a Map reference model
+  ---
+  duration_ms: 9.332757
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 119.589681
