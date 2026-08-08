@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: accepts an exact terminal sequence
+ok 1 - accepts an exact terminal sequence
+  ---
+  duration_ms: 2.023888
+  type: 'test'
+  ...
+# Subtest: rejects a mismatched terminal
+ok 2 - rejects a mismatched terminal
+  ---
+  duration_ms: 0.455569
+  type: 'test'
+  ...
+# Subtest: rejects a too-short input
+ok 3 - rejects a too-short input
+  ---
+  duration_ms: 0.472766
+  type: 'test'
+  ...
+# Subtest: rejects a too-long input
+ok 4 - rejects a too-long input
+  ---
+  duration_ms: 0.293365
+  type: 'test'
+  ...
+# Subtest: rejects when start nonterminal has zero productions (uninhabited, not an error)
+ok 5 - rejects when start nonterminal has zero productions (uninhabited, not an error)
+  ---
+  duration_ms: 0.393639
+  type: 'test'
+  ...
+# Subtest: accepts choosing between alternative productions
+ok 6 - accepts choosing between alternative productions
+  ---
+  duration_ms: 0.288175
+  type: 'test'
+  ...
+# Subtest: a symbol not present as a grammar key is treated as a terminal
+ok 7 - a symbol not present as a grammar key is treated as a terminal
+  ---
+  duration_ms: 0.391491
+  type: 'test'
+  ...
+# Subtest: terminal matching is exact-string, case-sensitive, no coercion
+ok 8 - terminal matching is exact-string, case-sensitive, no coercion
+  ---
+  duration_ms: 0.231187
+  type: 'test'
+  ...
+# Subtest: a terminal named like an Object.prototype member is not confused with a nonterminal
+ok 9 - a terminal named like an Object.prototype member is not confused with a nonterminal
+  ---
+  duration_ms: 0.530693
+  type: 'test'
+  ...
+# Subtest: an epsilon production accepts the empty input
+ok 10 - an epsilon production accepts the empty input
+  ---
+  duration_ms: 0.548492
+  type: 'test'
+  ...
+# Subtest: a nullable nonterminal reached via a chain of productions accepts the empty input
+ok 11 - a nullable nonterminal reached via a chain of productions accepts the empty input
+  ---
+  duration_ms: 0.250981
+  type: 'test'
+  ...
+# Subtest: a nullable nonterminal in the middle of a production is correctly skippable
+ok 12 - a nullable nonterminal in the middle of a production is correctly skippable
+  ---
+  duration_ms: 0.153204
+  type: 'test'
+  ...
+# Subtest: a nullable nonterminal can also still match its non-empty alternative
+ok 13 - a nullable nonterminal can also still match its non-empty alternative
+  ---
+  duration_ms: 0.172619
+  type: 'test'
+  ...
+# Subtest: nullable-chain ordering: a nonterminal that becomes nullable only transitively, referenced by an item constructed after that transitive nullability was already available, is still correctly resolved (regression test for a real algorithmic bug: a naive single-pass Earley worklist that only re-scans for completions when a *complete* item is processed can permanently miss this case; see the nullable-skip fix in the implementation)
+ok 14 - nullable-chain ordering: a nonterminal that becomes nullable only transitively, referenced by an item constructed after that transitive nullability was already available, is still correctly resolved (regression test for a real algorithmic bug: a naive single-pass Earley worklist that only re-scans for completions when a *complete* item is processed can permanently miss this case; see the nullable-skip fix in the implementation)
+  ---
+  duration_ms: 0.125333
+  type: 'test'
+  ...
+# Subtest: nullable cycle: mutually-recursive nonterminals resolve to a nullable fixpoint without infinite-looping
+ok 15 - nullable cycle: mutually-recursive nonterminals resolve to a nullable fixpoint without infinite-looping
+  ---
+  duration_ms: 0.10251
+  type: 'test'
+  ...
+# Subtest: nullable cycle with a non-nullable escape still recognizes non-empty input
+ok 16 - nullable cycle with a non-nullable escape still recognizes non-empty input
+  ---
+  duration_ms: 0.222887
+  type: 'test'
+  ...
+# Subtest: all-nullable long production resolves via chained nullable-skips
+ok 17 - all-nullable long production resolves via chained nullable-skips
+  ---
+  duration_ms: 0.115751
+  type: 'test'
+  ...
+# Subtest: direct left recursion: left-associative expression grammar
+ok 18 - direct left recursion: left-associative expression grammar
+  ---
+  duration_ms: 0.148534
+  type: 'test'
+  ...
+# Subtest: indirect left recursion: A -> B x, B -> A y | z
+ok 19 - indirect left recursion: A -> B x, B -> A y | z
+  ---
+  duration_ms: 0.108734
+  type: 'test'
+  ...
+# Subtest: an ambiguous grammar (multiple valid parses) still recognizes correctly
+ok 20 - an ambiguous grammar (multiple valid parses) still recognizes correctly
+  ---
+  duration_ms: 0.1556
+  type: 'test'
+  ...
+# Subtest: an ambiguous grammar with an epsilon alternative does not spuriously accept
+ok 21 - an ambiguous grammar with an epsilon alternative does not spuriously accept
+  ---
+  duration_ms: 0.176906
+  type: 'test'
+  ...
+# Subtest: recursive nesting: balanced-parenthesis grammar accepts deep nesting
+ok 22 - recursive nesting: balanced-parenthesis grammar accepts deep nesting
+  ---
+  duration_ms: 0.349369
+  type: 'test'
+  ...
+# Subtest: recursive nesting: balanced-parenthesis grammar rejects imbalance
+ok 23 - recursive nesting: balanced-parenthesis grammar rejects imbalance
+  ---
+  duration_ms: 0.124587
+  type: 'test'
+  ...
+# Subtest: recursive nesting: a grammar for nested lists of digits
+ok 24 - recursive nesting: a grammar for nested lists of digits
+  ---
+  duration_ms: 0.302135
+  type: 'test'
+  ...
+# Subtest: repeated calls with the same grammar produce consistent results
+ok 25 - repeated calls with the same grammar produce consistent results
+  ---
+  duration_ms: 0.18957
+  type: 'test'
+  ...
+# Subtest: repeated calls with different grammars do not interfere with each other
+ok 26 - repeated calls with different grammars do not interfere with each other
+  ---
+  duration_ms: 0.119881
+  type: 'test'
+  ...
+# Subtest: does not mutate the grammar object, its production arrays, or its symbol strings
+ok 27 - does not mutate the grammar object, its production arrays, or its symbol strings
+  ---
+  duration_ms: 1.450225
+  type: 'test'
+  ...
+# Subtest: does not mutate the tokens array
+ok 28 - does not mutate the tokens array
+  ---
+  duration_ms: 0.994212
+  type: 'test'
+  ...
+# Subtest: mutating the caller-side grammar/tokens after a call does not retroactively affect that already-returned result
+ok 29 - mutating the caller-side grammar/tokens after a call does not retroactively affect that already-returned result
+  ---
+  duration_ms: 0.130154
+  type: 'test'
+  ...
+# Subtest: empty input is rejected against a grammar with no nullable path
+ok 30 - empty input is rejected against a grammar with no nullable path
+  ---
+  duration_ms: 0.089939
+  type: 'test'
+  ...
+# Subtest: empty input is accepted against a directly-nullable start symbol
+ok 31 - empty input is accepted against a directly-nullable start symbol
+  ---
+  duration_ms: 0.117487
+  type: 'test'
+  ...
+# Subtest: throws TypeError when grammar is not a plain object
+ok 32 - throws TypeError when grammar is not a plain object
+  ---
+  duration_ms: 0.459115
+  type: 'test'
+  ...
+# Subtest: throws TypeError when a grammar entry is not an array of productions
+ok 33 - throws TypeError when a grammar entry is not an array of productions
+  ---
+  duration_ms: 0.319482
+  type: 'test'
+  ...
+# Subtest: throws TypeError when a production is not an array of symbols
+ok 34 - throws TypeError when a production is not an array of symbols
+  ---
+  duration_ms: 0.180042
+  type: 'test'
+  ...
+# Subtest: throws TypeError when a symbol within a production is not a string
+ok 35 - throws TypeError when a symbol within a production is not a string
+  ---
+  duration_ms: 0.302476
+  type: 'test'
+  ...
+# Subtest: throws TypeError when start is not a string
+ok 36 - throws TypeError when start is not a string
+  ---
+  duration_ms: 0.239735
+  type: 'test'
+  ...
+# Subtest: throws RangeError when start symbol has no key in grammar
+ok 37 - throws RangeError when start symbol has no key in grammar
+  ---
+  duration_ms: 0.145809
+  type: 'test'
+  ...
+# Subtest: missing-start-symbol RangeError is distinct from the TypeError cases above
+ok 38 - missing-start-symbol RangeError is distinct from the TypeError cases above
+  ---
+  duration_ms: 0.189163
+  type: 'test'
+  ...
+# Subtest: throws TypeError when tokens is not an array
+ok 39 - throws TypeError when tokens is not an array
+  ---
+  duration_ms: 0.194976
+  type: 'test'
+  ...
+# Subtest: throws TypeError when tokens contains a non-string element
+ok 40 - throws TypeError when tokens contains a non-string element
+  ---
+  duration_ms: 0.168191
+  type: 'test'
+  ...
+# Subtest: matches a brute-force reference recognizer for every binary string up to length 12 against an "equal count of 0s and 1s" context-free grammar
+ok 41 - matches a brute-force reference recognizer for every binary string up to length 12 against an "equal count of 0s and 1s" context-free grammar
+  ---
+  duration_ms: 526.378201
+  type: 'test'
+  ...
+# Subtest: a highly ambiguous grammar with exponentially many parses still recognizes a moderately long input quickly (chart deduplication keeps the state space polynomial)
+ok 42 - a highly ambiguous grammar with exponentially many parses still recognizes a moderately long input quickly (chart deduplication keeps the state space polynomial)
+  ---
+  duration_ms: 5.540248
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 697.966078
