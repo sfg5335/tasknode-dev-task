@@ -1,0 +1,136 @@
+TAP version 13
+# Subtest: fixed parity fixture: k=2, parityCount=2, shardLength=1, cross-checked against an independent Lagrange-interpolation reference
+ok 1 - fixed parity fixture: k=2, parityCount=2, shardLength=1, cross-checked against an independent Lagrange-interpolation reference
+  ---
+  duration_ms: 3.088246
+  type: 'test'
+  ...
+# Subtest: encode matches the independent Lagrange-interpolation reference across many random shapes
+ok 2 - encode matches the independent Lagrange-interpolation reference across many random shapes
+  ---
+  duration_ms: 49.301028
+  type: 'test'
+  ...
+# Subtest: every recoverable erasure combination is correctly reconstructed (k=3, parityCount=2)
+ok 3 - every recoverable erasure combination is correctly reconstructed (k=3, parityCount=2)
+  ---
+  duration_ms: 1.319617
+  type: 'test'
+  ...
+# Subtest: erasing more than parityCount shards throws RangeError (excessive erasures)
+ok 4 - erasing more than parityCount shards throws RangeError (excessive erasures)
+  ---
+  duration_ms: 0.480959
+  type: 'test'
+  ...
+# Subtest: erasing exactly all parity shards recovers them from data alone
+ok 5 - erasing exactly all parity shards recovers them from data alone
+  ---
+  duration_ms: 0.172323
+  type: 'test'
+  ...
+# Subtest: erasing exactly all data shards recovers them from parity alone (k=parityCount)
+ok 6 - erasing exactly all data shards recovers them from parity alone (k=parityCount)
+  ---
+  duration_ms: 0.132494
+  type: 'test'
+  ...
+# Subtest: zero-length shards: encode and reconstruct both handle shardLength=0
+ok 7 - zero-length shards: encode and reconstruct both handle shardLength=0
+  ---
+  duration_ms: 0.207677
+  type: 'test'
+  ...
+# Subtest: encode is deterministic: identical inputs produce byte-identical outputs
+ok 8 - encode is deterministic: identical inputs produce byte-identical outputs
+  ---
+  duration_ms: 0.116225
+  type: 'test'
+  ...
+# Subtest: reconstruct is deterministic: identical erasure patterns produce byte-identical recoveries
+ok 9 - reconstruct is deterministic: identical erasure patterns produce byte-identical recoveries
+  ---
+  duration_ms: 0.420684
+  type: 'test'
+  ...
+# Subtest: encode does not mutate dataShards or its elements, and returns fresh arrays
+ok 10 - encode does not mutate dataShards or its elements, and returns fresh arrays
+  ---
+  duration_ms: 0.444007
+  type: 'test'
+  ...
+# Subtest: reconstruct does not mutate shards or its elements, and returns fresh arrays
+ok 11 - reconstruct does not mutate shards or its elements, and returns fresh arrays
+  ---
+  duration_ms: 0.272531
+  type: 'test'
+  ...
+# Subtest: repeated calls do not leak state between them (independent EncodeMatrix per call)
+ok 12 - repeated calls do not leak state between them (independent EncodeMatrix per call)
+  ---
+  duration_ms: 0.095898
+  type: 'test'
+  ...
+# Subtest: randomized round-trip sweep across many shapes (deterministic fixed seed)
+ok 13 - randomized round-trip sweep across many shapes (deterministic fixed seed)
+  ---
+  duration_ms: 21.872702
+  type: 'test'
+  ...
+# Subtest: encode: invalid inputs throw TypeError for wrong types
+ok 14 - encode: invalid inputs throw TypeError for wrong types
+  ---
+  duration_ms: 0.387804
+  type: 'test'
+  ...
+# Subtest: encode: invalid inputs throw RangeError for well-typed out-of-domain values
+ok 15 - encode: invalid inputs throw RangeError for well-typed out-of-domain values
+  ---
+  duration_ms: 0.232657
+  type: 'test'
+  ...
+# Subtest: reconstruct: invalid inputs throw TypeError for wrong types
+ok 16 - reconstruct: invalid inputs throw TypeError for wrong types
+  ---
+  duration_ms: 0.378914
+  type: 'test'
+  ...
+# Subtest: reconstruct: invalid inputs throw RangeError for well-typed out-of-domain values
+ok 17 - reconstruct: invalid inputs throw RangeError for well-typed out-of-domain values
+  ---
+  duration_ms: 0.182816
+  type: 'test'
+  ...
+# Subtest: reconstruct: both null and undefined are accepted as missing-shard markers
+ok 18 - reconstruct: both null and undefined are accepted as missing-shard markers
+  ---
+  duration_ms: 0.118008
+  type: 'test'
+  ...
+# Subtest: TypeError and RangeError are distinct classes (not interchangeable)
+ok 19 - TypeError and RangeError are distinct classes (not interchangeable)
+  ---
+  duration_ms: 0.135972
+  type: 'test'
+  ...
+# Subtest: performance/correctness sanity: 255 total shards (k=200, parityCount=55)
+ok 20 - performance/correctness sanity: 255 total shards (k=200, parityCount=55)
+  ---
+  duration_ms: 124.191813
+  type: 'test'
+  ...
+# Subtest: 256 total shards is rejected even though it would fit in a byte count sense
+ok 21 - 256 total shards is rejected even though it would fit in a byte count sense
+  ---
+  duration_ms: 0.710563
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 305.392305
