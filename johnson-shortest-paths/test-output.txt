@@ -1,0 +1,238 @@
+TAP version 13
+# Subtest: basic: simple two-vertex positive-weight graph
+ok 1 - basic: simple two-vertex positive-weight graph
+  ---
+  duration_ms: 3.661681
+  type: 'test'
+  ...
+# Subtest: basic: three-vertex chain accumulates weights along the path
+ok 2 - basic: three-vertex chain accumulates weights along the path
+  ---
+  duration_ms: 0.381539
+  type: 'test'
+  ...
+# Subtest: diagonal is always exactly zero, regardless of graph shape
+ok 3 - diagonal is always exactly zero, regardless of graph shape
+  ---
+  duration_ms: 0.396206
+  type: 'test'
+  ...
+# Subtest: empty graph: vertexCount 0 returns a 0x0 matrix
+ok 4 - empty graph: vertexCount 0 returns a 0x0 matrix
+  ---
+  duration_ms: 0.152746
+  type: 'test'
+  ...
+# Subtest: single vertex, no edges: 1x1 matrix of [[0]]
+ok 5 - single vertex, no edges: 1x1 matrix of [[0]]
+  ---
+  duration_ms: 0.171601
+  type: 'test'
+  ...
+# Subtest: disconnected graph: unreachable pairs are Infinity in both directions
+ok 6 - disconnected graph: unreachable pairs are Infinity in both directions
+  ---
+  duration_ms: 0.128175
+  type: 'test'
+  ...
+# Subtest: fully disconnected graph (no edges at all): every off-diagonal entry is Infinity
+ok 7 - fully disconnected graph (no edges at all): every off-diagonal entry is Infinity
+  ---
+  duration_ms: 0.164139
+  type: 'test'
+  ...
+# Subtest: negative edges without a cycle: a negative-weight shortcut is correctly found
+ok 8 - negative edges without a cycle: a negative-weight shortcut is correctly found
+  ---
+  duration_ms: 0.17043
+  type: 'test'
+  ...
+# Subtest: negative edges: a longer negative-weight path can beat a shorter positive one
+ok 9 - negative edges: a longer negative-weight path can beat a shorter positive one
+  ---
+  duration_ms: 0.248222
+  type: 'test'
+  ...
+# Subtest: parallel edges: the minimum-weight parallel edge determines the shortest distance
+ok 10 - parallel edges: the minimum-weight parallel edge determines the shortest distance
+  ---
+  duration_ms: 0.773233
+  type: 'test'
+  ...
+# Subtest: parallel edges combined with a cheaper indirect path still finds the true minimum
+ok 11 - parallel edges combined with a cheaper indirect path still finds the true minimum
+  ---
+  duration_ms: 0.162107
+  type: 'test'
+  ...
+# Subtest: self-loops with non-negative weight have no effect on any shortest path
+ok 12 - self-loops with non-negative weight have no effect on any shortest path
+  ---
+  duration_ms: 1.087513
+  type: 'test'
+  ...
+# Subtest: self-loop with weight exactly zero is accepted and has no effect
+ok 13 - self-loop with weight exactly zero is accepted and has no effect
+  ---
+  duration_ms: 0.176699
+  type: 'test'
+  ...
+# Subtest: negative-weight self-loop is a negative cycle: throws RangeError
+ok 14 - negative-weight self-loop is a negative cycle: throws RangeError
+  ---
+  duration_ms: 0.446966
+  type: 'test'
+  ...
+# Subtest: negative cycle (length > 1) is detected and throws RangeError
+ok 15 - negative cycle (length > 1) is detected and throws RangeError
+  ---
+  duration_ms: 0.130585
+  type: 'test'
+  ...
+# Subtest: negative cycle not reachable from every vertex is still detected
+ok 16 - negative cycle not reachable from every vertex is still detected
+  ---
+  duration_ms: 0.063929
+  type: 'test'
+  ...
+# Subtest: a graph with negative edges but provably no negative cycle does not throw
+ok 17 - a graph with negative edges but provably no negative cycle does not throw
+  ---
+  duration_ms: 0.13864
+  type: 'test'
+  ...
+# Subtest: the classic CLRS Chapter 25 Bellman-Ford/Johnson example graph
+ok 18 - the classic CLRS Chapter 25 Bellman-Ford/Johnson example graph
+  ---
+  duration_ms: 0.456983
+  type: 'test'
+  ...
+# Subtest: comparison with a Floyd-Warshall oracle: hand-picked small graphs
+ok 19 - comparison with a Floyd-Warshall oracle: hand-picked small graphs
+  ---
+  duration_ms: 0.374995
+  type: 'test'
+  ...
+# Subtest: comparison with a Floyd-Warshall oracle: seeded random small graphs, integer weights (exact match expected)
+ok 20 - comparison with a Floyd-Warshall oracle: seeded random small graphs, integer weights (exact match expected)
+  ---
+  duration_ms: 16.954429
+  type: 'test'
+  ...
+# Subtest: edge-order independence: shuffling the edges array does not change the result
+ok 21 - edge-order independence: shuffling the edges array does not change the result
+  ---
+  duration_ms: 1.079359
+  type: 'test'
+  ...
+# Subtest: edge-order independence also holds with parallel edges and self-loops present
+ok 22 - edge-order independence also holds with parallel edges and self-loops present
+  ---
+  duration_ms: 0.200202
+  type: 'test'
+  ...
+# Subtest: input immutability: the edges array and its sub-arrays are never mutated
+ok 23 - input immutability: the edges array and its sub-arrays are never mutated
+  ---
+  duration_ms: 0.245909
+  type: 'test'
+  ...
+# Subtest: input immutability: vertexCount and edges are not retroactively affected by mutating the caller copy after the call
+ok 24 - input immutability: vertexCount and edges are not retroactively affected by mutating the caller copy after the call
+  ---
+  duration_ms: 0.087624
+  type: 'test'
+  ...
+# Subtest: repeated calls with the same graph produce identical results every time
+ok 25 - repeated calls with the same graph produce identical results every time
+  ---
+  duration_ms: 0.1635
+  type: 'test'
+  ...
+# Subtest: repeated calls with different graphs do not leak state between calls
+ok 26 - repeated calls with different graphs do not leak state between calls
+  ---
+  duration_ms: 0.108184
+  type: 'test'
+  ...
+# Subtest: matrix dimensions are exactly vertexCount x vertexCount for a range of sizes
+ok 27 - matrix dimensions are exactly vertexCount x vertexCount for a range of sizes
+  ---
+  duration_ms: 0.226065
+  type: 'test'
+  ...
+# Subtest: invalid inputs: throws TypeError when vertexCount has the wrong type
+ok 28 - invalid inputs: throws TypeError when vertexCount has the wrong type
+  ---
+  duration_ms: 0.185721
+  type: 'test'
+  ...
+# Subtest: invalid inputs: throws TypeError when vertexCount is not an integer
+ok 29 - invalid inputs: throws TypeError when vertexCount is not an integer
+  ---
+  duration_ms: 0.16764
+  type: 'test'
+  ...
+# Subtest: invalid inputs: throws RangeError when vertexCount is a negative integer
+ok 30 - invalid inputs: throws RangeError when vertexCount is a negative integer
+  ---
+  duration_ms: 0.07704
+  type: 'test'
+  ...
+# Subtest: invalid inputs: throws TypeError when edges is not an array
+ok 31 - invalid inputs: throws TypeError when edges is not an array
+  ---
+  duration_ms: 0.12371
+  type: 'test'
+  ...
+# Subtest: invalid inputs: throws TypeError when an individual edge is not a length-3 array
+ok 32 - invalid inputs: throws TypeError when an individual edge is not a length-3 array
+  ---
+  duration_ms: 0.125819
+  type: 'test'
+  ...
+# Subtest: invalid inputs: throws TypeError when an edge endpoint is not an integer
+ok 33 - invalid inputs: throws TypeError when an edge endpoint is not an integer
+  ---
+  duration_ms: 0.118305
+  type: 'test'
+  ...
+# Subtest: invalid inputs: throws TypeError when an edge weight is not a finite number
+ok 34 - invalid inputs: throws TypeError when an edge weight is not a finite number
+  ---
+  duration_ms: 0.128924
+  type: 'test'
+  ...
+# Subtest: invalid inputs: throws RangeError when an edge endpoint is out of range
+ok 35 - invalid inputs: throws RangeError when an edge endpoint is out of range
+  ---
+  duration_ms: 0.241053
+  type: 'test'
+  ...
+# Subtest: invalid-input RangeError and TypeError cases are distinct error classes
+ok 36 - invalid-input RangeError and TypeError cases are distinct error classes
+  ---
+  duration_ms: 0.108404
+  type: 'test'
+  ...
+# Subtest: valid inputs with zero vertices and non-empty vertexCount but empty edges do not throw
+ok 37 - valid inputs with zero vertices and non-empty vertexCount but empty edges do not throw
+  ---
+  duration_ms: 0.078547
+  type: 'test'
+  ...
+# Subtest: a moderately large sparse random graph completes quickly and matches Floyd-Warshall
+ok 38 - a moderately large sparse random graph completes quickly and matches Floyd-Warshall
+  ---
+  duration_ms: 2.315838
+  type: 'test'
+  ...
+1..38
+# tests 38
+# suites 0
+# pass 38
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 159.133491

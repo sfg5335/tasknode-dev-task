@@ -50,3 +50,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-08 | Implement and Test Exact Rectangle Union Area (2.75 PFT) | [`rectangle-union/`](rectangle-union/) |
 | 2026-08-08 | Implement and Test a Disjoint Sparse Table (2.5 PFT) | [`disjoint-sparse-table/`](disjoint-sparse-table/) |
 | 2026-08-08 | Implement and Test a Deterministic Earley Recognizer (2.75 PFT) | [`earley-recognizer/`](earley-recognizer/) |
+| 2026-08-08 | Implement and Test Deterministic Johnson All-Pairs Shortest Paths (2.75 PFT) | [`johnson-shortest-paths/`](johnson-shortest-paths/) |
