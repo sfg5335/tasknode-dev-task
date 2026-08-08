@@ -1,0 +1,310 @@
+TAP version 13
+# Subtest: constructor: accepts an array of distinct variable names
+ok 1 - constructor: accepts an array of distinct variable names
+  ---
+  duration_ms: 2.709132
+  type: 'test'
+  ...
+# Subtest: constructor: accepts an empty variable order
+ok 2 - constructor: accepts an empty variable order
+  ---
+  duration_ms: 0.444912
+  type: 'test'
+  ...
+# Subtest: constructor: rejects a non-array variableOrder
+ok 3 - constructor: rejects a non-array variableOrder
+  ---
+  duration_ms: 0.491032
+  type: 'test'
+  ...
+# Subtest: constructor: rejects a non-string element
+ok 4 - constructor: rejects a non-string element
+  ---
+  duration_ms: 0.193806
+  type: 'test'
+  ...
+# Subtest: constructor: rejects a duplicate variable name
+ok 5 - constructor: rejects a duplicate variable name
+  ---
+  duration_ms: 0.484816
+  type: 'test'
+  ...
+# Subtest: constructor: does not mutate the caller's array
+ok 6 - constructor: does not mutate the caller's array
+  ---
+  duration_ms: 0.152647
+  type: 'test'
+  ...
+# Subtest: ROBDD.FALSE and ROBDD.TRUE are fixed 0 and 1
+ok 7 - ROBDD.FALSE and ROBDD.TRUE are fixed 0 and 1
+  ---
+  duration_ms: 0.298999
+  type: 'test'
+  ...
+# Subtest: variable: returns a handle whose evaluate matches the assignment
+ok 8 - variable: returns a handle whose evaluate matches the assignment
+  ---
+  duration_ms: 0.357033
+  type: 'test'
+  ...
+# Subtest: variable: repeated calls for the same name return the same handle
+ok 9 - variable: repeated calls for the same name return the same handle
+  ---
+  duration_ms: 0.350243
+  type: 'test'
+  ...
+# Subtest: variable: rejects a non-string name
+ok 10 - variable: rejects a non-string name
+  ---
+  duration_ms: 4.942776
+  type: 'test'
+  ...
+# Subtest: variable: rejects an unknown variable name
+ok 11 - variable: rejects an unknown variable name
+  ---
+  duration_ms: 0.324856
+  type: 'test'
+  ...
+# Subtest: reduction: not(not(x)) === x (same handle)
+ok 12 - reduction: not(not(x)) === x (same handle)
+  ---
+  duration_ms: 0.206698
+  type: 'test'
+  ...
+# Subtest: reduction: apply(AND, x, x) === x
+ok 13 - reduction: apply(AND, x, x) === x
+  ---
+  duration_ms: 0.224311
+  type: 'test'
+  ...
+# Subtest: reduction: apply(OR, x, x) === x
+ok 14 - reduction: apply(OR, x, x) === x
+  ---
+  duration_ms: 0.086233
+  type: 'test'
+  ...
+# Subtest: reduction: apply(XOR, x, x) === FALSE
+ok 15 - reduction: apply(XOR, x, x) === FALSE
+  ---
+  duration_ms: 0.079621
+  type: 'test'
+  ...
+# Subtest: reduction: identity laws with terminals (AND/OR)
+ok 16 - reduction: identity laws with terminals (AND/OR)
+  ---
+  duration_ms: 0.136146
+  type: 'test'
+  ...
+# Subtest: reduction: XOR identity/negation laws with terminals
+ok 17 - reduction: XOR identity/negation laws with terminals
+  ---
+  duration_ms: 0.248878
+  type: 'test'
+  ...
+# Subtest: reduction: absorption law a & (a | b) === a
+ok 18 - reduction: absorption law a & (a | b) === a
+  ---
+  duration_ms: 0.134155
+  type: 'test'
+  ...
+# Subtest: reduction: a low===high node never gets its own handle (variable, then force a collapse)
+ok 19 - reduction: a low===high node never gets its own handle (variable, then force a collapse)
+  ---
+  duration_ms: 0.143381
+  type: 'test'
+  ...
+# Subtest: canonical identity: distributive law AND-over-OR
+ok 20 - canonical identity: distributive law AND-over-OR
+  ---
+  duration_ms: 0.208741
+  type: 'test'
+  ...
+# Subtest: canonical identity: De Morgan not(a|b) === not(a) & not(b)
+ok 21 - canonical identity: De Morgan not(a|b) === not(a) & not(b)
+  ---
+  duration_ms: 0.137565
+  type: 'test'
+  ...
+# Subtest: canonical identity: De Morgan not(a&b) === not(a) | not(b)
+ok 22 - canonical identity: De Morgan not(a&b) === not(a) | not(b)
+  ---
+  duration_ms: 0.156298
+  type: 'test'
+  ...
+# Subtest: canonical identity: XOR decomposition a^b === (a|b) & not(a&b)
+ok 23 - canonical identity: XOR decomposition a^b === (a|b) & not(a&b)
+  ---
+  duration_ms: 0.149519
+  type: 'test'
+  ...
+# Subtest: canonical identity: AND and XOR are associative at the handle level
+ok 24 - canonical identity: AND and XOR are associative at the handle level
+  ---
+  duration_ms: 0.173492
+  type: 'test'
+  ...
+# Subtest: canonical identity: two structurally different but logically equivalent formulas built via factored vs. fully-distributed form yield the identical handle
+ok 25 - canonical identity: two structurally different but logically equivalent formulas built via factored vs. fully-distributed form yield the identical handle
+  ---
+  duration_ms: 0.278992
+  type: 'test'
+  ...
+# Subtest: exhaustive truth table: random small-arity expressions match an independent evaluator on every assignment
+ok 26 - exhaustive truth table: random small-arity expressions match an independent evaluator on every assignment
+  ---
+  duration_ms: 5.706565
+  type: 'test'
+  ...
+# Subtest: exhaustive truth table: a fixed 4-variable formula matches a hand-derived table
+ok 27 - exhaustive truth table: a fixed 4-variable formula matches a hand-derived table
+  ---
+  duration_ms: 0.255454
+  type: 'test'
+  ...
+# Subtest: skipped variables: a function of only the first and last variable is correct despite middle variables never being tested
+ok 28 - skipped variables: a function of only the first and last variable is correct despite middle variables never being tested
+  ---
+  duration_ms: 0.260077
+  type: 'test'
+  ...
+# Subtest: skipped variables: satCount and nodeCount stay correct when the skip happens between two apply operands of different depth
+ok 29 - skipped variables: satCount and nodeCount stay correct when the skip happens between two apply operands of different depth
+  ---
+  duration_ms: 0.342371
+  type: 'test'
+  ...
+# Subtest: skipped variables: a constant function (independent of every variable) has satCount 2^n and nodeCount 1
+ok 30 - skipped variables: a constant function (independent of every variable) has satCount 2^n and nodeCount 1
+  ---
+  duration_ms: 0.136518
+  type: 'test'
+  ...
+# Subtest: satCount: TRUE and FALSE over various variable-order sizes
+ok 31 - satCount: TRUE and FALSE over various variable-order sizes
+  ---
+  duration_ms: 0.148586
+  type: 'test'
+  ...
+# Subtest: satCount: a single variable over n vars is exactly 2^(n-1)
+ok 32 - satCount: a single variable over n vars is exactly 2^(n-1)
+  ---
+  duration_ms: 0.238821
+  type: 'test'
+  ...
+# Subtest: satCount: exact hand-computed count for a 3-variable majority function
+ok 33 - satCount: exact hand-computed count for a 3-variable majority function
+  ---
+  duration_ms: 0.232147
+  type: 'test'
+  ...
+# Subtest: satCount: matches an independent brute-force count for random formulas (differential)
+ok 34 - satCount: matches an independent brute-force count for random formulas (differential)
+  ---
+  duration_ms: 1.939553
+  type: 'test'
+  ...
+# Subtest: satCount: returns a BigInt, not a Number
+ok 35 - satCount: returns a BigInt, not a Number
+  ---
+  duration_ms: 0.210219
+  type: 'test'
+  ...
+# Subtest: satCount: exact for an empty variable order (edge case)
+ok 36 - satCount: exact for an empty variable order (edge case)
+  ---
+  duration_ms: 0.100924
+  type: 'test'
+  ...
+# Subtest: cache reuse: apply with identical operands twice does not grow the apply cache
+ok 37 - cache reuse: apply with identical operands twice does not grow the apply cache
+  ---
+  duration_ms: 0.095862
+  type: 'test'
+  ...
+# Subtest: cache reuse: not with an identical operand twice does not grow the not cache
+ok 38 - cache reuse: not with an identical operand twice does not grow the not cache
+  ---
+  duration_ms: 0.108149
+  type: 'test'
+  ...
+# Subtest: cache reuse: rebuilding an identical formula from scratch does not grow the node table
+ok 39 - cache reuse: rebuilding an identical formula from scratch does not grow the node table
+  ---
+  duration_ms: 0.179529
+  type: 'test'
+  ...
+# Subtest: not: rejects an out-of-range or wrongly-typed handle
+ok 40 - not: rejects an out-of-range or wrongly-typed handle
+  ---
+  duration_ms: 0.344339
+  type: 'test'
+  ...
+# Subtest: apply: rejects a bad op string
+ok 41 - apply: rejects a bad op string
+  ---
+  duration_ms: 0.217123
+  type: 'test'
+  ...
+# Subtest: apply: rejects out-of-range or wrongly-typed handles for either operand
+ok 42 - apply: rejects out-of-range or wrongly-typed handles for either operand
+  ---
+  duration_ms: 0.187019
+  type: 'test'
+  ...
+# Subtest: evaluate: rejects an out-of-range or wrongly-typed handle
+ok 43 - evaluate: rejects an out-of-range or wrongly-typed handle
+  ---
+  duration_ms: 0.223903
+  type: 'test'
+  ...
+# Subtest: evaluate: rejects a non-object assignment
+ok 44 - evaluate: rejects a non-object assignment
+  ---
+  duration_ms: 0.199625
+  type: 'test'
+  ...
+# Subtest: evaluate: rejects an incomplete assignment (missing a required variable)
+ok 45 - evaluate: rejects an incomplete assignment (missing a required variable)
+  ---
+  duration_ms: 0.154379
+  type: 'test'
+  ...
+# Subtest: evaluate: rejects an assignment with a non-boolean value for a required variable
+ok 46 - evaluate: rejects an assignment with a non-boolean value for a required variable
+  ---
+  duration_ms: 0.170406
+  type: 'test'
+  ...
+# Subtest: evaluate: extra keys in the assignment beyond variableOrder are harmless
+ok 47 - evaluate: extra keys in the assignment beyond variableOrder are harmless
+  ---
+  duration_ms: 0.229422
+  type: 'test'
+  ...
+# Subtest: satCount: rejects an out-of-range or wrongly-typed handle
+ok 48 - satCount: rejects an out-of-range or wrongly-typed handle
+  ---
+  duration_ms: 0.193781
+  type: 'test'
+  ...
+# Subtest: nodeCount: rejects an out-of-range or wrongly-typed handle
+ok 49 - nodeCount: rejects an out-of-range or wrongly-typed handle
+  ---
+  duration_ms: 0.134316
+  type: 'test'
+  ...
+# Subtest: variable/not/apply/evaluate/satCount/nodeCount: handles from a different ROBDD instance are still just integers (documented limitation, not a crash) but out-of-range still throws
+ok 50 - variable/not/apply/evaluate/satCount/nodeCount: handles from a different ROBDD instance are still just integers (documented limitation, not a crash) but out-of-range still throws
+  ---
+  duration_ms: 0.246452
+  type: 'test'
+  ...
+1..50
+# tests 50
+# suites 0
+# pass 50
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 170.177628
