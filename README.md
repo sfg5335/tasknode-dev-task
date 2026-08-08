@@ -54,3 +54,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-08 | Build and Test a Reed-Solomon Erasure Codec (3.25 PFT) | [`reed-solomon/`](reed-solomon/) |
 | 2026-08-08 | Implement and Test a Persistent Hash-Array Mapped Trie (3.25 PFT) | [`persistent-hamt/`](persistent-hamt/) |
 | 2026-08-08 | Implement and Test an Indexed Pairing Heap (2.75 PFT) | [`indexed-pairing-heap/`](indexed-pairing-heap/) |
+| 2026-08-08 | Implement and Test Deterministic Edmonds Blossom Matching (3.5 PFT) | [`blossom-matching/`](blossom-matching/) |

@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: empty graph (n=0) has cardinality 0 and an empty mate array
+ok 1 - empty graph (n=0) has cardinality 0 and an empty mate array
+  ---
+  duration_ms: 3.681277
+  type: 'test'
+  ...
+# Subtest: a graph with vertices but no edges has cardinality 0 and every vertex unmatched
+ok 2 - a graph with vertices but no edges has cardinality 0 and every vertex unmatched
+  ---
+  duration_ms: 0.419215
+  type: 'test'
+  ...
+# Subtest: a single edge matches both its endpoints
+ok 3 - a single edge matches both its endpoints
+  ---
+  duration_ms: 0.585823
+  type: 'test'
+  ...
+# Subtest: a disconnected graph matches every component independently
+ok 4 - a disconnected graph matches every component independently
+  ---
+  duration_ms: 0.281712
+  type: 'test'
+  ...
+# Subtest: an even-length path (4 vertices) admits a perfect matching
+ok 5 - an even-length path (4 vertices) admits a perfect matching
+  ---
+  duration_ms: 0.392874
+  type: 'test'
+  ...
+# Subtest: an odd-length path (5 vertices) leaves exactly one vertex unmatched
+ok 6 - an odd-length path (5 vertices) leaves exactly one vertex unmatched
+  ---
+  duration_ms: 0.244033
+  type: 'test'
+  ...
+# Subtest: an even cycle (6 vertices) admits a perfect matching
+ok 7 - an even cycle (6 vertices) admits a perfect matching
+  ---
+  duration_ms: 0.216639
+  type: 'test'
+  ...
+# Subtest: an odd cycle (5 vertices) can never admit a perfect matching
+ok 8 - an odd cycle (5 vertices) can never admit a perfect matching
+  ---
+  duration_ms: 0.20348
+  type: 'test'
+  ...
+# Subtest: contraction-dependent augmenting path: triangle with a pendant on two different triangle vertices requires blossom contraction to find the maximum matching
+ok 9 - contraction-dependent augmenting path: triangle with a pendant on two different triangle vertices requires blossom contraction to find the maximum matching
+  ---
+  duration_ms: 0.309413
+  type: 'test'
+  ...
+# Subtest: a second contraction-dependent case: a 5-cycle with pendants on two different cycle vertices
+ok 10 - a second contraction-dependent case: a 5-cycle with pendants on two different cycle vertices
+  ---
+  duration_ms: 0.44948
+  type: 'test'
+  ...
+# Subtest: reordering the input edges does not change the result (determinism)
+ok 11 - reordering the input edges does not change the result (determinism)
+  ---
+  duration_ms: 0.263544
+  type: 'test'
+  ...
+# Subtest: running the same input twice yields byte-identical results (determinism)
+ok 12 - running the same input twice yields byte-identical results (determinism)
+  ---
+  duration_ms: 0.176844
+  type: 'test'
+  ...
+# Subtest: duplicate edges (including reversed-endpoint duplicates) are deduplicated, not double-counted or rejected
+ok 13 - duplicate edges (including reversed-endpoint duplicates) are deduplicated, not double-counted or rejected
+  ---
+  duration_ms: 0.095539
+  type: 'test'
+  ...
+# Subtest: vertexCount that is not an integer throws TypeError
+ok 14 - vertexCount that is not an integer throws TypeError
+  ---
+  duration_ms: 0.743044
+  type: 'test'
+  ...
+# Subtest: a negative vertexCount throws RangeError
+ok 15 - a negative vertexCount throws RangeError
+  ---
+  duration_ms: 0.116998
+  type: 'test'
+  ...
+# Subtest: edges that is not an array throws TypeError
+ok 16 - edges that is not an array throws TypeError
+  ---
+  duration_ms: 0.179582
+  type: 'test'
+  ...
+# Subtest: an edge that is not a 2-element array throws TypeError
+ok 17 - an edge that is not a 2-element array throws TypeError
+  ---
+  duration_ms: 0.154984
+  type: 'test'
+  ...
+# Subtest: edge endpoints that are not integers throw TypeError
+ok 18 - edge endpoints that are not integers throw TypeError
+  ---
+  duration_ms: 0.292052
+  type: 'test'
+  ...
+# Subtest: edge endpoints out of the [0, vertexCount) range throw RangeError
+ok 19 - edge endpoints out of the [0, vertexCount) range throw RangeError
+  ---
+  duration_ms: 0.121588
+  type: 'test'
+  ...
+# Subtest: a self-loop edge throws RangeError
+ok 20 - a self-loop edge throws RangeError
+  ---
+  duration_ms: 0.05846
+  type: 'test'
+  ...
+# Subtest: invalid edges are rejected before any valid ones are processed (no partial mutation of caller state)
+ok 21 - invalid edges are rejected before any valid ones are processed (no partial mutation of caller state)
+  ---
+  duration_ms: 0.059885
+  type: 'test'
+  ...
+# Subtest: input edges array and its sub-arrays are never mutated (frozen inputs still work)
+ok 22 - input edges array and its sub-arrays are never mutated (frozen inputs still work)
+  ---
+  duration_ms: 0.093895
+  type: 'test'
+  ...
+# Subtest: the returned mate array is a fresh array, not aliased to any internal state across calls
+ok 23 - the returned mate array is a fresh array, not aliased to any internal state across calls
+  ---
+  duration_ms: 0.116277
+  type: 'test'
+  ...
+# Subtest: exhaustive: matches the independent oracle on every simple graph with up to 6 vertices
+ok 24 - exhaustive: matches the independent oracle on every simple graph with up to 6 vertices
+  ---
+  duration_ms: 359.17123
+  type: 'test'
+  ...
+# Subtest: randomized differential test against the independent oracle for larger graphs (up to 14 vertices)
+ok 25 - randomized differential test against the independent oracle for larger graphs (up to 14 vertices)
+  ---
+  duration_ms: 8.890461
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 470.161815
