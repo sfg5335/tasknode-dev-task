@@ -48,3 +48,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-08 | Implement and Test a Bytewise Burrows-Wheeler Transform (2.5 PFT) | [`burrows-wheeler/`](burrows-wheeler/) |
 | 2026-08-08 | Implement and Test Deterministic 64-Bit Factorization (3 PFT) | [`factor64/`](factor64/) |
 | 2026-08-08 | Implement and Test Exact Rectangle Union Area (2.75 PFT) | [`rectangle-union/`](rectangle-union/) |
+| 2026-08-08 | Implement and Test a Disjoint Sparse Table (2.5 PFT) | [`disjoint-sparse-table/`](disjoint-sparse-table/) |

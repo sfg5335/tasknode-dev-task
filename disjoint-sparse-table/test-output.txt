@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: empty input: size is 0, and every query is rejected as out of range
+ok 1 - empty input: size is 0, and every query is rejected as out of range
+  ---
+  duration_ms: 1.502826
+  type: 'test'
+  ...
+# Subtest: singleton input: the only valid query returns the single element directly
+ok 2 - singleton input: the only valid query returns the single element directly
+  ---
+  duration_ms: 1.621183
+  type: 'test'
+  ...
+# Subtest: singleton input never touches the combine function (no pair exists to combine)
+ok 3 - singleton input never touches the combine function (no pair exists to combine)
+  ---
+  duration_ms: 0.145715
+  type: 'test'
+  ...
+# Subtest: every valid range matches naive sum, for power-of-two lengths
+ok 4 - every valid range matches naive sum, for power-of-two lengths
+  ---
+  duration_ms: 3.965309
+  type: 'test'
+  ...
+# Subtest: every valid range matches naive sum, for irregular (non-power-of-two) lengths
+ok 5 - every valid range matches naive sum, for irregular (non-power-of-two) lengths
+  ---
+  duration_ms: 33.499981
+  type: 'test'
+  ...
+# Subtest: every valid range matches naive sum, including negative numbers
+ok 6 - every valid range matches naive sum, including negative numbers
+  ---
+  duration_ms: 0.266397
+  type: 'test'
+  ...
+# Subtest: every valid range matches ordered string concatenation (a normal, commutative-looking but order-sensitive combine)
+ok 7 - every valid range matches ordered string concatenation (a normal, commutative-looking but order-sensitive combine)
+  ---
+  duration_ms: 0.567443
+  type: 'test'
+  ...
+# Subtest: a genuinely non-commutative combine (reverse-concatenation) is answered with the correct fold order, not the commuted one
+ok 8 - a genuinely non-commutative combine (reverse-concatenation) is answered with the correct fold order, not the commuted one
+  ---
+  duration_ms: 0.292752
+  type: 'test'
+  ...
+# Subtest: combine is always invoked as combine(leftOperand, rightOperand) in original array order
+ok 9 - combine is always invoked as combine(leftOperand, rightOperand) in original array order
+  ---
+  duration_ms: 0.657755
+  type: 'test'
+  ...
+# Subtest: 2x2 integer matrix multiplication (associative, non-commutative) over a range matches naive left-to-right product
+ok 10 - 2x2 integer matrix multiplication (associative, non-commutative) over a range matches naive left-to-right product
+  ---
+  duration_ms: 1.805262
+  type: 'test'
+  ...
+# Subtest: repeated identical queries return identical (deep-equal) results
+ok 11 - repeated identical queries return identical (deep-equal) results
+  ---
+  duration_ms: 0.218824
+  type: 'test'
+  ...
+# Subtest: a non-empty multi-element query invokes combine EXACTLY ONCE, regardless of range width (O(1) query shape)
+ok 12 - a non-empty multi-element query invokes combine EXACTLY ONCE, regardless of range width (O(1) query shape)
+  ---
+  duration_ms: 0.254414
+  type: 'test'
+  ...
+# Subtest: query timing does not grow with range width (coarse O(1) sanity check)
+ok 13 - query timing does not grow with range width (coarse O(1) sanity check)
+  ---
+  duration_ms: 944.66512
+  type: 'test'
+  ...
+# Subtest: non-array data throws TypeError
+ok 14 - non-array data throws TypeError
+  ---
+  duration_ms: 0.459283
+  type: 'test'
+  ...
+# Subtest: non-function combine throws TypeError
+ok 15 - non-function combine throws TypeError
+  ---
+  duration_ms: 0.577534
+  type: 'test'
+  ...
+# Subtest: out-of-bounds or empty/reversed ranges throw RangeError
+ok 16 - out-of-bounds or empty/reversed ranges throw RangeError
+  ---
+  duration_ms: 0.649912
+  type: 'test'
+  ...
+# Subtest: non-integer or non-numeric left/right throw TypeError
+ok 17 - non-integer or non-numeric left/right throw TypeError
+  ---
+  duration_ms: 0.699843
+  type: 'test'
+  ...
+# Subtest: an earlier valid-looking argument does not mask a later invalid one
+ok 18 - an earlier valid-looking argument does not mask a later invalid one
+  ---
+  duration_ms: 0.347666
+  type: 'test'
+  ...
+# Subtest: the constructor does not mutate the input array
+ok 19 - the constructor does not mutate the input array
+  ---
+  duration_ms: 0.218622
+  type: 'test'
+  ...
+# Subtest: mutating the caller array after construction does not affect the table
+ok 20 - mutating the caller array after construction does not affect the table
+  ---
+  duration_ms: 0.293071
+  type: 'test'
+  ...
+# Subtest: the table copies data into a frozen internal array, and the instance itself is frozen
+ok 21 - the table copies data into a frozen internal array, and the instance itself is frozen
+  ---
+  duration_ms: 0.222042
+  type: 'test'
+  ...
+# Subtest: size property reflects the input length exactly
+ok 22 - size property reflects the input length exactly
+  ---
+  duration_ms: 0.219402
+  type: 'test'
+  ...
+# Subtest: seeded random arrays and random valid ranges match the naive-fold oracle (sum, max, and string concat)
+ok 23 - seeded random arrays and random valid ranges match the naive-fold oracle (sum, max, and string concat)
+  ---
+  duration_ms: 4.759632
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1111.337682
