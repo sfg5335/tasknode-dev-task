@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: constructor rejects out-of-range precision with RangeError
+ok 1 - constructor rejects out-of-range precision with RangeError
+  ---
+  duration_ms: 1.468314
+  type: 'test'
+  ...
+# Subtest: constructor rejects non-integer / non-numeric precision with RangeError
+ok 2 - constructor rejects non-integer / non-numeric precision with RangeError
+  ---
+  duration_ms: 0.335063
+  type: 'test'
+  ...
+# Subtest: constructor accepts every integer precision in [4, 16]
+ok 3 - constructor accepts every integer precision in [4, 16]
+  ---
+  duration_ms: 0.305189
+  type: 'test'
+  ...
+# Subtest: add() rejects non-string values with TypeError
+ok 4 - add() rejects non-string values with TypeError
+  ---
+  duration_ms: 0.432048
+  type: 'test'
+  ...
+# Subtest: merge() rejects non-HyperLogLog instances with TypeError
+ok 5 - merge() rejects non-HyperLogLog instances with TypeError
+  ---
+  duration_ms: 0.265781
+  type: 'test'
+  ...
+# Subtest: merge() rejects mismatched precision with RangeError
+ok 6 - merge() rejects mismatched precision with RangeError
+  ---
+  duration_ms: 0.526539
+  type: 'test'
+  ...
+# Subtest: a freshly constructed counter estimates exactly 0
+ok 7 - a freshly constructed counter estimates exactly 0
+  ---
+  duration_ms: 3.662127
+  type: 'test'
+  ...
+# Subtest: adding one string produces a positive, finite, reasonable estimate
+ok 8 - adding one string produces a positive, finite, reasonable estimate
+  ---
+  duration_ms: 0.890619
+  type: 'test'
+  ...
+# Subtest: adding the same string repeatedly does not change the estimate (idempotence)
+ok 9 - adding the same string repeatedly does not change the estimate (idempotence)
+  ---
+  duration_ms: 5.498442
+  type: 'test'
+  ...
+# Subtest: duplicate-heavy stream (many repeats of few distinct items) estimates the distinct count, not the total count
+ok 10 - duplicate-heavy stream (many repeats of few distinct items) estimates the distinct count, not the total count
+  ---
+  duration_ms: 9.344949
+  type: 'test'
+  ...
+# Subtest: accepts and correctly distinguishes Unicode strings, including astral code points
+ok 11 - accepts and correctly distinguishes Unicode strings, including astral code points
+  ---
+  duration_ms: 0.556537
+  type: 'test'
+  ...
+# Subtest: visually similar but distinct Unicode strings are treated as different items
+ok 12 - visually similar but distinct Unicode strings are treated as different items
+  ---
+  duration_ms: 0.247345
+  type: 'test'
+  ...
+# Subtest: building the same stream twice (fresh instances) produces bit-for-bit identical registers and estimates
+ok 13 - building the same stream twice (fresh instances) produces bit-for-bit identical registers and estimates
+  ---
+  duration_ms: 6.351392
+  type: 'test'
+  ...
+# Subtest: the same string always hashes to the same register index and rank across separate counters
+ok 14 - the same string always hashes to the same register index and rank across separate counters
+  ---
+  duration_ms: 0.217699
+  type: 'test'
+  ...
+# Subtest: clear() resets to an exactly-empty state matching a freshly constructed counter
+ok 15 - clear() resets to an exactly-empty state matching a freshly constructed counter
+  ---
+  duration_ms: 1.17508
+  type: 'test'
+  ...
+# Subtest: a counter is fully reusable after clear(), reflecting only post-clear data
+ok 16 - a counter is fully reusable after clear(), reflecting only post-clear data
+  ---
+  duration_ms: 6.670434
+  type: 'test'
+  ...
+# Subtest: add(), merge(), and clear() all return `this` for chaining
+ok 17 - add(), merge(), and clear() all return `this` for chaining
+  ---
+  duration_ms: 0.157004
+  type: 'test'
+  ...
+# Subtest: merging two disjoint counters produces an estimate close to the sum of their exact cardinalities
+ok 18 - merging two disjoint counters produces an estimate close to the sum of their exact cardinalities
+  ---
+  duration_ms: 6.678245
+  type: 'test'
+  ...
+# Subtest: merging two overlapping counters produces an estimate close to the true union cardinality
+ok 19 - merging two overlapping counters produces an estimate close to the true union cardinality
+  ---
+  duration_ms: 7.726873
+  type: 'test'
+  ...
+# Subtest: merge() exactly matches building one counter directly from the full union (register-wise max identity)
+ok 20 - merge() exactly matches building one counter directly from the full union (register-wise max identity)
+  ---
+  duration_ms: 5.269086
+  type: 'test'
+  ...
+# Subtest: merge() does not mutate or retroactively affect via the source counter
+ok 21 - merge() does not mutate or retroactively affect via the source counter
+  ---
+  duration_ms: 0.618028
+  type: 'test'
+  ...
+# Subtest: merging an empty counter into a populated one leaves the estimate unchanged
+ok 22 - merging an empty counter into a populated one leaves the estimate unchanged
+  ---
+  duration_ms: 0.669611
+  type: 'test'
+  ...
+# Subtest: merging a counter into itself is a safe no-op
+ok 23 - merging a counter into itself is a safe no-op
+  ---
+  duration_ms: 1.225484
+  type: 'test'
+  ...
+# Subtest: fixed stream of 1,000 unique strings at precision 12 estimates within 10% of actual cardinality
+ok 24 - fixed stream of 1,000 unique strings at precision 12 estimates within 10% of actual cardinality
+  ---
+  duration_ms: 2.716108
+  type: 'test'
+  ...
+# Subtest: fixed stream of 20,000 unique strings at precision 12 estimates within 10% of actual cardinality
+ok 25 - fixed stream of 20,000 unique strings at precision 12 estimates within 10% of actual cardinality
+  ---
+  duration_ms: 66.001993
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 238.778784
