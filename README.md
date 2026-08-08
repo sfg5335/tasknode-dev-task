@@ -40,3 +40,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-07 | Implement and Test a Balanced JavaScript Rope (3 PFT) | [`rope/`](rope/) |
 | 2026-08-07 | Implement and Test a Deterministic Li Chao Tree (3 PFT) | [`li-chao-tree/`](li-chao-tree/) |
 | 2026-08-07 | Implement and Test a Deterministic Two-Dimensional KD-Tree (3 PFT) | [`kd-tree/`](kd-tree/) |
+| 2026-08-08 | Implement and Test a Robin Hood Hash Map (3 PFT) | [`robin-hood-map/`](robin-hood-map/) |

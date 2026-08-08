@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: empty map: size 0, get/has/delete all behave as absent
+ok 1 - empty map: size 0, get/has/delete all behave as absent
+  ---
+  duration_ms: 1.308955
+  type: 'test'
+  ...
+# Subtest: set on an existing key updates the value in place without changing size
+ok 2 - set on an existing key updates the value in place without changing size
+  ---
+  duration_ms: 1.275991
+  type: 'test'
+  ...
+# Subtest: updating a key does not change any entry probe distances
+ok 3 - updating a key does not change any entry probe distances
+  ---
+  duration_ms: 1.468247
+  type: 'test'
+  ...
+# Subtest: forced collision: colliding keys share a home bucket and all remain retrievable
+ok 4 - forced collision: colliding keys share a home bucket and all remain retrievable
+  ---
+  duration_ms: 0.409315
+  type: 'test'
+  ...
+# Subtest: displacement: inserting colliding keys produces nonzero probe distances and Robin Hood swapping
+ok 5 - displacement: inserting colliding keys produces nonzero probe distances and Robin Hood swapping
+  ---
+  duration_ms: 0.293763
+  type: 'test'
+  ...
+# Subtest: displacement: a later key with a higher forced probe distance can swap an earlier one out of its slot
+ok 6 - displacement: a later key with a higher forced probe distance can swap an earlier one out of its slot
+  ---
+  duration_ms: 0.27045
+  type: 'test'
+  ...
+# Subtest: tie-break: equal probe distance does not swap -- earlier-placed entry stays put
+ok 7 - tie-break: equal probe distance does not swap -- earlier-placed entry stays put
+  ---
+  duration_ms: 0.266992
+  type: 'test'
+  ...
+# Subtest: backward-shift deletion retains all other members of a collision cluster
+ok 8 - backward-shift deletion retains all other members of a collision cluster
+  ---
+  duration_ms: 0.245953
+  type: 'test'
+  ...
+# Subtest: backward-shift deletion decrements probe distance of shifted entries and leaves no tombstones
+ok 9 - backward-shift deletion decrements probe distance of shifted entries and leaves no tombstones
+  ---
+  duration_ms: 0.473268
+  type: 'test'
+  ...
+# Subtest: deleting a key at its own home slot with an empty next slot leaves that slot simply empty
+ok 10 - deleting a key at its own home slot with an empty next slot leaves that slot simply empty
+  ---
+  duration_ms: 0.453412
+  type: 'test'
+  ...
+# Subtest: growth doubles capacity at the documented load-factor threshold
+ok 11 - growth doubles capacity at the documented load-factor threshold
+  ---
+  duration_ms: 0.335529
+  type: 'test'
+  ...
+# Subtest: resize-retention: every key inserted before growth is still correct after growth
+ok 12 - resize-retention: every key inserted before growth is still correct after growth
+  ---
+  duration_ms: 2.556635
+  type: 'test'
+  ...
+# Subtest: resize-retention holds even with deletes interleaved before and after growth
+ok 13 - resize-retention holds even with deletes interleaved before and after growth
+  ---
+  duration_ms: 1.871014
+  type: 'test'
+  ...
+# Subtest: clear empties the map and resets capacity to the initial value
+ok 14 - clear empties the map and resets capacity to the initial value
+  ---
+  duration_ms: 0.209478
+  type: 'test'
+  ...
+# Subtest: map is fully usable again after clear()
+ok 15 - map is fully usable again after clear()
+  ---
+  duration_ms: 0.080852
+  type: 'test'
+  ...
+# Subtest: every key-accepting method rejects non-string keys with TypeError
+ok 16 - every key-accepting method rejects non-string keys with TypeError
+  ---
+  duration_ms: 1.049192
+  type: 'test'
+  ...
+# Subtest: the empty string is a valid, ordinary key
+ok 17 - the empty string is a valid, ordinary key
+  ---
+  duration_ms: 0.139417
+  type: 'test'
+  ...
+# Subtest: empty string and other keys coexist correctly
+ok 18 - empty string and other keys coexist correctly
+  ---
+  duration_ms: 0.083558
+  type: 'test'
+  ...
+# Subtest: fnv1aHash is deterministic and matches known standard FNV-1a 32-bit test vectors
+ok 19 - fnv1aHash is deterministic and matches known standard FNV-1a 32-bit test vectors
+  ---
+  duration_ms: 0.067332
+  type: 'test'
+  ...
+# Subtest: differential: seeded random operation sequences match native Map exactly
+ok 20 - differential: seeded random operation sequences match native Map exactly
+  ---
+  duration_ms: 15.165568
+  type: 'test'
+  ...
+# Subtest: differential: small key pools forcing heavy collisions/displacement, checked against Map
+ok 21 - differential: small key pools forcing heavy collisions/displacement, checked against Map
+  ---
+  duration_ms: 4.203966
+  type: 'test'
+  ...
+# Subtest: differential: growth-heavy sequences (many more keys than initial capacity) vs Map
+ok 22 - differential: growth-heavy sequences (many more keys than initial capacity) vs Map
+  ---
+  duration_ms: 29.975797
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 175.82232
