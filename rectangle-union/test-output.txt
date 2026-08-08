@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: empty array returns 0n
+ok 1 - empty array returns 0n
+  ---
+  duration_ms: 1.225465
+  type: 'test'
+  ...
+# Subtest: single rectangle: area is exactly width * height
+ok 2 - single rectangle: area is exactly width * height
+  ---
+  duration_ms: 1.717845
+  type: 'test'
+  ...
+# Subtest: disjoint rectangles: areas simply add
+ok 3 - disjoint rectangles: areas simply add
+  ---
+  duration_ms: 0.319031
+  type: 'test'
+  ...
+# Subtest: touching rectangles (shared edge, zero-width overlap): areas simply add
+ok 4 - touching rectangles (shared edge, zero-width overlap): areas simply add
+  ---
+  duration_ms: 0.374306
+  type: 'test'
+  ...
+# Subtest: touching at a single corner: areas simply add (zero-area intersection)
+ok 5 - touching at a single corner: areas simply add (zero-area intersection)
+  ---
+  duration_ms: 0.149176
+  type: 'test'
+  ...
+# Subtest: overlapping rectangles: union subtracts the double-counted intersection
+ok 6 - overlapping rectangles: union subtracts the double-counted intersection
+  ---
+  duration_ms: 0.182603
+  type: 'test'
+  ...
+# Subtest: nested rectangle contributes no extra area
+ok 7 - nested rectangle contributes no extra area
+  ---
+  duration_ms: 0.12719
+  type: 'test'
+  ...
+# Subtest: duplicate rectangles do not double-count
+ok 8 - duplicate rectangles do not double-count
+  ---
+  duration_ms: 0.123376
+  type: 'test'
+  ...
+# Subtest: negative-coordinate rectangles are handled correctly
+ok 9 - negative-coordinate rectangles are handled correctly
+  ---
+  duration_ms: 0.359463
+  type: 'test'
+  ...
+# Subtest: a cross shape (two overlapping strips) computes the correct union
+ok 10 - a cross shape (two overlapping strips) computes the correct union
+  ---
+  duration_ms: 0.410927
+  type: 'test'
+  ...
+# Subtest: large-coordinate rectangles near the safe-integer boundary are exact
+ok 11 - large-coordinate rectangles near the safe-integer boundary are exact
+  ---
+  duration_ms: 0.284412
+  type: 'test'
+  ...
+# Subtest: a coordinate span that would NOT be exact under plain float64 subtraction is still exact
+ok 12 - a coordinate span that would NOT be exact under plain float64 subtraction is still exact
+  ---
+  duration_ms: 0.183524
+  type: 'test'
+  ...
+# Subtest: non-array top-level input throws TypeError
+ok 13 - non-array top-level input throws TypeError
+  ---
+  duration_ms: 0.515718
+  type: 'test'
+  ...
+# Subtest: a rectangle entry that is not a 4-element array throws TypeError
+ok 14 - a rectangle entry that is not a 4-element array throws TypeError
+  ---
+  duration_ms: 0.244818
+  type: 'test'
+  ...
+# Subtest: non-safe-integer coordinates throw TypeError
+ok 15 - non-safe-integer coordinates throw TypeError
+  ---
+  duration_ms: 0.588545
+  type: 'test'
+  ...
+# Subtest: zero or negative width/height throws RangeError
+ok 16 - zero or negative width/height throws RangeError
+  ---
+  duration_ms: 0.248889
+  type: 'test'
+  ...
+# Subtest: a valid rectangle earlier in the array does not mask an invalid one later
+ok 17 - a valid rectangle earlier in the array does not mask an invalid one later
+  ---
+  duration_ms: 1.095185
+  type: 'test'
+  ...
+# Subtest: the input array and its rectangles are not mutated
+ok 18 - the input array and its rectangles are not mutated
+  ---
+  duration_ms: 1.336252
+  type: 'test'
+  ...
+# Subtest: repeated calls on the same input produce identical results
+ok 19 - repeated calls on the same input produce identical results
+  ---
+  duration_ms: 0.184579
+  type: 'test'
+  ...
+# Subtest: seeded random small rectangle sets match the brute-force oracle
+ok 20 - seeded random small rectangle sets match the brute-force oracle
+  ---
+  duration_ms: 33.781389
+  type: 'test'
+  ...
+# Subtest: seeded random medium rectangle sets (larger coordinate range) match the brute-force oracle
+ok 21 - seeded random medium rectangle sets (larger coordinate range) match the brute-force oracle
+  ---
+  duration_ms: 21.681648
+  type: 'test'
+  ...
+# Subtest: many overlapping strips (dense overlap stress case) matches the brute-force oracle
+ok 22 - many overlapping strips (dense overlap stress case) matches the brute-force oracle
+  ---
+  duration_ms: 0.297453
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 174.952198
