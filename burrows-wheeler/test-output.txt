@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: encodeBWT on empty input returns an empty lastColumn and primaryIndex 0
+ok 1 - encodeBWT on empty input returns an empty lastColumn and primaryIndex 0
+  ---
+  duration_ms: 2.687899
+  type: 'test'
+  ...
+# Subtest: decodeBWT on empty lastColumn with primaryIndex 0 returns empty data
+ok 2 - decodeBWT on empty lastColumn with primaryIndex 0 returns empty data
+  ---
+  duration_ms: 0.395707
+  type: 'test'
+  ...
+# Subtest: decodeBWT on empty lastColumn rejects any nonzero primaryIndex with RangeError
+ok 3 - decodeBWT on empty lastColumn rejects any nonzero primaryIndex with RangeError
+  ---
+  duration_ms: 0.462494
+  type: 'test'
+  ...
+# Subtest: singleton input round-trips, with lastColumn equal to the single byte and primaryIndex 0
+ok 4 - singleton input round-trips, with lastColumn equal to the single byte and primaryIndex 0
+  ---
+  duration_ms: 0.273175
+  type: 'test'
+  ...
+# Subtest: the known BANANA fixture produces exactly NNBAAA with primary index 3
+ok 5 - the known BANANA fixture produces exactly NNBAAA with primary index 3
+  ---
+  duration_ms: 0.56547
+  type: 'test'
+  ...
+# Subtest: the known BANANA fixture decodes back to BANANA exactly
+ok 6 - the known BANANA fixture decodes back to BANANA exactly
+  ---
+  duration_ms: 0.20291
+  type: 'test'
+  ...
+# Subtest: a string of all-identical bytes round-trips correctly
+ok 7 - a string of all-identical bytes round-trips correctly
+  ---
+  duration_ms: 0.20842
+  type: 'test'
+  ...
+# Subtest: a periodic two-byte pattern round-trips correctly
+ok 8 - a periodic two-byte pattern round-trips correctly
+  ---
+  duration_ms: 0.397034
+  type: 'test'
+  ...
+# Subtest: a periodic three-byte pattern round-trips correctly
+ok 9 - a periodic three-byte pattern round-trips correctly
+  ---
+  duration_ms: 0.400206
+  type: 'test'
+  ...
+# Subtest: lastColumn is always a byte-multiset permutation of the input (structural invariant)
+ok 10 - lastColumn is always a byte-multiset permutation of the input (structural invariant)
+  ---
+  duration_ms: 1.818113
+  type: 'test'
+  ...
+# Subtest: a run of zero bytes round-trips correctly
+ok 11 - a run of zero bytes round-trips correctly
+  ---
+  duration_ms: 0.236812
+  type: 'test'
+  ...
+# Subtest: a run of 0xFF bytes round-trips correctly
+ok 12 - a run of 0xFF bytes round-trips correctly
+  ---
+  duration_ms: 0.251633
+  type: 'test'
+  ...
+# Subtest: alternating 0x00/0xFF bytes round-trip correctly
+ok 13 - alternating 0x00/0xFF bytes round-trip correctly
+  ---
+  duration_ms: 0.155787
+  type: 'test'
+  ...
+# Subtest: all 256 distinct byte values (ascending) round-trip correctly
+ok 14 - all 256 distinct byte values (ascending) round-trip correctly
+  ---
+  duration_ms: 1.165789
+  type: 'test'
+  ...
+# Subtest: all 256 distinct byte values (descending) round-trip correctly
+ok 15 - all 256 distinct byte values (descending) round-trip correctly
+  ---
+  duration_ms: 2.572322
+  type: 'test'
+  ...
+# Subtest: every byte value appearing exactly twice round-trips correctly
+ok 16 - every byte value appearing exactly twice round-trips correctly
+  ---
+  duration_ms: 6.101224
+  type: 'test'
+  ...
+# Subtest: fixed-seed random round trips across varied lengths and alphabet sizes
+ok 17 - fixed-seed random round trips across varied lengths and alphabet sizes
+  ---
+  duration_ms: 40.746953
+  type: 'test'
+  ...
+# Subtest: fixed-seed round trips are exactly reproducible across repeated runs
+ok 18 - fixed-seed round trips are exactly reproducible across repeated runs
+  ---
+  duration_ms: 1.437415
+  type: 'test'
+  ...
+# Subtest: encodeBWT does not mutate its input
+ok 19 - encodeBWT does not mutate its input
+  ---
+  duration_ms: 0.174167
+  type: 'test'
+  ...
+# Subtest: encodeBWT's returned lastColumn does not alias the input buffer
+ok 20 - encodeBWT's returned lastColumn does not alias the input buffer
+  ---
+  duration_ms: 0.116084
+  type: 'test'
+  ...
+# Subtest: decodeBWT does not mutate its lastColumn input
+ok 21 - decodeBWT does not mutate its lastColumn input
+  ---
+  duration_ms: 0.162563
+  type: 'test'
+  ...
+# Subtest: decodeBWT's returned buffer does not alias the lastColumn input
+ok 22 - decodeBWT's returned buffer does not alias the lastColumn input
+  ---
+  duration_ms: 0.115976
+  type: 'test'
+  ...
+# Subtest: accepts and round-trips a plain Uint8Array in addition to Buffer
+ok 23 - accepts and round-trips a plain Uint8Array in addition to Buffer
+  ---
+  duration_ms: 0.188624
+  type: 'test'
+  ...
+# Subtest: encodeBWT rejects non-Buffer/Uint8Array input with TypeError
+ok 24 - encodeBWT rejects non-Buffer/Uint8Array input with TypeError
+  ---
+  duration_ms: 0.268415
+  type: 'test'
+  ...
+# Subtest: decodeBWT rejects non-Buffer/Uint8Array lastColumn with TypeError
+ok 25 - decodeBWT rejects non-Buffer/Uint8Array lastColumn with TypeError
+  ---
+  duration_ms: 0.24535
+  type: 'test'
+  ...
+# Subtest: decodeBWT rejects a non-integer primaryIndex with TypeError
+ok 26 - decodeBWT rejects a non-integer primaryIndex with TypeError
+  ---
+  duration_ms: 0.25064
+  type: 'test'
+  ...
+# Subtest: decodeBWT rejects an out-of-bounds primaryIndex with RangeError
+ok 27 - decodeBWT rejects an out-of-bounds primaryIndex with RangeError
+  ---
+  duration_ms: 0.163194
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 165.254144
