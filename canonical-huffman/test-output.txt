@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: golden vector: single repeated symbol [65, 65, 65] encodes to the exact expected bytes
+ok 1 - golden vector: single repeated symbol [65, 65, 65] encodes to the exact expected bytes
+  ---
+  duration_ms: 1.651201
+  type: 'test'
+  ...
+# Subtest: golden vector: [0, 1, 0, 0] (two symbols) encodes to the exact expected bytes
+ok 2 - golden vector: [0, 1, 0, 0] (two symbols) encodes to the exact expected bytes
+  ---
+  duration_ms: 0.428789
+  type: 'test'
+  ...
+# Subtest: golden vector: empty input encodes to exactly the header with an all-zero table and no payload
+ok 3 - golden vector: empty input encodes to exactly the header with an all-zero table and no payload
+  ---
+  duration_ms: 0.254198
+  type: 'test'
+  ...
+# Subtest: empty input round-trips to an empty Uint8Array
+ok 4 - empty input round-trips to an empty Uint8Array
+  ---
+  duration_ms: 0.505406
+  type: 'test'
+  ...
+# Subtest: single-symbol input of various lengths round-trips correctly
+ok 5 - single-symbol input of various lengths round-trips correctly
+  ---
+  duration_ms: 1.412487
+  type: 'test'
+  ...
+# Subtest: all 256 distinct byte values, uniform frequency, round-trips correctly
+ok 6 - all 256 distinct byte values, uniform frequency, round-trips correctly
+  ---
+  duration_ms: 3.421038
+  type: 'test'
+  ...
+# Subtest: all 256 distinct byte values, skewed frequency, round-trips correctly
+ok 7 - all 256 distinct byte values, skewed frequency, round-trips correctly
+  ---
+  duration_ms: 51.910216
+  type: 'test'
+  ...
+# Subtest: repeated round trips: encoding and decoding the same input multiple times is stable
+ok 8 - repeated round trips: encoding and decoding the same input multiple times is stable
+  ---
+  duration_ms: 7.470382
+  type: 'test'
+  ...
+# Subtest: seeded-random round trips across varied sizes and alphabet sizes
+ok 9 - seeded-random round trips across varied sizes and alphabet sizes
+  ---
+  duration_ms: 46.728656
+  type: 'test'
+  ...
+# Subtest: deep-tree round trip: a Fibonacci-weighted 26-symbol frequency distribution forces a genuinely deep canonical code
+ok 10 - deep-tree round trip: a Fibonacci-weighted 26-symbol frequency distribution forces a genuinely deep canonical code
+  ---
+  duration_ms: 143.163292
+  type: 'test'
+  ...
+# Subtest: determinism: encoding the same input twice produces byte-identical output
+ok 11 - determinism: encoding the same input twice produces byte-identical output
+  ---
+  duration_ms: 10.689661
+  type: 'test'
+  ...
+# Subtest: input immutability: encode does not mutate its input
+ok 12 - input immutability: encode does not mutate its input
+  ---
+  duration_ms: 0.195945
+  type: 'test'
+  ...
+# Subtest: input immutability: decode does not mutate its input
+ok 13 - input immutability: decode does not mutate its input
+  ---
+  duration_ms: 0.103541
+  type: 'test'
+  ...
+# Subtest: input immutability: encode does not retain a live reference to its input array
+ok 14 - input immutability: encode does not retain a live reference to its input array
+  ---
+  duration_ms: 0.090672
+  type: 'test'
+  ...
+# Subtest: encode: rejects non-Uint8Array input
+ok 15 - encode: rejects non-Uint8Array input
+  ---
+  duration_ms: 0.556067
+  type: 'test'
+  ...
+# Subtest: decode: rejects non-Uint8Array input
+ok 16 - decode: rejects non-Uint8Array input
+  ---
+  duration_ms: 0.259908
+  type: 'test'
+  ...
+# Subtest: decode: rejects a stream shorter than the fixed header size
+ok 17 - decode: rejects a stream shorter than the fixed header size
+  ---
+  duration_ms: 0.198187
+  type: 'test'
+  ...
+# Subtest: decode: rejects a stream with the wrong magic bytes
+ok 18 - decode: rejects a stream with the wrong magic bytes
+  ---
+  duration_ms: 0.301235
+  type: 'test'
+  ...
+# Subtest: decode: rejects a declared original length inconsistent with available payload bits
+ok 19 - decode: rejects a declared original length inconsistent with available payload bits
+  ---
+  duration_ms: 0.155114
+  type: 'test'
+  ...
+# Subtest: decode: rejects a code-length table with too many symbols claiming the same short length (overflow)
+ok 20 - decode: rejects a code-length table with too many symbols claiming the same short length (overflow)
+  ---
+  duration_ms: 0.144119
+  type: 'test'
+  ...
+# Subtest: decode: rejects an incomplete (but not single-symbol) code-length table
+ok 21 - decode: rejects an incomplete (but not single-symbol) code-length table
+  ---
+  duration_ms: 0.127571
+  type: 'test'
+  ...
+# Subtest: decode: rejects a single-symbol table whose one entry does not use length 1
+ok 22 - decode: rejects a single-symbol table whose one entry does not use length 1
+  ---
+  duration_ms: 0.115002
+  type: 'test'
+  ...
+# Subtest: decode: rejects a non-empty table paired with a declared original length of zero
+ok 23 - decode: rejects a non-empty table paired with a declared original length of zero
+  ---
+  duration_ms: 0.103783
+  type: 'test'
+  ...
+# Subtest: decode: rejects an all-zero table paired with a non-zero declared original length
+ok 24 - decode: rejects an all-zero table paired with a non-zero declared original length
+  ---
+  duration_ms: 0.113274
+  type: 'test'
+  ...
+# Subtest: decode: rejects a payload truncated mid-symbol
+ok 25 - decode: rejects a payload truncated mid-symbol
+  ---
+  duration_ms: 0.21981
+  type: 'test'
+  ...
+# Subtest: decode: rejects payload bits that never match any known code
+ok 26 - decode: rejects payload bits that never match any known code
+  ---
+  duration_ms: 0.151359
+  type: 'test'
+  ...
+# Subtest: decode: rejects non-zero padding bits
+ok 27 - decode: rejects non-zero padding bits
+  ---
+  duration_ms: 0.123149
+  type: 'test'
+  ...
+# Subtest: decode: rejects non-zero padding bits in a multi-byte payload
+ok 28 - decode: rejects non-zero padding bits in a multi-byte payload
+  ---
+  duration_ms: 0.164578
+  type: 'test'
+  ...
+# Subtest: decode: rejects unexpected trailing bytes after a valid payload
+ok 29 - decode: rejects unexpected trailing bytes after a valid payload
+  ---
+  duration_ms: 0.178866
+  type: 'test'
+  ...
+# Subtest: decode: rejects trailing bytes appended after an empty payload
+ok 30 - decode: rejects trailing bytes appended after an empty payload
+  ---
+  duration_ms: 0.143521
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 381.334321

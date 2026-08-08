@@ -43,3 +43,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-08 | Implement and Test a Robin Hood Hash Map (3 PFT) | [`robin-hood-map/`](robin-hood-map/) |
 | 2026-08-08 | Implement and Test a Canonical Binary Decision Diagram (3 PFT) | [`robdd/`](robdd/) |
 | 2026-08-08 | Implement and Test a Deterministic Palindromic Tree (3 PFT) | [`palindromic-tree/`](palindromic-tree/) |
+| 2026-08-08 | Build and Test a Canonical Huffman Byte Codec (3.25 PFT) | [`canonical-huffman/`](canonical-huffman/) |
