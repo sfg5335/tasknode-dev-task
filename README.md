@@ -52,3 +52,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-08 | Implement and Test a Deterministic Earley Recognizer (2.75 PFT) | [`earley-recognizer/`](earley-recognizer/) |
 | 2026-08-08 | Implement and Test Deterministic Johnson All-Pairs Shortest Paths (2.75 PFT) | [`johnson-shortest-paths/`](johnson-shortest-paths/) |
 | 2026-08-08 | Build and Test a Reed-Solomon Erasure Codec (3.25 PFT) | [`reed-solomon/`](reed-solomon/) |
+| 2026-08-08 | Implement and Test a Persistent Hash-Array Mapped Trie (3.25 PFT) | [`persistent-hamt/`](persistent-hamt/) |

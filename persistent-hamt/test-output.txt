@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: empty() starts with size 0 and no keys present
+ok 1 - empty() starts with size 0 and no keys present
+  ---
+  duration_ms: 3.366508
+  type: 'test'
+  ...
+# Subtest: empty() rejects a non-function hashFn
+ok 2 - empty() rejects a non-function hashFn
+  ---
+  duration_ms: 0.536879
+  type: 'test'
+  ...
+# Subtest: set then get/has round-trips a single key
+ok 3 - set then get/has round-trips a single key
+  ---
+  duration_ms: 0.27464
+  type: 'test'
+  ...
+# Subtest: re-setting a key to a `===`-equal value is a no-op: same instance, same size
+ok 4 - re-setting a key to a `===`-equal value is a no-op: same instance, same size
+  ---
+  duration_ms: 0.181592
+  type: 'test'
+  ...
+# Subtest: re-setting a key to a different value returns a new instance, leaves the old one intact
+ok 5 - re-setting a key to a different value returns a new instance, leaves the old one intact
+  ---
+  duration_ms: 0.140215
+  type: 'test'
+  ...
+# Subtest: setting an undefined value is distinct from the key being absent
+ok 6 - setting an undefined value is distinct from the key being absent
+  ---
+  duration_ms: 0.117305
+  type: 'test'
+  ...
+# Subtest: many distinct keys all round-trip correctly under the default hash
+ok 7 - many distinct keys all round-trip correctly under the default hash
+  ---
+  duration_ms: 5.893116
+  type: 'test'
+  ...
+# Subtest: deleting an absent key is a no-op: same instance, same size
+ok 8 - deleting an absent key is a no-op: same instance, same size
+  ---
+  duration_ms: 0.327113
+  type: 'test'
+  ...
+# Subtest: delete removes exactly the given key and decrements size
+ok 9 - delete removes exactly the given key and decrements size
+  ---
+  duration_ms: 0.31492
+  type: 'test'
+  ...
+# Subtest: deleting every key returns to an empty, null-rooted map
+ok 10 - deleting every key returns to an empty, null-rooted map
+  ---
+  duration_ms: 2.187278
+  type: 'test'
+  ...
+# Subtest: the empty string is a valid, distinct key
+ok 11 - the empty string is a valid, distinct key
+  ---
+  duration_ms: 0.190038
+  type: 'test'
+  ...
+# Subtest: Unicode keys (accents, CJK, astral-plane emoji) round-trip correctly
+ok 12 - Unicode keys (accents, CJK, astral-plane emoji) round-trip correctly
+  ---
+  duration_ms: 0.188837
+  type: 'test'
+  ...
+# Subtest: entries() returns pairs sorted in ascending plain-JS `<` string order
+ok 13 - entries() returns pairs sorted in ascending plain-JS `<` string order
+  ---
+  duration_ms: 0.276443
+  type: 'test'
+  ...
+# Subtest: a constant custom hash function forces a full-hash collision node, and it still works correctly
+ok 14 - a constant custom hash function forces a full-hash collision node, and it still works correctly
+  ---
+  duration_ms: 0.29113
+  type: 'test'
+  ...
+# Subtest: deleting keys out of a full-hash collision node collapses correctly, all the way to null
+ok 15 - deleting keys out of a full-hash collision node collapses correctly, all the way to null
+  ---
+  duration_ms: 0.259396
+  type: 'test'
+  ...
+# Subtest: two keys sharing a depth-0 bucket but diverging at depth-1 force a nested bitmap (branch expansion)
+ok 16 - two keys sharing a depth-0 bucket but diverging at depth-1 force a nested bitmap (branch expansion)
+  ---
+  duration_ms: 0.224266
+  type: 'test'
+  ...
+# Subtest: inserting 7 keys that hash to 7 distinct low-order bits builds a single flat bitmap level
+ok 17 - inserting 7 keys that hash to 7 distinct low-order bits builds a single flat bitmap level
+  ---
+  duration_ms: 0.210601
+  type: 'test'
+  ...
+# Subtest: a chain of derived versions all remain independently correct (persistence)
+ok 18 - a chain of derived versions all remain independently correct (persistence)
+  ---
+  duration_ms: 0.151193
+  type: 'test'
+  ...
+# Subtest: internal nodes are frozen and reject direct mutation attempts
+ok 19 - internal nodes are frozen and reject direct mutation attempts
+  ---
+  duration_ms: 0.109879
+  type: 'test'
+  ...
+# Subtest: non-string keys throw TypeError from every accessor
+ok 20 - non-string keys throw TypeError from every accessor
+  ---
+  duration_ms: 0.519082
+  type: 'test'
+  ...
+# Subtest: fnv1aHash is a pure, deterministic function of its input
+ok 21 - fnv1aHash is a pure, deterministic function of its input
+  ---
+  duration_ms: 0.221171
+  type: 'test'
+  ...
+# Subtest: seeded differential sequence against native Map, with persistence spot-checks
+ok 22 - seeded differential sequence against native Map, with persistence spot-checks
+  ---
+  duration_ms: 33.47601
+  type: 'test'
+  ...
+# Subtest: seeded differential sequence using a deliberately collision-heavy custom hash (mod 4)
+ok 23 - seeded differential sequence using a deliberately collision-heavy custom hash (mod 4)
+  ---
+  duration_ms: 11.905847
+  type: 'test'
+  ...
+# Subtest: a collision node hoisted to a shallow depth by delete is correctly re-expanded by a later diverging set()
+ok 24 - a collision node hoisted to a shallow depth by delete is correctly re-expanded by a later diverging set()
+  ---
+  duration_ms: 0.471009
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 148.855032
