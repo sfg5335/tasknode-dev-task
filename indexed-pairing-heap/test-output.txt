@@ -1,0 +1,136 @@
+TAP version 13
+# Subtest: an empty heap has size 0 and peek()/pop() both throw RangeError
+ok 1 - an empty heap has size 0 and peek()/pop() both throw RangeError
+  ---
+  duration_ms: 1.375771
+  type: 'test'
+  ...
+# Subtest: insert() rejects non-finite priorities with TypeError, and never mutates the heap when it throws
+ok 2 - insert() rejects non-finite priorities with TypeError, and never mutates the heap when it throws
+  ---
+  duration_ms: 1.81452
+  type: 'test'
+  ...
+# Subtest: single insert/peek/pop round-trips the exact priority and value
+ok 3 - single insert/peek/pop round-trips the exact priority and value
+  ---
+  duration_ms: 1.483283
+  type: 'test'
+  ...
+# Subtest: popping several distinct priorities returns them in ascending order regardless of insertion order
+ok 4 - popping several distinct priorities returns them in ascending order regardless of insertion order
+  ---
+  duration_ms: 0.375333
+  type: 'test'
+  ...
+# Subtest: equal priorities are drained in FIFO insertion order
+ok 5 - equal priorities are drained in FIFO insertion order
+  ---
+  duration_ms: 0.270486
+  type: 'test'
+  ...
+# Subtest: a large batch of duplicate-priority inserts still drains in exact FIFO order among themselves
+ok 6 - a large batch of duplicate-priority inserts still drains in exact FIFO order among themselves
+  ---
+  duration_ms: 0.534046
+  type: 'test'
+  ...
+# Subtest: decreaseKey on the current root leaves it as the root and updates its priority
+ok 7 - decreaseKey on the current root leaves it as the root and updates its priority
+  ---
+  duration_ms: 0.173426
+  type: 'test'
+  ...
+# Subtest: decreaseKey on a non-root node can promote it to become the new minimum
+ok 8 - decreaseKey on a non-root node can promote it to become the new minimum
+  ---
+  duration_ms: 0.190795
+  type: 'test'
+  ...
+# Subtest: decreaseKey to the exact same priority is a documented no-op and does not disturb tie-break order
+ok 9 - decreaseKey to the exact same priority is a documented no-op and does not disturb tie-break order
+  ---
+  duration_ms: 0.291709
+  type: 'test'
+  ...
+# Subtest: decreaseKey rejects an actual priority increase with RangeError and leaves the heap unchanged
+ok 10 - decreaseKey rejects an actual priority increase with RangeError and leaves the heap unchanged
+  ---
+  duration_ms: 0.333215
+  type: 'test'
+  ...
+# Subtest: decreaseKey rejects non-finite new priorities with TypeError
+ok 11 - decreaseKey rejects non-finite new priorities with TypeError
+  ---
+  duration_ms: 0.53069
+  type: 'test'
+  ...
+# Subtest: delete() on a leaf node removes exactly that element and nothing else
+ok 12 - delete() on a leaf node removes exactly that element and nothing else
+  ---
+  duration_ms: 0.194191
+  type: 'test'
+  ...
+# Subtest: delete() on the current root behaves like pop() and re-consolidates its children
+ok 13 - delete() on the current root behaves like pop() and re-consolidates its children
+  ---
+  duration_ms: 0.175263
+  type: 'test'
+  ...
+# Subtest: delete() on an internal (non-root, non-leaf) node reattaches its children to the rest of the heap
+ok 14 - delete() on an internal (non-root, non-leaf) node reattaches its children to the rest of the heap
+  ---
+  duration_ms: 1.645398
+  type: 'test'
+  ...
+# Subtest: delete() and decreaseKey() both throw RangeError on a null/undefined/plain-object/primitive "handle"
+ok 15 - delete() and decreaseKey() both throw RangeError on a null/undefined/plain-object/primitive "handle"
+  ---
+  duration_ms: 0.459545
+  type: 'test'
+  ...
+# Subtest: delete() and decreaseKey() throw RangeError for a genuine handle from a DIFFERENT heap instance
+ok 16 - delete() and decreaseKey() throw RangeError for a genuine handle from a DIFFERENT heap instance
+  ---
+  duration_ms: 0.266165
+  type: 'test'
+  ...
+# Subtest: delete() and decreaseKey() throw RangeError for a stale handle (already popped)
+ok 17 - delete() and decreaseKey() throw RangeError for a stale handle (already popped)
+  ---
+  duration_ms: 0.13285
+  type: 'test'
+  ...
+# Subtest: delete() and decreaseKey() throw RangeError for a stale handle (already deleted, including double-delete)
+ok 18 - delete() and decreaseKey() throw RangeError for a stale handle (already deleted, including double-delete)
+  ---
+  duration_ms: 0.092242
+  type: 'test'
+  ...
+# Subtest: size is a read-only getter: attempting to assign it throws in strict mode
+ok 19 - size is a read-only getter: attempting to assign it throws in strict mode
+  ---
+  duration_ms: 0.067166
+  type: 'test'
+  ...
+# Subtest: a long interleaved sequence of insert/pop/decreaseKey/delete stays internally consistent throughout
+ok 20 - a long interleaved sequence of insert/pop/decreaseKey/delete stays internally consistent throughout
+  ---
+  duration_ms: 0.318987
+  type: 'test'
+  ...
+# Subtest: randomized differential stress test against a simple linear-scan reference queue
+ok 21 - randomized differential stress test against a simple linear-scan reference queue
+  ---
+  duration_ms: 20.306825
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 123.807989
