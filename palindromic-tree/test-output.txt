@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: empty input: fresh tree has size 0, no entries, no longest, has() is always false
+ok 1 - empty input: fresh tree has size 0, no entries, no longest, has() is always false
+  ---
+  duration_ms: 3.423816
+  type: 'test'
+  ...
+# Subtest: empty input: constructing with an explicit empty string behaves the same as the default
+ok 2 - empty input: constructing with an explicit empty string behaves the same as the default
+  ---
+  duration_ms: 0.227958
+  type: 'test'
+  ...
+# Subtest: odd palindrome: "aba" produces the expected entries, size, and longest
+ok 3 - odd palindrome: "aba" produces the expected entries, size, and longest
+  ---
+  duration_ms: 0.557227
+  type: 'test'
+  ...
+# Subtest: even palindrome: "aa" produces the expected entries, size, and longest
+ok 4 - even palindrome: "aa" produces the expected entries, size, and longest
+  ---
+  duration_ms: 0.288263
+  type: 'test'
+  ...
+# Subtest: mixed odd/even: "abba" tracks both "bb" (even) and any odd palindromes present
+ok 5 - mixed odd/even: "abba" tracks both "bb" (even) and any odd palindromes present
+  ---
+  duration_ms: 0.670531
+  type: 'test'
+  ...
+# Subtest: repeats/overlaps: "aaaa" -- every prefix run of "a" occurs the expected overlapping number of times
+ok 6 - repeats/overlaps: "aaaa" -- every prefix run of "a" occurs the expected overlapping number of times
+  ---
+  duration_ms: 0.203557
+  type: 'test'
+  ...
+# Subtest: repeats/overlaps: "aaabaaa" -- overlapping occurrences on both sides of a distinct middle character
+ok 7 - repeats/overlaps: "aaabaaa" -- overlapping occurrences on both sides of a distinct middle character
+  ---
+  duration_ms: 0.241768
+  type: 'test'
+  ...
+# Subtest: repeats/overlaps: a long run of a single character stresses the suffix-link chain and occurrence cascade
+ok 8 - repeats/overlaps: a long run of a single character stresses the suffix-link chain and occurrence cascade
+  ---
+  duration_ms: 1.920549
+  type: 'test'
+  ...
+# Subtest: incremental append: chainable, and equivalent to constructing with the full string at once
+ok 9 - incremental append: chainable, and equivalent to constructing with the full string at once
+  ---
+  duration_ms: 0.40342
+  type: 'test'
+  ...
+# Subtest: incremental append: every prefix of a random string matches an independently-constructed tree for that prefix
+ok 10 - incremental append: every prefix of a random string matches an independently-constructed tree for that prefix
+  ---
+  duration_ms: 1.245894
+  type: 'test'
+  ...
+# Subtest: Unicode: an astral (surrogate-pair) code point is treated as exactly one code point
+ok 11 - Unicode: an astral (surrogate-pair) code point is treated as exactly one code point
+  ---
+  duration_ms: 0.24473
+  type: 'test'
+  ...
+# Subtest: Unicode: a palindrome built from astral code points is tracked correctly, including firstIndex in code-point units
+ok 12 - Unicode: a palindrome built from astral code points is tracked correctly, including firstIndex in code-point units
+  ---
+  duration_ms: 0.153497
+  type: 'test'
+  ...
+# Subtest: Unicode: entries() orders by Unicode code-point value, not UTF-16 code-unit order
+ok 13 - Unicode: entries() orders by Unicode code-point value, not UTF-16 code-unit order
+  ---
+  duration_ms: 0.122138
+  type: 'test'
+  ...
+# Subtest: constructor: rejects a non-string text argument
+ok 14 - constructor: rejects a non-string text argument
+  ---
+  duration_ms: 0.883078
+  type: 'test'
+  ...
+# Subtest: append: rejects a non-string argument
+ok 15 - append: rejects a non-string argument
+  ---
+  duration_ms: 0.199112
+  type: 'test'
+  ...
+# Subtest: append: rejects the empty string
+ok 16 - append: rejects the empty string
+  ---
+  duration_ms: 0.102263
+  type: 'test'
+  ...
+# Subtest: append: rejects a string spanning more than one Unicode code point
+ok 17 - append: rejects a string spanning more than one Unicode code point
+  ---
+  duration_ms: 0.129253
+  type: 'test'
+  ...
+# Subtest: append: accepts a single astral code point despite .length === 2
+ok 18 - append: accepts a single astral code point despite .length === 2
+  ---
+  duration_ms: 0.131799
+  type: 'test'
+  ...
+# Subtest: append: a failed append does not corrupt tree state
+ok 19 - append: a failed append does not corrupt tree state
+  ---
+  duration_ms: 0.148041
+  type: 'test'
+  ...
+# Subtest: has: rejects a non-string value
+ok 20 - has: rejects a non-string value
+  ---
+  duration_ms: 0.294451
+  type: 'test'
+  ...
+# Subtest: deterministic ordering: entries() is sorted by firstIndex, then length, then code-point lexical order
+ok 21 - deterministic ordering: entries() is sorted by firstIndex, then length, then code-point lexical order
+  ---
+  duration_ms: 0.30204
+  type: 'test'
+  ...
+# Subtest: deterministic ordering: repeated entries() calls on the same tree return identical results
+ok 22 - deterministic ordering: repeated entries() calls on the same tree return identical results
+  ---
+  duration_ms: 0.284459
+  type: 'test'
+  ...
+# Subtest: deterministic ordering: two trees built from the same text produce identical entries, regardless of build method
+ok 23 - deterministic ordering: two trees built from the same text produce identical entries, regardless of build method
+  ---
+  duration_ms: 0.168839
+  type: 'test'
+  ...
+# Subtest: exhaustive: every string of length <= 8 over a 2-letter alphabet matches an independent brute-force oracle
+ok 24 - exhaustive: every string of length <= 8 over a 2-letter alphabet matches an independent brute-force oracle
+  ---
+  duration_ms: 28.027937
+  type: 'test'
+  ...
+# Subtest: exhaustive: every string of length <= 6 over a 3-letter alphabet matches an independent brute-force oracle
+ok 25 - exhaustive: every string of length <= 6 over a 3-letter alphabet matches an independent brute-force oracle
+  ---
+  duration_ms: 8.962202
+  type: 'test'
+  ...
+# Subtest: differential: random strings across several alphabets match the brute-force oracle
+ok 26 - differential: random strings across several alphabets match the brute-force oracle
+  ---
+  duration_ms: 1.988866
+  type: 'test'
+  ...
+# Subtest: differential: random Unicode strings mixing astral and BMP code points match the brute-force oracle
+ok 27 - differential: random Unicode strings mixing astral and BMP code points match the brute-force oracle
+  ---
+  duration_ms: 0.850267
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 152.680936
