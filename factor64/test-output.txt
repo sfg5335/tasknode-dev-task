@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: isPrime64 and factorize64 match trial division for every n in 1..5000
+ok 1 - isPrime64 and factorize64 match trial division for every n in 1..5000
+  ---
+  duration_ms: 58.581265
+  type: 'test'
+  ...
+# Subtest: factorize64(1n) is an empty array
+ok 2 - factorize64(1n) is an empty array
+  ---
+  duration_ms: 0.222321
+  type: 'test'
+  ...
+# Subtest: isPrime64(1n) is false (1 is not prime by convention)
+ok 3 - isPrime64(1n) is false (1 is not prime by convention)
+  ---
+  duration_ms: 0.160104
+  type: 'test'
+  ...
+# Subtest: small primes and composites are classified correctly
+ok 4 - small primes and composites are classified correctly
+  ---
+  duration_ms: 0.119603
+  type: 'test'
+  ...
+# Subtest: prime powers factor to the same prime repeated
+ok 5 - prime powers factor to the same prime repeated
+  ---
+  duration_ms: 0.17392
+  type: 'test'
+  ...
+# Subtest: repeated factors across distinct primes are all reported with correct multiplicity
+ok 6 - repeated factors across distinct primes are all reported with correct multiplicity
+  ---
+  duration_ms: 0.12525
+  type: 'test'
+  ...
+# Subtest: Carmichael numbers are correctly identified as composite
+ok 7 - Carmichael numbers are correctly identified as composite
+  ---
+  duration_ms: 0.310254
+  type: 'test'
+  ...
+# Subtest: the smallest Carmichael number 561 factors as 3 x 11 x 17
+ok 8 - the smallest Carmichael number 561 factors as 3 x 11 x 17
+  ---
+  duration_ms: 0.104364
+  type: 'test'
+  ...
+# Subtest: large known primes are correctly identified, including near the 64-bit boundary
+ok 9 - large known primes are correctly identified, including near the 64-bit boundary
+  ---
+  duration_ms: 1.974136
+  type: 'test'
+  ...
+# Subtest: 2^64 - 1 is composite and matches its known factorization
+ok 10 - 2^64 - 1 is composite and matches its known factorization
+  ---
+  duration_ms: 1.365092
+  type: 'test'
+  ...
+# Subtest: known semiprimes factor into exactly their two prime factors
+ok 11 - known semiprimes factor into exactly their two prime factors
+  ---
+  duration_ms: 6.002992
+  type: 'test'
+  ...
+# Subtest: a hard 64-bit semiprime (product of two ~32-bit primes) factors correctly
+ok 12 - a hard 64-bit semiprime (product of two ~32-bit primes) factors correctly
+  ---
+  duration_ms: 32.074806
+  type: 'test'
+  ...
+# Subtest: isPrime64 rejects non-BigInt input with TypeError
+ok 13 - isPrime64 rejects non-BigInt input with TypeError
+  ---
+  duration_ms: 0.749807
+  type: 'test'
+  ...
+# Subtest: factorize64 rejects non-BigInt input with TypeError
+ok 14 - factorize64 rejects non-BigInt input with TypeError
+  ---
+  duration_ms: 0.393774
+  type: 'test'
+  ...
+# Subtest: isPrime64 and factorize64 reject values outside [1, 2^64 - 1] with RangeError
+ok 15 - isPrime64 and factorize64 reject values outside [1, 2^64 - 1] with RangeError
+  ---
+  duration_ms: 0.234657
+  type: 'test'
+  ...
+# Subtest: boundary values 1n and 2^64 - 1 are accepted (no throw) as valid domain endpoints
+ok 16 - boundary values 1n and 2^64 - 1 are accepted (no throw) as valid domain endpoints
+  ---
+  duration_ms: 0.785409
+  type: 'test'
+  ...
+# Subtest: factorize64 always returns factors in ascending order
+ok 17 - factorize64 always returns factors in ascending order
+  ---
+  duration_ms: 0.432494
+  type: 'test'
+  ...
+# Subtest: factorize64 and isPrime64 produce identical repeated results for the same input
+ok 18 - factorize64 and isPrime64 produce identical repeated results for the same input
+  ---
+  duration_ms: 1.264963
+  type: 'test'
+  ...
+# Subtest: two independent factorizations of a hard semiprime are byte-for-byte identical
+ok 19 - two independent factorizations of a hard semiprime are byte-for-byte identical
+  ---
+  duration_ms: 48.247563
+  type: 'test'
+  ...
+# Subtest: reconstructed product of factors always equals the original n, across many magnitudes
+ok 20 - reconstructed product of factors always equals the original n, across many magnitudes
+  ---
+  duration_ms: 1.468801
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 272.92821

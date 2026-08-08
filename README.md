@@ -46,3 +46,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-08 | Build and Test a Canonical Huffman Byte Codec (3.25 PFT) | [`canonical-huffman/`](canonical-huffman/) |
 | 2026-08-08 | Implement and Test a Deterministic HyperLogLog Counter (2.5 PFT) | [`hyperloglog/`](hyperloglog/) |
 | 2026-08-08 | Implement and Test a Bytewise Burrows-Wheeler Transform (2.5 PFT) | [`burrows-wheeler/`](burrows-wheeler/) |
+| 2026-08-08 | Implement and Test Deterministic 64-Bit Factorization (3 PFT) | [`factor64/`](factor64/) |
