@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: empty pattern array is allowed and never matches anything
+ok 1 - empty pattern array is allowed and never matches anything
+  ---
+  duration_ms: 4.405292
+  type: 'test'
+  ...
+# Subtest: empty search text with non-empty patterns yields no matches
+ok 2 - empty search text with non-empty patterns yields no matches
+  ---
+  duration_ms: 0.212734
+  type: 'test'
+  ...
+# Subtest: empty pattern array against empty text
+ok 3 - empty pattern array against empty text
+  ---
+  duration_ms: 0.247427
+  type: 'test'
+  ...
+# Subtest: a single pattern matches every occurrence, including immediately adjacent ones
+ok 4 - a single pattern matches every occurrence, including immediately adjacent ones
+  ---
+  duration_ms: 0.391049
+  type: 'test'
+  ...
+# Subtest: classic failure-link example: he/she/his/hers in "ushers"
+ok 5 - classic failure-link example: he/she/his/hers in "ushers"
+  ---
+  duration_ms: 0.448378
+  type: 'test'
+  ...
+# Subtest: failure links chain through multiple levels: a/ab/bc/bca/c/caa in "abcaa"
+ok 6 - failure links chain through multiple levels: a/ab/bc/bca/c/caa in "abcaa"
+  ---
+  duration_ms: 0.224782
+  type: 'test'
+  ...
+# Subtest: overlapping matches at the same and different end positions
+ok 7 - overlapping matches at the same and different end positions
+  ---
+  duration_ms: 0.216287
+  type: 'test'
+  ...
+# Subtest: fully overlapping repeated-character patterns
+ok 8 - fully overlapping repeated-character patterns
+  ---
+  duration_ms: 0.213208
+  type: 'test'
+  ...
+# Subtest: duplicate pattern strings are each reported independently by their own index
+ok 9 - duplicate pattern strings are each reported independently by their own index
+  ---
+  duration_ms: 0.553275
+  type: 'test'
+  ...
+# Subtest: three-way duplicate of the same pattern all report independently
+ok 10 - three-way duplicate of the same pattern all report independently
+  ---
+  duration_ms: 0.5574
+  type: 'test'
+  ...
+# Subtest: Unicode: astral (non-BMP) characters count as two UTF-16 code units
+ok 11 - Unicode: astral (non-BMP) characters count as two UTF-16 code units
+  ---
+  duration_ms: 0.243025
+  type: 'test'
+  ...
+# Subtest: Unicode: a pattern that is only half of a surrogate pair still matches by code unit
+ok 12 - Unicode: a pattern that is only half of a surrogate pair still matches by code unit
+  ---
+  duration_ms: 0.104915
+  type: 'test'
+  ...
+# Subtest: Unicode: combining characters and accented letters are matched by code unit like any other
+ok 13 - Unicode: combining characters and accented letters are matched by code unit like any other
+  ---
+  duration_ms: 0.09578
+  type: 'test'
+  ...
+# Subtest: punctuation patterns and text
+ok 14 - punctuation patterns and text
+  ---
+  duration_ms: 0.084296
+  type: 'test'
+  ...
+# Subtest: deterministic ordering: matches ending at the same position are ordered by start, then by pattern index
+ok 15 - deterministic ordering: matches ending at the same position are ordered by start, then by pattern index
+  ---
+  duration_ms: 0.146369
+  type: 'test'
+  ...
+# Subtest: deterministic ordering: pattern-index tiebreak fires when start and end both coincide
+ok 16 - deterministic ordering: pattern-index tiebreak fires when start and end both coincide
+  ---
+  duration_ms: 1.241848
+  type: 'test'
+  ...
+# Subtest: reordering the pattern list preserves match content and (end, start) sort order; only patternIndex changes
+ok 17 - reordering the pattern list preserves match content and (end, start) sort order; only patternIndex changes
+  ---
+  duration_ms: 0.28323
+  type: 'test'
+  ...
+# Subtest: repeated searches on the same instance are independent (no state leakage)
+ok 18 - repeated searches on the same instance are independent (no state leakage)
+  ---
+  duration_ms: 0.105755
+  type: 'test'
+  ...
+# Subtest: interleaving many searches with different texts never cross-contaminates results
+ok 19 - interleaving many searches with different texts never cross-contaminates results
+  ---
+  duration_ms: 0.247798
+  type: 'test'
+  ...
+# Subtest: two independent instances built from the same patterns never share mutable state
+ok 20 - two independent instances built from the same patterns never share mutable state
+  ---
+  duration_ms: 0.07285
+  type: 'test'
+  ...
+# Subtest: patterns argument that is not an array throws TypeError
+ok 21 - patterns argument that is not an array throws TypeError
+  ---
+  duration_ms: 0.347808
+  type: 'test'
+  ...
+# Subtest: a pattern element that is not a string throws TypeError
+ok 22 - a pattern element that is not a string throws TypeError
+  ---
+  duration_ms: 0.257665
+  type: 'test'
+  ...
+# Subtest: an empty-string pattern throws RangeError, not TypeError
+ok 23 - an empty-string pattern throws RangeError, not TypeError
+  ---
+  duration_ms: 0.21862
+  type: 'test'
+  ...
+# Subtest: validation rejects the first offending element even when mixed with valid ones
+ok 24 - validation rejects the first offending element even when mixed with valid ones
+  ---
+  duration_ms: 0.089595
+  type: 'test'
+  ...
+# Subtest: search() text argument that is not a string throws TypeError
+ok 25 - search() text argument that is not a string throws TypeError
+  ---
+  duration_ms: 0.1273
+  type: 'test'
+  ...
+# Subtest: mutating the caller-supplied patterns array after construction does not affect the instance
+ok 26 - mutating the caller-supplied patterns array after construction does not affect the instance
+  ---
+  duration_ms: 0.077125
+  type: 'test'
+  ...
+# Subtest: a long pattern that never matches produces no output and does not affect other patterns
+ok 27 - a long pattern that never matches produces no output and does not affect other patterns
+  ---
+  duration_ms: 0.096161
+  type: 'test'
+  ...
+# Subtest: every returned match satisfies text.slice(start, end) === pattern
+ok 28 - every returned match satisfies text.slice(start, end) === pattern
+  ---
+  duration_ms: 0.206474
+  type: 'test'
+  ...
+# Subtest: seeded randomized differential test against the naive oracle
+ok 29 - seeded randomized differential test against the naive oracle
+  ---
+  duration_ms: 26.155357
+  type: 'test'
+  ...
+# Subtest: seeded randomized differential test with deliberately many duplicate patterns
+ok 30 - seeded randomized differential test with deliberately many duplicate patterns
+  ---
+  duration_ms: 4.997789
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 149.085689
