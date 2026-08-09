@@ -60,3 +60,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-09 | Implement and Test a Deterministic Scapegoat Search Tree (3 PFT) | [`scapegoat-tree/`](scapegoat-tree/) |
 | 2026-08-09 | Implement and Test Deterministic Bron-Kerbosch Clique Enumeration (3 PFT) | [`bron-kerbosch/`](bron-kerbosch/) |
 | 2026-08-09 | Implement and Test a Deterministic Merkle Mountain Range (3.2 PFT) | [`merkle-mountain-range/`](merkle-mountain-range/) |
+| 2026-08-09 | Implement and Test a Deterministic In-Memory B+ Tree (3.2 PFT) | [`bplus-tree/`](bplus-tree/) |

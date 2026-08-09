@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: an empty tree has size 0 and reports every key as absent
+ok 1 - an empty tree has size 0 and reports every key as absent
+  ---
+  duration_ms: 3.74036
+  type: 'test'
+  ...
+# Subtest: odd maxKeys=3 and even maxKeys=4 both split, merge, and stay valid across 200 randomized ops
+ok 2 - odd maxKeys=3 and even maxKeys=4 both split, merge, and stay valid across 200 randomized ops
+  ---
+  duration_ms: 15.826205
+  type: 'test'
+  ...
+# Subtest: deep ascending insert then ascending delete stays valid and empties cleanly
+ok 3 - deep ascending insert then ascending delete stays valid and empties cleanly
+  ---
+  duration_ms: 67.191963
+  type: 'test'
+  ...
+# Subtest: deep descending insert then descending delete stays valid and empties cleanly
+ok 4 - deep descending insert then descending delete stays valid and empties cleanly
+  ---
+  duration_ms: 64.542843
+  type: 'test'
+  ...
+# Subtest: set() on an existing key updates the value without changing size
+ok 5 - set() on an existing key updates the value without changing size
+  ---
+  duration_ms: 0.276556
+  type: 'test'
+  ...
+# Subtest: repeated upserts across many keys never inflate size beyond the unique-key count
+ok 6 - repeated upserts across many keys never inflate size beyond the unique-key count
+  ---
+  duration_ms: 0.49349
+  type: 'test'
+  ...
+# Subtest: set() returns the tree instance itself (chainable, Map-like)
+ok 7 - set() returns the tree instance itself (chainable, Map-like)
+  ---
+  duration_ms: 0.264987
+  type: 'test'
+  ...
+# Subtest: range() is inclusive of both endpoints exactly
+ok 8 - range() is inclusive of both endpoints exactly
+  ---
+  duration_ms: 0.36118
+  type: 'test'
+  ...
+# Subtest: range() with bounds entirely outside the stored keys returns an empty array
+ok 9 - range() with bounds entirely outside the stored keys returns an empty array
+  ---
+  duration_ms: 0.483951
+  type: 'test'
+  ...
+# Subtest: range() with lo > hi returns an empty array without throwing
+ok 10 - range() with lo > hi returns an empty array without throwing
+  ---
+  duration_ms: 0.397408
+  type: 'test'
+  ...
+# Subtest: range() spans multiple leaves via the linked-leaf chain and returns entries in ascending order
+ok 11 - range() spans multiple leaves via the linked-leaf chain and returns entries in ascending order
+  ---
+  duration_ms: 0.384062
+  type: 'test'
+  ...
+# Subtest: negative, fractional, and mixed-sign keys are stored and ordered correctly
+ok 12 - negative, fractional, and mixed-sign keys are stored and ordered correctly
+  ---
+  duration_ms: 0.403694
+  type: 'test'
+  ...
+# Subtest: -0 and 0 are treated as the same numeric key (standard JS number equality)
+ok 13 - -0 and 0 are treated as the same numeric key (standard JS number equality)
+  ---
+  duration_ms: 0.140465
+  type: 'test'
+  ...
+# Subtest: constructor rejects a non-integer maxKeys with TypeError
+ok 14 - constructor rejects a non-integer maxKeys with TypeError
+  ---
+  duration_ms: 0.552028
+  type: 'test'
+  ...
+# Subtest: constructor rejects a well-typed but too-small maxKeys with RangeError
+ok 15 - constructor rejects a well-typed but too-small maxKeys with RangeError
+  ---
+  duration_ms: 0.266259
+  type: 'test'
+  ...
+# Subtest: constructor accepts maxKeys omitted or explicitly undefined via the default parameter (maxKeys=4)
+ok 16 - constructor accepts maxKeys omitted or explicitly undefined via the default parameter (maxKeys=4)
+  ---
+  duration_ms: 0.082522
+  type: 'test'
+  ...
+# Subtest: constructor accepts every integer maxKeys >= 2
+ok 17 - constructor accepts every integer maxKeys >= 2
+  ---
+  duration_ms: 0.079533
+  type: 'test'
+  ...
+# Subtest: get/has/delete/set/range all reject non-finite or non-numeric keys with TypeError
+ok 18 - get/has/delete/set/range all reject non-finite or non-numeric keys with TypeError
+  ---
+  duration_ms: 1.130234
+  type: 'test'
+  ...
+# Subtest: deleting a key forces the underflowing leaf to borrow from its LEFT sibling
+ok 19 - deleting a key forces the underflowing leaf to borrow from its LEFT sibling
+  ---
+  duration_ms: 0.268878
+  type: 'test'
+  ...
+# Subtest: a further deletion merges the two remaining leaves and collapses the root
+ok 20 - a further deletion merges the two remaining leaves and collapses the root
+  ---
+  duration_ms: 0.176119
+  type: 'test'
+  ...
+# Subtest: deleting keys from the LEFTMOST leaf forces it to borrow from its RIGHT sibling
+ok 21 - deleting keys from the LEFTMOST leaf forces it to borrow from its RIGHT sibling
+  ---
+  duration_ms: 0.139813
+  type: 'test'
+  ...
+# Subtest: deletions propagate rebalancing through an INTERNAL node (not just a leaf), in a deep tree
+ok 22 - deletions propagate rebalancing through an INTERNAL node (not just a leaf), in a deep tree
+  ---
+  duration_ms: 0.620464
+  type: 'test'
+  ...
+# Subtest: deleting every key one at a time from a large tree always leaves a valid structure, ending in an empty bare-leaf root
+ok 23 - deleting every key one at a time from a large tree always leaves a valid structure, ending in an empty bare-leaf root
+  ---
+  duration_ms: 25.382717
+  type: 'test'
+  ...
+# Subtest: randomized fixed-seed differential sweep against SimpleOrderedMap, with structural checks throughout
+ok 24 - randomized fixed-seed differential sweep against SimpleOrderedMap, with structural checks throughout
+  ---
+  duration_ms: 14.695818
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 293.236707
