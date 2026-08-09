@@ -1,0 +1,214 @@
+TAP version 13
+# Subtest: constructor: defaults
+ok 1 - constructor: defaults
+  ---
+  duration_ms: 2.80903
+  type: 'test'
+  ...
+# Subtest: constructor: custom startTick and wheelSize
+ok 2 - constructor: custom startTick and wheelSize
+  ---
+  duration_ms: 0.229094
+  type: 'test'
+  ...
+# Subtest: constructor: invalid startTick throws RangeError
+ok 3 - constructor: invalid startTick throws RangeError
+  ---
+  duration_ms: 0.550168
+  type: 'test'
+  ...
+# Subtest: constructor: invalid wheelSize throws RangeError
+ok 4 - constructor: invalid wheelSize throws RangeError
+  ---
+  duration_ms: 0.310704
+  type: 'test'
+  ...
+# Subtest: empty state: peekNext is null, size is 0, advanceTo no-op returns []
+ok 5 - empty state: peekNext is null, size is 0, advanceTo no-op returns []
+  ---
+  duration_ms: 1.625177
+  type: 'test'
+  ...
+# Subtest: schedule: returns id, increments size, peekNext reflects it
+ok 6 - schedule: returns id, increments size, peekNext reflects it
+  ---
+  duration_ms: 0.356588
+  type: 'test'
+  ...
+# Subtest: schedule: duplicate id throws
+ok 7 - schedule: duplicate id throws
+  ---
+  duration_ms: 0.32276
+  type: 'test'
+  ...
+# Subtest: schedule: invalid id throws TypeError
+ok 8 - schedule: invalid id throws TypeError
+  ---
+  duration_ms: 0.244267
+  type: 'test'
+  ...
+# Subtest: schedule: non-future / non-safe-integer dueTick throws RangeError
+ok 9 - schedule: non-future / non-safe-integer dueTick throws RangeError
+  ---
+  duration_ms: 0.588244
+  type: 'test'
+  ...
+# Subtest: schedule: dueTick exactly Number.MAX_SAFE_INTEGER is accepted
+ok 10 - schedule: dueTick exactly Number.MAX_SAFE_INTEGER is accepted
+  ---
+  duration_ms: 0.436429
+  type: 'test'
+  ...
+# Subtest: same-tick ordering: entries scheduled at the same due tick fire in schedule order
+ok 11 - same-tick ordering: entries scheduled at the same due tick fire in schedule order
+  ---
+  duration_ms: 0.475279
+  type: 'test'
+  ...
+# Subtest: ordering across distinct ticks: fires in ascending due-tick order regardless of schedule order
+ok 12 - ordering across distinct ticks: fires in ascending due-tick order regardless of schedule order
+  ---
+  duration_ms: 0.250753
+  type: 'test'
+  ...
+# Subtest: wraparound: entries hashing to the same bucket on different revolutions do not collide
+ok 13 - wraparound: entries hashing to the same bucket on different revolutions do not collide
+  ---
+  duration_ms: 0.289558
+  type: 'test'
+  ...
+# Subtest: multiple revolutions: many entries across many wraps fire at their exact tick, in order
+ok 14 - multiple revolutions: many entries across many wraps fire at their exact tick, in order
+  ---
+  duration_ms: 0.26082
+  type: 'test'
+  ...
+# Subtest: cancellation: removes the entry so it never fires, and decrements size
+ok 15 - cancellation: removes the entry so it never fires, and decrements size
+  ---
+  duration_ms: 0.212132
+  type: 'test'
+  ...
+# Subtest: cancellation: unknown id returns false, does not throw
+ok 16 - cancellation: unknown id returns false, does not throw
+  ---
+  duration_ms: 1.64707
+  type: 'test'
+  ...
+# Subtest: cancellation: non-string id throws TypeError
+ok 17 - cancellation: non-string id throws TypeError
+  ---
+  duration_ms: 0.148463
+  type: 'test'
+  ...
+# Subtest: cancellation: an emptied bucket slot does not leave a stale next-event lookup
+ok 18 - cancellation: an emptied bucket slot does not leave a stale next-event lookup
+  ---
+  duration_ms: 0.114516
+  type: 'test'
+  ...
+# Subtest: rescheduling: moves the due tick and preserves the original value
+ok 19 - rescheduling: moves the due tick and preserves the original value
+  ---
+  duration_ms: 0.240953
+  type: 'test'
+  ...
+# Subtest: rescheduling: unknown id throws
+ok 20 - rescheduling: unknown id throws
+  ---
+  duration_ms: 0.130619
+  type: 'test'
+  ...
+# Subtest: rescheduling: non-string id throws TypeError
+ok 21 - rescheduling: non-string id throws TypeError
+  ---
+  duration_ms: 0.219571
+  type: 'test'
+  ...
+# Subtest: rescheduling: non-future newDueTick throws RangeError
+ok 22 - rescheduling: non-future newDueTick throws RangeError
+  ---
+  duration_ms: 0.201474
+  type: 'test'
+  ...
+# Subtest: rescheduling: an already-fired id cannot be rescheduled
+ok 23 - rescheduling: an already-fired id cannot be rescheduled
+  ---
+  duration_ms: 0.124688
+  type: 'test'
+  ...
+# Subtest: rescheduling: same-tick ordering reflects reschedule as the new placement order
+ok 24 - rescheduling: same-tick ordering reflects reschedule as the new placement order
+  ---
+  duration_ms: 0.119742
+  type: 'test'
+  ...
+# Subtest: rescheduling: moving within the same bucket (different revolution) still lands at the right tick
+ok 25 - rescheduling: moving within the same bucket (different revolution) still lands at the right tick
+  ---
+  duration_ms: 0.166905
+  type: 'test'
+  ...
+# Subtest: peekNext: non-mutating — does not change size, currentTick, or the entry set
+ok 26 - peekNext: non-mutating — does not change size, currentTick, or the entry set
+  ---
+  duration_ms: 0.141435
+  type: 'test'
+  ...
+# Subtest: peekNext: reflects cancellation and rescheduling immediately
+ok 27 - peekNext: reflects cancellation and rescheduling immediately
+  ---
+  duration_ms: 0.157149
+  type: 'test'
+  ...
+# Subtest: repeated advancement: stepping tick-by-tick fires the same set, in the same order, as one big jump
+ok 28 - repeated advancement: stepping tick-by-tick fires the same set, in the same order, as one big jump
+  ---
+  duration_ms: 0.174436
+  type: 'test'
+  ...
+# Subtest: repeated advancement: calling advanceTo with the current tick again is a no-op
+ok 29 - repeated advancement: calling advanceTo with the current tick again is a no-op
+  ---
+  duration_ms: 0.09564
+  type: 'test'
+  ...
+# Subtest: exactly-once firing: an entry returned by advanceTo never appears again
+ok 30 - exactly-once firing: an entry returned by advanceTo never appears again
+  ---
+  duration_ms: 0.143508
+  type: 'test'
+  ...
+# Subtest: exactly-once firing: overlapping/adjacent advanceTo calls never double-fire, across many entries
+ok 31 - exactly-once firing: overlapping/adjacent advanceTo calls never double-fire, across many entries
+  ---
+  duration_ms: 0.37534
+  type: 'test'
+  ...
+# Subtest: advanceTo: invalid targetTick throws RangeError
+ok 32 - advanceTo: invalid targetTick throws RangeError
+  ---
+  duration_ms: 0.208238
+  type: 'test'
+  ...
+# Subtest: advanceTo: skipping over an untouched tick range with nothing scheduled is safe
+ok 33 - advanceTo: skipping over an untouched tick range with nothing scheduled is safe
+  ---
+  duration_ms: 22.506103
+  type: 'test'
+  ...
+# Subtest: integration: schedule, cancel, reschedule, and advance interleaved across wraps
+ok 34 - integration: schedule, cancel, reschedule, and advance interleaved across wraps
+  ---
+  duration_ms: 0.578429
+  type: 'test'
+  ...
+1..34
+# tests 34
+# suites 0
+# pass 34
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 175.268462
