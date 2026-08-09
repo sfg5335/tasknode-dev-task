@@ -1,0 +1,226 @@
+TAP version 13
+# Subtest: empty tree: size, height, and every query method behave correctly
+ok 1 - empty tree: size, height, and every query method behave correctly
+  ---
+  duration_ms: 2.721025
+  type: 'test'
+  ...
+# Subtest: set on an existing key replaces the value without changing size or structure
+ok 2 - set on an existing key replaces the value without changing size or structure
+  ---
+  duration_ms: 0.354827
+  type: 'test'
+  ...
+# Subtest: set can replace a value with undefined, and has() still reports true
+ok 3 - set can replace a value with undefined, and has() still reports true
+  ---
+  duration_ms: 0.129021
+  type: 'test'
+  ...
+# Subtest: repeated replacement of the same key never grows size
+ok 4 - repeated replacement of the same key never grows size
+  ---
+  duration_ms: 0.251222
+  type: 'test'
+  ...
+# Subtest: ascending insertion of 0..N-1 keeps height well below the unbalanced N-1 worst case
+ok 5 - ascending insertion of 0..N-1 keeps height well below the unbalanced N-1 worst case
+  ---
+  duration_ms: 4.454697
+  type: 'test'
+  ...
+# Subtest: descending insertion of N-1..0 keeps height well below the unbalanced N-1 worst case
+ok 6 - descending insertion of N-1..0 keeps height well below the unbalanced N-1 worst case
+  ---
+  duration_ms: 5.140119
+  type: 'test'
+  ...
+# Subtest: get/has/size on a small fixed tree
+ok 7 - get/has/size on a small fixed tree
+  ---
+  duration_ms: 0.303671
+  type: 'test'
+  ...
+# Subtest: rank returns the count of keys strictly less than the queried key
+ok 8 - rank returns the count of keys strictly less than the queried key
+  ---
+  duration_ms: 0.141703
+  type: 'test'
+  ...
+# Subtest: select returns the [key, value] pair at each ascending index
+ok 9 - select returns the [key, value] pair at each ascending index
+  ---
+  duration_ms: 0.477832
+  type: 'test'
+  ...
+# Subtest: select throws RangeError for out-of-bounds indices, including on an empty tree
+ok 10 - select throws RangeError for out-of-bounds indices, including on an empty tree
+  ---
+  duration_ms: 0.457653
+  type: 'test'
+  ...
+# Subtest: rank and select are inverses of each other across a populated tree
+ok 11 - rank and select are inverses of each other across a populated tree
+  ---
+  duration_ms: 0.400674
+  type: 'test'
+  ...
+# Subtest: range returns every entry within [lo, hi] inclusive, in ascending order
+ok 12 - range returns every entry within [lo, hi] inclusive, in ascending order
+  ---
+  duration_ms: 0.219559
+  type: 'test'
+  ...
+# Subtest: range with lo > hi returns an empty array rather than throwing
+ok 13 - range with lo > hi returns an empty array rather than throwing
+  ---
+  duration_ms: 0.108292
+  type: 'test'
+  ...
+# Subtest: toArray returns every entry in ascending key order
+ok 14 - toArray returns every entry in ascending key order
+  ---
+  duration_ms: 0.263223
+  type: 'test'
+  ...
+# Subtest: delete returns false for a key that was never present
+ok 15 - delete returns false for a key that was never present
+  ---
+  duration_ms: 0.080393
+  type: 'test'
+  ...
+# Subtest: delete of a leaf node removes exactly that key
+ok 16 - delete of a leaf node removes exactly that key
+  ---
+  duration_ms: 0.126036
+  type: 'test'
+  ...
+# Subtest: delete of a node with exactly one child splices the child up
+ok 17 - delete of a node with exactly one child splices the child up
+  ---
+  duration_ms: 0.142418
+  type: 'test'
+  ...
+# Subtest: delete of a node with two children replaces it with its in-order successor
+ok 18 - delete of a node with two children replaces it with its in-order successor
+  ---
+  duration_ms: 0.190315
+  type: 'test'
+  ...
+# Subtest: deleting every key one at a time empties the tree correctly
+ok 19 - deleting every key one at a time empties the tree correctly
+  ---
+  duration_ms: 0.124337
+  type: 'test'
+  ...
+# Subtest: ascending insertion of keys 0..4 triggers a SUBTREE rebuild scoped to root.right, leaving the root and its (empty) left subtree untouched
+ok 20 - ascending insertion of keys 0..4 triggers a SUBTREE rebuild scoped to root.right, leaving the root and its (empty) left subtree untouched
+  ---
+  duration_ms: 0.174751
+  type: 'test'
+  ...
+# Subtest: descending insertion of keys 4..0 also triggers a SUBTREE rebuild scoped to root.left, leaving the root and its (empty) right subtree untouched
+ok 21 - descending insertion of keys 4..0 also triggers a SUBTREE rebuild scoped to root.left, leaving the root and its (empty) right subtree untouched
+  ---
+  duration_ms: 0.134588
+  type: 'test'
+  ...
+# Subtest: deleting enough elements after a large ascending build triggers a WHOLE-TREE rebuild (root identity changes)
+ok 22 - deleting enough elements after a large ascending build triggers a WHOLE-TREE rebuild (root identity changes)
+  ---
+  duration_ms: 0.353823
+  type: 'test'
+  ...
+# Subtest: the whole-tree rebuild above is preceded by ordinary subtree-scale work: height stays bounded throughout the ascending build, not just at the very end
+ok 23 - the whole-tree rebuild above is preceded by ordinary subtree-scale work: height stays bounded throughout the ascending build, not just at the very end
+  ---
+  duration_ms: 0.714633
+  type: 'test'
+  ...
+# Subtest: deleting down to a single element and back up still leaves a valid, correctly-balanced tree
+ok 24 - deleting down to a single element and back up still leaves a valid, correctly-balanced tree
+  ---
+  duration_ms: 1.415545
+  type: 'test'
+  ...
+# Subtest: negative and fractional keys are ordered correctly by get/has/rank/select/range/toArray
+ok 25 - negative and fractional keys are ordered correctly by get/has/rank/select/range/toArray
+  ---
+  duration_ms: 0.257844
+  type: 'test'
+  ...
+# Subtest: positive zero and negative zero are treated as the same key
+ok 26 - positive zero and negative zero are treated as the same key
+  ---
+  duration_ms: 0.10572
+  type: 'test'
+  ...
+# Subtest: very small and very large finite fractional keys are handled without precision-induced misordering
+ok 27 - very small and very large finite fractional keys are handled without precision-induced misordering
+  ---
+  duration_ms: 0.157365
+  type: 'test'
+  ...
+# Subtest: set/get/has/delete/rank throw TypeError for non-finite-number keys
+ok 28 - set/get/has/delete/rank throw TypeError for non-finite-number keys
+  ---
+  duration_ms: 0.906748
+  type: 'test'
+  ...
+# Subtest: range throws TypeError for non-finite-number bounds
+ok 29 - range throws TypeError for non-finite-number bounds
+  ---
+  duration_ms: 0.32404
+  type: 'test'
+  ...
+# Subtest: select throws TypeError for non-integer or non-number indices, RangeError for out-of-bounds integers
+ok 30 - select throws TypeError for non-integer or non-number indices, RangeError for out-of-bounds integers
+  ---
+  duration_ms: 0.267684
+  type: 'test'
+  ...
+# Subtest: invalid inputs never mutate the tree
+ok 31 - invalid inputs never mutate the tree
+  ---
+  duration_ms: 0.1927
+  type: 'test'
+  ...
+# Subtest: the same sequence of operations produces byte-identical toArray/select/range/rank output across independent fresh instances
+ok 32 - the same sequence of operations produces byte-identical toArray/select/range/rank output across independent fresh instances
+  ---
+  duration_ms: 11.54586
+  type: 'test'
+  ...
+# Subtest: search/query methods do not mutate state between repeated calls
+ok 33 - search/query methods do not mutate state between repeated calls
+  ---
+  duration_ms: 0.378445
+  type: 'test'
+  ...
+# Subtest: height stays within a generous constant multiple of the ideal log_(1/alpha)(n) bound across a large randomized build
+ok 34 - height stays within a generous constant multiple of the ideal log_(1/alpha)(n) bound across a large randomized build
+  ---
+  duration_ms: 5.783943
+  type: 'test'
+  ...
+# Subtest: height of a single-node tree is 0, and of a two-node tree is 1
+ok 35 - height of a single-node tree is 0, and of a two-node tree is 1
+  ---
+  duration_ms: 0.174005
+  type: 'test'
+  ...
+# Subtest: fixed-seed randomized mixed set/get/has/delete/rank/select/range/toArray operations exactly match a sorted-array oracle
+ok 36 - fixed-seed randomized mixed set/get/has/delete/rank/select/range/toArray operations exactly match a sorted-array oracle
+  ---
+  duration_ms: 95.880994
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 238.216524
