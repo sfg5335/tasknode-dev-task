@@ -58,3 +58,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-08 | Implement and Test a Deterministic Aho-Corasick Matcher (3 PFT) | [`aho-corasick-multi-pattern/`](aho-corasick-multi-pattern/) |
 | 2026-08-09 | Implement and Test Deterministic Offline Dynamic Connectivity (3.25 PFT) | [`offline-dynamic-connectivity/`](offline-dynamic-connectivity/) |
 | 2026-08-09 | Implement and Test a Deterministic Scapegoat Search Tree (3 PFT) | [`scapegoat-tree/`](scapegoat-tree/) |
+| 2026-08-09 | Implement and Test Deterministic Bron-Kerbosch Clique Enumeration (3 PFT) | [`bron-kerbosch/`](bron-kerbosch/) |
