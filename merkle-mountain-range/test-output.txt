@@ -1,0 +1,166 @@
+TAP version 13
+# Subtest: empty MMR has size 0 and a fixed, spec-defined empty root
+ok 1 - empty MMR has size 0 and a fixed, spec-defined empty root
+  ---
+  duration_ms: 2.002979
+  type: 'test'
+  ...
+# Subtest: single-leaf MMR: proof has no siblings, round-trips through verifyProof
+ok 2 - single-leaf MMR: proof has no siblings, round-trips through verifyProof
+  ---
+  duration_ms: 2.464949
+  type: 'test'
+  ...
+# Subtest: pinned regression vector: appending "a","b","c" yields an exact known root
+ok 3 - pinned regression vector: appending "a","b","c" yields an exact known root
+  ---
+  duration_ms: 0.554307
+  type: 'test'
+  ...
+# Subtest: sequential appends from 0 through 20 leaves: root matches the independent oracle at every size
+ok 4 - sequential appends from 0 through 20 leaves: root matches the independent oracle at every size
+  ---
+  duration_ms: 5.207163
+  type: 'test'
+  ...
+# Subtest: every leaf produces a verifying proof, for several sizes crossing power-of-two boundaries
+ok 5 - every leaf produces a verifying proof, for several sizes crossing power-of-two boundaries
+  ---
+  duration_ms: 17.93134
+  type: 'test'
+  ...
+# Subtest: duplicate-content leaves are distinguished by tree position, not by content
+ok 6 - duplicate-content leaves are distinguished by tree position, not by content
+  ---
+  duration_ms: 0.41648
+  type: 'test'
+  ...
+# Subtest: binary payloads: zero bytes, high-bit bytes, and empty (0-length) payloads all work
+ok 7 - binary payloads: zero bytes, high-bit bytes, and empty (0-length) payloads all work
+  ---
+  duration_ms: 0.446465
+  type: 'test'
+  ...
+# Subtest: two independently built MMRs with the same append sequence produce byte-identical roots and proofs
+ok 8 - two independently built MMRs with the same append sequence produce byte-identical roots and proofs
+  ---
+  duration_ms: 1.516682
+  type: 'test'
+  ...
+# Subtest: calling getProof/root repeatedly for the same state returns byte-identical results
+ok 9 - calling getProof/root repeatedly for the same state returns byte-identical results
+  ---
+  duration_ms: 0.668666
+  type: 'test'
+  ...
+# Subtest: mutating the bytes array after append() does not affect the stored leaf
+ok 10 - mutating the bytes array after append() does not affect the stored leaf
+  ---
+  duration_ms: 0.524297
+  type: 'test'
+  ...
+# Subtest: mutating a returned proof object does not corrupt the MMR internal state
+ok 11 - mutating a returned proof object does not corrupt the MMR internal state
+  ---
+  duration_ms: 0.607586
+  type: 'test'
+  ...
+# Subtest: verifyProof does not mutate the proof object or the bytes it is given
+ok 12 - verifyProof does not mutate the proof object or the bytes it is given
+  ---
+  duration_ms: 0.512711
+  type: 'test'
+  ...
+# Subtest: append() rejects non-Uint8Array payloads with TypeError
+ok 13 - append() rejects non-Uint8Array payloads with TypeError
+  ---
+  duration_ms: 0.579868
+  type: 'test'
+  ...
+# Subtest: getProof() rejects non-integer indices with TypeError and out-of-range indices with RangeError
+ok 14 - getProof() rejects non-integer indices with TypeError and out-of-range indices with RangeError
+  ---
+  duration_ms: 0.360173
+  type: 'test'
+  ...
+# Subtest: getProof() on an empty MMR always throws RangeError (no valid index exists)
+ok 15 - getProof() on an empty MMR always throws RangeError (no valid index exists)
+  ---
+  duration_ms: 0.157062
+  type: 'test'
+  ...
+# Subtest: verifyProof() rejects a non-Uint8Array bytes argument with TypeError
+ok 16 - verifyProof() rejects a non-Uint8Array bytes argument with TypeError
+  ---
+  duration_ms: 0.432966
+  type: 'test'
+  ...
+# Subtest: verifyProof() rejects malformed proof shapes with TypeError, field by field
+ok 17 - verifyProof() rejects malformed proof shapes with TypeError, field by field
+  ---
+  duration_ms: 0.915354
+  type: 'test'
+  ...
+# Subtest: verifyProof() rejects a malformed expectedRoot with TypeError
+ok 18 - verifyProof() rejects a malformed expectedRoot with TypeError
+  ---
+  duration_ms: 0.327346
+  type: 'test'
+  ...
+# Subtest: verifyProof() accepts an uppercase-hex expectedRoot as a case-insensitive match (documented leniency)
+ok 19 - verifyProof() accepts an uppercase-hex expectedRoot as a case-insensitive match (documented leniency)
+  ---
+  duration_ms: 0.191639
+  type: 'test'
+  ...
+# Subtest: verifyProof() rejects a tampered leaf (wrong bytes)
+ok 20 - verifyProof() rejects a tampered leaf (wrong bytes)
+  ---
+  duration_ms: 0.304757
+  type: 'test'
+  ...
+# Subtest: verifyProof() rejects a tampered sibling hash in the path
+ok 21 - verifyProof() rejects a tampered sibling hash in the path
+  ---
+  duration_ms: 0.421124
+  type: 'test'
+  ...
+# Subtest: verifyProof() rejects a tampered peak belonging to a DIFFERENT mountain than the one being proven
+ok 22 - verifyProof() rejects a tampered peak belonging to a DIFFERENT mountain than the one being proven
+  ---
+  duration_ms: 0.335022
+  type: 'test'
+  ...
+# Subtest: tampering the peak slot at the proof's OWN peakIndex is a documented no-op, not a security hole
+ok 23 - tampering the peak slot at the proof's OWN peakIndex is a documented no-op, not a security hole
+  ---
+  duration_ms: 0.30306
+  type: 'test'
+  ...
+# Subtest: verifyProof() rejects a tampered size
+ok 24 - verifyProof() rejects a tampered size
+  ---
+  duration_ms: 0.408139
+  type: 'test'
+  ...
+# Subtest: verifyProof() rejects a tampered expectedRoot
+ok 25 - verifyProof() rejects a tampered expectedRoot
+  ---
+  duration_ms: 0.318415
+  type: 'test'
+  ...
+# Subtest: randomized fixed-seed comparisons against the independent from-scratch oracle
+ok 26 - randomized fixed-seed comparisons against the independent from-scratch oracle
+  ---
+  duration_ms: 24.381164
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 190.011258
