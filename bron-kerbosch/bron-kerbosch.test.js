@@ -155,10 +155,11 @@ test('cyclic graph (triangle-free cycle C5) has one maximal clique per edge', ()
   assert.deepEqual(result, [[0, 1], [0, 4], [1, 2], [2, 3], [3, 4]]);
 });
 
-test('cyclic graph with a chord (C4 + one diagonal) produces one triangle and one edge', () => {
-  // 0-1-2-3-0 plus chord 0-2: triangle {0,1,2}, triangle {0,2,3}... wait,
-  // both triangles share edge 0-2, and each is maximal on its own since
-  // 1 and 3 are not adjacent to each other.
+test('cyclic graph with a chord (C4 + one diagonal) produces two triangles sharing the chord', () => {
+  // 0-1-2-3-0 plus chord 0-2: this produces two maximal triangles,
+  // {0,1,2} and {0,2,3}, which share edge 0-2. Each is maximal on its own
+  // since 1 and 3 are not adjacent to each other, so neither triangle can
+  // be extended to include the other's non-shared vertex.
   const edges = [[0, 1], [1, 2], [2, 3], [3, 0], [0, 2]];
   const result = maximalCliques(4, edges);
   assert.deepEqual(result, [[0, 1, 2], [0, 2, 3]]);

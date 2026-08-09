@@ -2,133 +2,133 @@ TAP version 13
 # Subtest: empty graph (0 vertices) has zero maximal cliques
 ok 1 - empty graph (0 vertices) has zero maximal cliques
   ---
-  duration_ms: 2.892318
+  duration_ms: 2.286279
   type: 'test'
   ...
 # Subtest: graph with vertices but no edges: every vertex is its own maximal clique
 ok 2 - graph with vertices but no edges: every vertex is its own maximal clique
   ---
-  duration_ms: 3.541292
+  duration_ms: 1.32759
   type: 'test'
   ...
 # Subtest: complete graph K_n has exactly one maximal clique: all vertices
 ok 3 - complete graph K_n has exactly one maximal clique: all vertices
   ---
-  duration_ms: 1.073662
+  duration_ms: 1.080572
   type: 'test'
   ...
 # Subtest: cyclic graph (triangle-free cycle C5) has one maximal clique per edge
 ok 4 - cyclic graph (triangle-free cycle C5) has one maximal clique per edge
   ---
-  duration_ms: 0.388267
+  duration_ms: 0.269506
   type: 'test'
   ...
-# Subtest: cyclic graph with a chord (C4 + one diagonal) produces one triangle and one edge
-ok 5 - cyclic graph with a chord (C4 + one diagonal) produces one triangle and one edge
+# Subtest: cyclic graph with a chord (C4 + one diagonal) produces two triangles sharing the chord
+ok 5 - cyclic graph with a chord (C4 + one diagonal) produces two triangles sharing the chord
   ---
-  duration_ms: 0.357422
+  duration_ms: 0.252994
   type: 'test'
   ...
 # Subtest: disconnected graph: maximal cliques are computed independently per component
 ok 6 - disconnected graph: maximal cliques are computed independently per component
   ---
-  duration_ms: 0.430791
+  duration_ms: 0.186873
   type: 'test'
   ...
 # Subtest: the complete tripartite graph K3,3,3 produces exactly 27 maximal cliques
 ok 7 - the complete tripartite graph K3,3,3 produces exactly 27 maximal cliques
   ---
-  duration_ms: 3.061788
+  duration_ms: 0.798591
   type: 'test'
   ...
 # Subtest: non-integer or negative vertexCount throws the correct error type
 ok 8 - non-integer or negative vertexCount throws the correct error type
   ---
-  duration_ms: 0.816746
+  duration_ms: 0.623591
   type: 'test'
   ...
 # Subtest: non-array edges throws TypeError
 ok 9 - non-array edges throws TypeError
   ---
-  duration_ms: 0.784084
+  duration_ms: 0.386277
   type: 'test'
   ...
 # Subtest: malformed edge entries throw TypeError
 ok 10 - malformed edge entries throw TypeError
   ---
-  duration_ms: 4.303592
+  duration_ms: 1.36384
   type: 'test'
   ...
 # Subtest: endpoints outside [0, vertexCount) throw RangeError
 ok 11 - endpoints outside [0, vertexCount) throw RangeError
   ---
-  duration_ms: 0.408961
+  duration_ms: 0.273854
   type: 'test'
   ...
 # Subtest: self-loop edges throw RangeError
 ok 12 - self-loop edges throw RangeError
   ---
-  duration_ms: 0.160337
+  duration_ms: 0.15258
   type: 'test'
   ...
 # Subtest: invalid inputs never mutate the passed-in edges array
 ok 13 - invalid inputs never mutate the passed-in edges array
   ---
-  duration_ms: 0.11734
+  duration_ms: 0.116923
   type: 'test'
   ...
 # Subtest: duplicate edges (exact repeats) are normalized away, not rejected
 ok 14 - duplicate edges (exact repeats) are normalized away, not rejected
   ---
-  duration_ms: 0.147546
+  duration_ms: 0.103698
   type: 'test'
   ...
 # Subtest: reversed-order duplicate edges ([u,v] and [v,u]) are treated as the same edge
 ok 15 - reversed-order duplicate edges ([u,v] and [v,u]) are treated as the same edge
   ---
-  duration_ms: 0.098807
+  duration_ms: 0.087134
   type: 'test'
   ...
 # Subtest: shuffling edge order never changes the result
 ok 16 - shuffling edge order never changes the result
   ---
-  duration_ms: 10.542675
+  duration_ms: 3.889342
   type: 'test'
   ...
 # Subtest: the same graph produces byte-identical output across repeated independent calls
 ok 17 - the same graph produces byte-identical output across repeated independent calls
   ---
-  duration_ms: 15.01622
+  duration_ms: 4.314405
   type: 'test'
   ...
 # Subtest: output is always sorted in ascending lexicographic order
 ok 18 - output is always sorted in ascending lexicographic order
   ---
-  duration_ms: 1.904588
+  duration_ms: 1.990344
   type: 'test'
   ...
 # Subtest: every reported clique is a genuine clique and the whole set is duplicate-free
 ok 19 - every reported clique is a genuine clique and the whole set is duplicate-free
   ---
-  duration_ms: 1.342347
+  duration_ms: 1.255184
   type: 'test'
   ...
 # Subtest: exhaustive comparison against the brute-force oracle for every labeled graph on 0..6 vertices
 ok 20 - exhaustive comparison against the brute-force oracle for every labeled graph on 0..6 vertices
   ---
-  duration_ms: 558.046164
+  duration_ms: 505.609521
   type: 'test'
   ...
 # Subtest: randomized comparison against the brute-force oracle at n=7..13
 ok 21 - randomized comparison against the brute-force oracle at n=7..13
   ---
-  duration_ms: 29.476895
+  duration_ms: 27.056507
   type: 'test'
   ...
 # Subtest: sparse randomized comparison against the brute-force oracle at n=14..16
 ok 22 - sparse randomized comparison against the brute-force oracle at n=14..16
   ---
-  duration_ms: 71.158315
+  duration_ms: 70.960298
   type: 'test'
   ...
 1..22
@@ -139,4 +139,4 @@ ok 22 - sparse randomized comparison against the brute-force oracle at n=14..16
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 842.313126
+# duration_ms 727.37327
