@@ -1,0 +1,322 @@
+TAP version 13
+# Subtest: vertexCount 0 with no operations returns an empty result array
+ok 1 - vertexCount 0 with no operations returns an empty result array
+  ---
+  duration_ms: 6.671881
+  type: 'test'
+  ...
+# Subtest: positive vertexCount with no operations returns an empty result array
+ok 2 - positive vertexCount with no operations returns an empty result array
+  ---
+  duration_ms: 0.363495
+  type: 'test'
+  ...
+# Subtest: vertexCount 0 with a componentCount query returns 0
+ok 3 - vertexCount 0 with a componentCount query returns 0
+  ---
+  duration_ms: 0.624624
+  type: 'test'
+  ...
+# Subtest: graph with vertices but no edges: every componentCount equals vertexCount
+ok 4 - graph with vertices but no edges: every componentCount equals vertexCount
+  ---
+  duration_ms: 1.519385
+  type: 'test'
+  ...
+# Subtest: add then connected then remove then connected reflects the edge going away
+ok 5 - add then connected then remove then connected reflects the edge going away
+  ---
+  duration_ms: 11.341534
+  type: 'test'
+  ...
+# Subtest: add, remove, then re-add the same edge is legal and restores connectivity
+ok 6 - add, remove, then re-add the same edge is legal and restores connectivity
+  ---
+  duration_ms: 0.826915
+  type: 'test'
+  ...
+# Subtest: an edge active only briefly is invisible to queries both before and after its interval
+ok 7 - an edge active only briefly is invisible to queries both before and after its interval
+  ---
+  duration_ms: 0.97277
+  type: 'test'
+  ...
+# Subtest: many alternating add/remove cycles on the same edge stay correct throughout
+ok 8 - many alternating add/remove cycles on the same edge stay correct throughout
+  ---
+  duration_ms: 4.290201
+  type: 'test'
+  ...
+# Subtest: an edge left active through the end of the sequence still answers queries after it (never-removed interval)
+ok 9 - an edge left active through the end of the sequence still answers queries after it (never-removed interval)
+  ---
+  duration_ms: 0.872292
+  type: 'test'
+  ...
+# Subtest: removing a bridge edge disconnects the two sides it was joining
+ok 10 - removing a bridge edge disconnects the two sides it was joining
+  ---
+  duration_ms: 0.770263
+  type: 'test'
+  ...
+# Subtest: removing a non-bridge edge from a cycle preserves connectivity
+ok 11 - removing a non-bridge edge from a cycle preserves connectivity
+  ---
+  duration_ms: 0.258491
+  type: 'test'
+  ...
+# Subtest: removing all edges of a star graph isolates every leaf one at a time
+ok 12 - removing all edges of a star graph isolates every leaf one at a time
+  ---
+  duration_ms: 0.260094
+  type: 'test'
+  ...
+# Subtest: removing an edge with reversed endpoints from how it was added still works
+ok 13 - removing an edge with reversed endpoints from how it was added still works
+  ---
+  duration_ms: 0.106654
+  type: 'test'
+  ...
+# Subtest: adding an edge with reversed endpoints while already active is still a duplicate
+ok 14 - adding an edge with reversed endpoints while already active is still a duplicate
+  ---
+  duration_ms: 0.547881
+  type: 'test'
+  ...
+# Subtest: connected() reports the same answer regardless of query argument order
+ok 15 - connected() reports the same answer regardless of query argument order
+  ---
+  duration_ms: 0.106892
+  type: 'test'
+  ...
+# Subtest: a self-loop can be added and removed like any other edge, validated the same way
+ok 16 - a self-loop can be added and removed like any other edge, validated the same way
+  ---
+  duration_ms: 0.127647
+  type: 'test'
+  ...
+# Subtest: a self-loop never changes connectivity between distinct vertices or componentCount
+ok 17 - a self-loop never changes connectivity between distinct vertices or componentCount
+  ---
+  duration_ms: 0.125407
+  type: 'test'
+  ...
+# Subtest: adding a self-loop while it is already active is a duplicate RangeError
+ok 18 - adding a self-loop while it is already active is a duplicate RangeError
+  ---
+  duration_ms: 0.145353
+  type: 'test'
+  ...
+# Subtest: removing a self-loop that was never added throws RangeError
+ok 19 - removing a self-loop that was never added throws RangeError
+  ---
+  duration_ms: 0.140265
+  type: 'test'
+  ...
+# Subtest: a self-loop and a same-pair real edge are tracked independently by canonicalization (both are key (u,u))
+ok 20 - a self-loop and a same-pair real edge are tracked independently by canonicalization (both are key (u,u))
+  ---
+  duration_ms: 0.126725
+  type: 'test'
+  ...
+# Subtest: componentCount decreases by exactly one per structural union and tracks isolated vertices
+ok 21 - componentCount decreases by exactly one per structural union and tracks isolated vertices
+  ---
+  duration_ms: 0.142708
+  type: 'test'
+  ...
+# Subtest: componentCount increases by exactly one per edge removal that actually disconnects
+ok 22 - componentCount increases by exactly one per edge removal that actually disconnects
+  ---
+  duration_ms: 0.153137
+  type: 'test'
+  ...
+# Subtest: componentCount after adding a redundant edge inside an existing component does not change
+ok 23 - componentCount after adding a redundant edge inside an existing component does not change
+  ---
+  duration_ms: 0.14775
+  type: 'test'
+  ...
+# Subtest: vertexCount that is not a non-negative integer throws TypeError
+ok 24 - vertexCount that is not a non-negative integer throws TypeError
+  ---
+  duration_ms: 0.263099
+  type: 'test'
+  ...
+# Subtest: operations that is not an array throws TypeError
+ok 25 - operations that is not an array throws TypeError
+  ---
+  duration_ms: 0.152018
+  type: 'test'
+  ...
+# Subtest: a non-object operation entry throws TypeError
+ok 26 - a non-object operation entry throws TypeError
+  ---
+  duration_ms: 0.489856
+  type: 'test'
+  ...
+# Subtest: an operation with an unknown or missing type throws TypeError
+ok 27 - an operation with an unknown or missing type throws TypeError
+  ---
+  duration_ms: 0.20409
+  type: 'test'
+  ...
+# Subtest: add/remove/connected with a non-integer u or v throws TypeError
+ok 28 - add/remove/connected with a non-integer u or v throws TypeError
+  ---
+  duration_ms: 0.225031
+  type: 'test'
+  ...
+# Subtest: add/remove/connected with an out-of-range vertex throws RangeError
+ok 29 - add/remove/connected with an out-of-range vertex throws RangeError
+  ---
+  duration_ms: 0.251536
+  type: 'test'
+  ...
+# Subtest: adding an already-active edge throws RangeError
+ok 30 - adding an already-active edge throws RangeError
+  ---
+  duration_ms: 0.146904
+  type: 'test'
+  ...
+# Subtest: removing an edge that was never added throws RangeError
+ok 31 - removing an edge that was never added throws RangeError
+  ---
+  duration_ms: 0.089102
+  type: 'test'
+  ...
+# Subtest: removing an edge that was already removed throws RangeError
+ok 32 - removing an edge that was already removed throws RangeError
+  ---
+  duration_ms: 0.085507
+  type: 'test'
+  ...
+# Subtest: a TypeError-worthy malformed operation earlier in the sequence is reported even if a RangeError-worthy one follows
+ok 33 - a TypeError-worthy malformed operation earlier in the sequence is reported even if a RangeError-worthy one follows
+  ---
+  duration_ms: 0.089209
+  type: 'test'
+  ...
+# Subtest: the operations array and its entries are never mutated
+ok 34 - the operations array and its entries are never mutated
+  ---
+  duration_ms: 0.809587
+  type: 'test'
+  ...
+# Subtest: mutating the caller-supplied operations array after the call does not retroactively change anything (defensive read, not aliasing)
+ok 35 - mutating the caller-supplied operations array after the call does not retroactively change anything (defensive read, not aliasing)
+  ---
+  duration_ms: 0.118194
+  type: 'test'
+  ...
+# Subtest: RollbackUnionFind: union of two singletons is a size tie broken by the smaller root winning
+ok 36 - RollbackUnionFind: union of two singletons is a size tie broken by the smaller root winning
+  ---
+  duration_ms: 0.214829
+  type: 'test'
+  ...
+# Subtest: RollbackUnionFind: union prefers the strictly larger component regardless of index
+ok 37 - RollbackUnionFind: union prefers the strictly larger component regardless of index
+  ---
+  duration_ms: 0.096714
+  type: 'test'
+  ...
+# Subtest: RollbackUnionFind: merging two equal-size (>1) components breaks the tie by smaller root
+ok 38 - RollbackUnionFind: merging two equal-size (>1) components breaks the tie by smaller root
+  ---
+  duration_ms: 0.166706
+  type: 'test'
+  ...
+# Subtest: RollbackUnionFind: union returns false and is a no-op for vertices already in the same component (including self-loops)
+ok 39 - RollbackUnionFind: union returns false and is a no-op for vertices already in the same component (including self-loops)
+  ---
+  duration_ms: 0.119574
+  type: 'test'
+  ...
+# Subtest: RollbackUnionFind: snapshot/rollback exactly restores parent, size, and componentCount state
+ok 40 - RollbackUnionFind: snapshot/rollback exactly restores parent, size, and componentCount state
+  ---
+  duration_ms: 0.124337
+  type: 'test'
+  ...
+# Subtest: RollbackUnionFind: nested snapshot/rollback (stack discipline) restores intermediate states correctly
+ok 41 - RollbackUnionFind: nested snapshot/rollback (stack discipline) restores intermediate states correctly
+  ---
+  duration_ms: 0.11919
+  type: 'test'
+  ...
+# Subtest: RollbackUnionFind: find() performs no path compression (parent chain length is left exactly as union() built it)
+ok 42 - RollbackUnionFind: find() performs no path compression (parent chain length is left exactly as union() built it)
+  ---
+  duration_ms: 2.328946
+  type: 'test'
+  ...
+# Subtest: buildActiveIntervals: a closed add/remove pair produces one half-open interval
+ok 43 - buildActiveIntervals: a closed add/remove pair produces one half-open interval
+  ---
+  duration_ms: 0.216641
+  type: 'test'
+  ...
+# Subtest: buildActiveIntervals: an edge never removed extends to the end of the timeline
+ok 44 - buildActiveIntervals: an edge never removed extends to the end of the timeline
+  ---
+  duration_ms: 0.147203
+  type: 'test'
+  ...
+# Subtest: buildActiveIntervals: add/remove/re-add produces two disjoint intervals
+ok 45 - buildActiveIntervals: add/remove/re-add produces two disjoint intervals
+  ---
+  duration_ms: 0.127505
+  type: 'test'
+  ...
+# Subtest: buildActiveIntervals: an add immediately followed by remove at the very next index still produces a width-1 interval, but it can never cover a query
+ok 46 - buildActiveIntervals: an add immediately followed by remove at the very next index still produces a width-1 interval, but it can never cover a query
+  ---
+  duration_ms: 0.119968
+  type: 'test'
+  ...
+# Subtest: buildActiveIntervals: multiple independent edges are tracked separately
+ok 47 - buildActiveIntervals: multiple independent edges are tracked separately
+  ---
+  duration_ms: 2.997917
+  type: 'test'
+  ...
+# Subtest: seeded randomized differential test: broad mixed operation mix, small graphs
+ok 48 - seeded randomized differential test: broad mixed operation mix, small graphs
+  ---
+  duration_ms: 52.311344
+  type: 'test'
+  ...
+# Subtest: seeded randomized differential test: larger vertex counts and longer sequences
+ok 49 - seeded randomized differential test: larger vertex counts and longer sequences
+  ---
+  duration_ms: 49.045845
+  type: 'test'
+  ...
+# Subtest: seeded randomized differential test: self-loop-heavy operation mix
+ok 50 - seeded randomized differential test: self-loop-heavy operation mix
+  ---
+  duration_ms: 3.210901
+  type: 'test'
+  ...
+# Subtest: seeded randomized differential test: dense complete-graph add-all then remove-all in shuffled orders
+ok 51 - seeded randomized differential test: dense complete-graph add-all then remove-all in shuffled orders
+  ---
+  duration_ms: 3.220475
+  type: 'test'
+  ...
+# Subtest: the same input produces byte-identical output across repeated calls
+ok 52 - the same input produces byte-identical output across repeated calls
+  ---
+  duration_ms: 0.159981
+  type: 'test'
+  ...
+1..52
+# tests 52
+# suites 0
+# pass 52
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 396.493769
