@@ -63,3 +63,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-09 | Implement and Test a Deterministic In-Memory B+ Tree (3.2 PFT) | [`bplus-tree/`](bplus-tree/) |
 | 2026-08-09 | Build and Test a Deterministic Hashed Timing Wheel (3 PFT) | [`hashed-timing-wheel/`](hashed-timing-wheel/) |
 | 2026-08-10 | Implement and Test a Deterministic Wavelet Matrix, rangeFreq variant (3.2 PFT) | [`wavelet-matrix-v2/`](wavelet-matrix-v2/) |
+| 2026-08-10 | Implement and Test Deterministic Dancing Links Exact Cover (3.2 PFT) | [`dancing-links-exact-cover/`](dancing-links-exact-cover/) |
