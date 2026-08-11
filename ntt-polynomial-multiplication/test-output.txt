@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: MOD is the expected NTT-friendly prime, exported as a BigInt
+ok 1 - MOD is the expected NTT-friendly prime, exported as a BigInt
+  ---
+  duration_ms: 1.138174
+  type: 'test'
+  ...
+# Subtest: convolve returns [] when the first input is empty
+ok 2 - convolve returns [] when the first input is empty
+  ---
+  duration_ms: 2.389057
+  type: 'test'
+  ...
+# Subtest: convolve returns [] when the second input is empty
+ok 3 - convolve returns [] when the second input is empty
+  ---
+  duration_ms: 0.134142
+  type: 'test'
+  ...
+# Subtest: convolve returns [] when both inputs are empty
+ok 4 - convolve returns [] when both inputs are empty
+  ---
+  duration_ms: 0.221834
+  type: 'test'
+  ...
+# Subtest: convolving with an all-zero polynomial produces an all-zero result of the full product length
+ok 5 - convolving with an all-zero polynomial produces an all-zero result of the full product length
+  ---
+  duration_ms: 0.496923
+  type: 'test'
+  ...
+# Subtest: convolving with the multiplicative identity [1n] returns the other polynomial unchanged (mod-reduced)
+ok 6 - convolving with the multiplicative identity [1n] returns the other polynomial unchanged (mod-reduced)
+  ---
+  duration_ms: 0.286907
+  type: 'test'
+  ...
+# Subtest: a hand-derived small product: (1 + 2x) * (3 + 4x) = 3 + 10x + 8x^2
+ok 7 - a hand-derived small product: (1 + 2x) * (3 + 4x) = 3 + 10x + 8x^2
+  ---
+  duration_ms: 0.233968
+  type: 'test'
+  ...
+# Subtest: convolve handles unequal-length inputs, result length is a.length + b.length - 1
+ok 8 - convolve handles unequal-length inputs, result length is a.length + b.length - 1
+  ---
+  duration_ms: 0.349759
+  type: 'test'
+  ...
+# Subtest: trailing zero coefficients in the result are preserved, not trimmed
+ok 9 - trailing zero coefficients in the result are preserved, not trimmed
+  ---
+  duration_ms: 0.421919
+  type: 'test'
+  ...
+# Subtest: trailing zero coefficients survive across a larger unequal-length product
+ok 10 - trailing zero coefficients survive across a larger unequal-length product
+  ---
+  duration_ms: 0.440376
+  type: 'test'
+  ...
+# Subtest: boundary coefficient MOD - 1 behaves as -1 under the modulus: (MOD-1)*(MOD-1) = 1
+ok 11 - boundary coefficient MOD - 1 behaves as -1 under the modulus: (MOD-1)*(MOD-1) = 1
+  ---
+  duration_ms: 1.113987
+  type: 'test'
+  ...
+# Subtest: negative BigInt coefficients are reduced correctly: (-1) * (-1) = 1 (mod MOD)
+ok 12 - negative BigInt coefficients are reduced correctly: (-1) * (-1) = 1 (mod MOD)
+  ---
+  duration_ms: 0.139391
+  type: 'test'
+  ...
+# Subtest: a coefficient exactly equal to MOD reduces to 0
+ok 13 - a coefficient exactly equal to MOD reduces to 0
+  ---
+  duration_ms: 0.084631
+  type: 'test'
+  ...
+# Subtest: a coefficient several multiples of MOD past zero still reduces correctly
+ok 14 - a coefficient several multiples of MOD past zero still reduces correctly
+  ---
+  duration_ms: 0.078383
+  type: 'test'
+  ...
+# Subtest: boundary coefficients cross-checked against the independent reference over a mixed vector
+ok 15 - boundary coefficients cross-checked against the independent reference over a mixed vector
+  ---
+  duration_ms: 0.146948
+  type: 'test'
+  ...
+# Subtest: convolve is repeatable: identical inputs produce byte-identical (BigInt-identical) output every call
+ok 16 - convolve is repeatable: identical inputs produce byte-identical (BigInt-identical) output every call
+  ---
+  duration_ms: 0.214503
+  type: 'test'
+  ...
+# Subtest: convolve never mutates its input arrays
+ok 17 - convolve never mutates its input arrays
+  ---
+  duration_ms: 0.414215
+  type: 'test'
+  ...
+# Subtest: convolve throws TypeError when the first argument is not an array
+ok 18 - convolve throws TypeError when the first argument is not an array
+  ---
+  duration_ms: 0.458476
+  type: 'test'
+  ...
+# Subtest: convolve throws TypeError when the second argument is not an array
+ok 19 - convolve throws TypeError when the second argument is not an array
+  ---
+  duration_ms: 0.114835
+  type: 'test'
+  ...
+# Subtest: convolve throws TypeError when an array element is not a BigInt
+ok 20 - convolve throws TypeError when an array element is not a BigInt
+  ---
+  duration_ms: 0.215146
+  type: 'test'
+  ...
+# Subtest: result lengths crossing power-of-two transform-size boundaries all match the reference
+ok 21 - result lengths crossing power-of-two transform-size boundaries all match the reference
+  ---
+  duration_ms: 11.312008
+  type: 'test'
+  ...
+# Subtest: single-coefficient polynomials (the degenerate size-1 transform) multiply correctly
+ok 22 - single-coefficient polynomials (the degenerate size-1 transform) multiply correctly
+  ---
+  duration_ms: 0.172195
+  type: 'test'
+  ...
+# Subtest: deterministic randomized differential coverage: at least 500 small polynomial pairs against an independent O(n^2) BigInt reference
+ok 23 - deterministic randomized differential coverage: at least 500 small polynomial pairs against an independent O(n^2) BigInt reference
+  ---
+  duration_ms: 39.108334
+  type: 'test'
+  ...
+# Subtest: deterministic randomized differential coverage: larger polynomial pairs (sparse sampling of sizes) against the reference
+ok 24 - deterministic randomized differential coverage: larger polynomial pairs (sparse sampling of sizes) against the reference
+  ---
+  duration_ms: 27.098019
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 195.577313
