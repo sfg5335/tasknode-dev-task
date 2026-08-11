@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: empty input returns an empty array
+ok 1 - empty input returns an empty array
+  ---
+  duration_ms: 2.990287
+  type: 'test'
+  ...
+# Subtest: singleton input returns the single value unchanged
+ok 2 - singleton input returns the single value unchanged
+  ---
+  duration_ms: 0.420383
+  type: 'test'
+  ...
+# Subtest: already-nondecreasing input is returned unchanged
+ok 3 - already-nondecreasing input is returned unchanged
+  ---
+  duration_ms: 0.528793
+  type: 'test'
+  ...
+# Subtest: strictly descending input merges into a single block (the weighted mean)
+ok 4 - strictly descending input merges into a single block (the weighted mean)
+  ---
+  duration_ms: 0.44733
+  type: 'test'
+  ...
+# Subtest: all-equal (plateau) input has no violations and is returned unchanged
+ok 5 - all-equal (plateau) input has no violations and is returned unchanged
+  ---
+  duration_ms: 0.332704
+  type: 'test'
+  ...
+# Subtest: duplicate values mixed with a violation pool correctly
+ok 6 - duplicate values mixed with a violation pool correctly
+  ---
+  duration_ms: 0.224636
+  type: 'test'
+  ...
+# Subtest: negative values are handled correctly
+ok 7 - negative values are handled correctly
+  ---
+  duration_ms: 0.124774
+  type: 'test'
+  ...
+# Subtest: fractional values are handled correctly
+ok 8 - fractional values are handled correctly
+  ---
+  duration_ms: 0.28129
+  type: 'test'
+  ...
+# Subtest: omitted weights default to 1 for every point
+ok 9 - omitted weights default to 1 for every point
+  ---
+  duration_ms: 0.302353
+  type: 'test'
+  ...
+# Subtest: a heavier weight pulls the pooled mean toward its value
+ok 10 - a heavier weight pulls the pooled mean toward its value
+  ---
+  duration_ms: 0.483641
+  type: 'test'
+  ...
+# Subtest: an already-nondecreasing sequence is unaffected by any weights
+ok 11 - an already-nondecreasing sequence is unaffected by any weights
+  ---
+  duration_ms: 0.201642
+  type: 'test'
+  ...
+# Subtest: throws TypeError when values is not an array
+ok 12 - throws TypeError when values is not an array
+  ---
+  duration_ms: 0.482374
+  type: 'test'
+  ...
+# Subtest: throws TypeError when values contains a non-finite entry
+ok 13 - throws TypeError when values contains a non-finite entry
+  ---
+  duration_ms: 0.248426
+  type: 'test'
+  ...
+# Subtest: throws TypeError when weights is provided but not an array
+ok 14 - throws TypeError when weights is provided but not an array
+  ---
+  duration_ms: 0.119564
+  type: 'test'
+  ...
+# Subtest: throws TypeError when weights contains a non-finite entry
+ok 15 - throws TypeError when weights contains a non-finite entry
+  ---
+  duration_ms: 0.119006
+  type: 'test'
+  ...
+# Subtest: throws RangeError when weights.length does not match values.length
+ok 16 - throws RangeError when weights.length does not match values.length
+  ---
+  duration_ms: 0.213375
+  type: 'test'
+  ...
+# Subtest: throws RangeError when a weight is zero or negative
+ok 17 - throws RangeError when a weight is zero or negative
+  ---
+  duration_ms: 0.149752
+  type: 'test'
+  ...
+# Subtest: never mutates the values array
+ok 18 - never mutates the values array
+  ---
+  duration_ms: 0.095909
+  type: 'test'
+  ...
+# Subtest: never mutates the weights array
+ok 19 - never mutates the weights array
+  ---
+  duration_ms: 0.118732
+  type: 'test'
+  ...
+# Subtest: output is always nondecreasing across randomized inputs
+ok 20 - output is always nondecreasing across randomized inputs
+  ---
+  duration_ms: 4.369479
+  type: 'test'
+  ...
+# Subtest: deterministic randomized differential coverage: at least 200 arrays of length 0-8 against an independent exhaustive contiguous-partition solver, within 1e-10
+ok 21 - deterministic randomized differential coverage: at least 200 arrays of length 0-8 against an independent exhaustive contiguous-partition solver, within 1e-10
+  ---
+  duration_ms: 15.414781
+  type: 'test'
+  ...
+# Subtest: deterministic randomized differential coverage: unweighted small arrays (length 0-8) against the reference, within 1e-10
+ok 22 - deterministic randomized differential coverage: unweighted small arrays (length 0-8) against the reference, within 1e-10
+  ---
+  duration_ms: 11.15343
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 173.799692
