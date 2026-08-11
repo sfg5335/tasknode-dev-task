@@ -66,3 +66,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-10 | Implement and Test Deterministic Dancing Links Exact Cover (3.2 PFT) | [`dancing-links-exact-cover/`](dancing-links-exact-cover/) |
 | 2026-08-11 | Implement and Test Deterministic NTT Polynomial Multiplication (3.2 PFT) | [`ntt-polynomial-multiplication/`](ntt-polynomial-multiplication/) |
 | 2026-08-11 | Implement and Test Weighted Isotonic Regression (3 PFT) | [`isotonic-regression/`](isotonic-regression/) |
+| 2026-08-11 | Implement and Test a Deterministic Minimum Enclosing Circle (3 PFT) | [`minimum-enclosing-circle/`](minimum-enclosing-circle/) |

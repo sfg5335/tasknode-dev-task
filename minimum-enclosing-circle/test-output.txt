@@ -1,0 +1,136 @@
+TAP version 13
+# Subtest: empty array returns null
+ok 1 - empty array returns null
+  ---
+  duration_ms: 3.125319
+  type: 'test'
+  ...
+# Subtest: a single point returns a radius-0 circle centered on it
+ok 2 - a single point returns a radius-0 circle centered on it
+  ---
+  duration_ms: 2.215159
+  type: 'test'
+  ...
+# Subtest: two points: the circle has them as opposite ends of a diameter
+ok 3 - two points: the circle has them as opposite ends of a diameter
+  ---
+  duration_ms: 0.817892
+  type: 'test'
+  ...
+# Subtest: right triangle: the circumcircle (diameter = hypotenuse) is the MEC
+ok 4 - right triangle: the circumcircle (diameter = hypotenuse) is the MEC
+  ---
+  duration_ms: 1.170321
+  type: 'test'
+  ...
+# Subtest: obtuse triangle: the MEC is the circle over the longest side alone, excluding the circumcircle
+ok 5 - obtuse triangle: the MEC is the circle over the longest side alone, excluding the circumcircle
+  ---
+  duration_ms: 0.348571
+  type: 'test'
+  ...
+# Subtest: acute (equilateral) triangle: the MEC is the true circumcircle through all 3 vertices
+ok 6 - acute (equilateral) triangle: the MEC is the true circumcircle through all 3 vertices
+  ---
+  duration_ms: 0.254318
+  type: 'test'
+  ...
+# Subtest: collinear points: the MEC has the two extreme points as its diameter
+ok 7 - collinear points: the MEC has the two extreme points as its diameter
+  ---
+  duration_ms: 0.924925
+  type: 'test'
+  ...
+# Subtest: all-duplicate points collapse to a radius-0 circle
+ok 8 - all-duplicate points collapse to a radius-0 circle
+  ---
+  duration_ms: 0.175943
+  type: 'test'
+  ...
+# Subtest: a duplicated point mixed with distinct points does not change the result
+ok 9 - a duplicated point mixed with distinct points does not change the result
+  ---
+  duration_ms: 0.65941
+  type: 'test'
+  ...
+# Subtest: a point strictly inside the MEC of the other points does not change the result
+ok 10 - a point strictly inside the MEC of the other points does not change the result
+  ---
+  duration_ms: 0.495991
+  type: 'test'
+  ...
+# Subtest: a point exactly on the boundary of the MEC does not change the result
+ok 11 - a point exactly on the boundary of the MEC does not change the result
+  ---
+  duration_ms: 0.479398
+  type: 'test'
+  ...
+# Subtest: negative coordinates are handled correctly
+ok 12 - negative coordinates are handled correctly
+  ---
+  duration_ms: 0.143682
+  type: 'test'
+  ...
+# Subtest: fractional coordinates are handled correctly
+ok 13 - fractional coordinates are handled correctly
+  ---
+  duration_ms: 0.11788
+  type: 'test'
+  ...
+# Subtest: throws TypeError when points is not an array
+ok 14 - throws TypeError when points is not an array
+  ---
+  duration_ms: 0.553505
+  type: 'test'
+  ...
+# Subtest: throws TypeError when an element is not a [x, y] pair
+ok 15 - throws TypeError when an element is not a [x, y] pair
+  ---
+  duration_ms: 0.463489
+  type: 'test'
+  ...
+# Subtest: throws TypeError when a coordinate is non-finite or non-numeric
+ok 16 - throws TypeError when a coordinate is non-finite or non-numeric
+  ---
+  duration_ms: 0.459933
+  type: 'test'
+  ...
+# Subtest: repeated calls on the same input produce identical output
+ok 17 - repeated calls on the same input produce identical output
+  ---
+  duration_ms: 0.485061
+  type: 'test'
+  ...
+# Subtest: never mutates the points array or its sub-arrays
+ok 18 - never mutates the points array or its sub-arrays
+  ---
+  duration_ms: 0.233542
+  type: 'test'
+  ...
+# Subtest: never returns -0 for any field
+ok 19 - never returns -0 for any field
+  ---
+  duration_ms: 1.788657
+  type: 'test'
+  ...
+# Subtest: the returned circle always encloses every input point
+ok 20 - the returned circle always encloses every input point
+  ---
+  duration_ms: 10.860909
+  type: 'test'
+  ...
+# Subtest: deterministic randomized differential coverage: xorshift32(0xC0FFEE), >=500 sets of 0-8 integer points, against an independent 1/2/3-point brute-force reference, within a scale-aware 1e-9 tolerance
+ok 21 - deterministic randomized differential coverage: xorshift32(0xC0FFEE), >=500 sets of 0-8 integer points, against an independent 1/2/3-point brute-force reference, within a scale-aware 1e-9 tolerance
+  ---
+  duration_ms: 20.391328
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 215.707093
