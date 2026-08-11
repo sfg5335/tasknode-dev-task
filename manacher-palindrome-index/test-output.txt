@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: empty string returns empty odd/even arrays and the length-0 longest
+ok 1 - empty string returns empty odd/even arrays and the length-0 longest
+  ---
+  duration_ms: 3.534414
+  type: 'test'
+  ...
+# Subtest: single character: odd[0] = 1, even[0] = 0, longest is the character itself
+ok 2 - single character: odd[0] = 1, even[0] = 0, longest is the character itself
+  ---
+  duration_ms: 0.365998
+  type: 'test'
+  ...
+# Subtest: "aba": odd[1] = 2 (radius), longest is the full odd palindrome "aba"
+ok 3 - "aba": odd[1] = 2 (radius), longest is the full odd palindrome "aba"
+  ---
+  duration_ms: 0.36721
+  type: 'test'
+  ...
+# Subtest: "racecar": full-string odd palindrome, radius 4 at the center
+ok 4 - "racecar": full-string odd palindrome, radius 4 at the center
+  ---
+  duration_ms: 0.288505
+  type: 'test'
+  ...
+# Subtest: odd palindrome embedded in non-palindromic surroundings
+ok 5 - odd palindrome embedded in non-palindromic surroundings
+  ---
+  duration_ms: 0.175881
+  type: 'test'
+  ...
+# Subtest: "abba": even[2] = 2 (radius), longest is the full even palindrome "abba"
+ok 6 - "abba": even[2] = 2 (radius), longest is the full even palindrome "abba"
+  ---
+  duration_ms: 0.177312
+  type: 'test'
+  ...
+# Subtest: "aa": single even palindrome, radius 1 centered before index 1
+ok 7 - "aa": single even palindrome, radius 1 centered before index 1
+  ---
+  duration_ms: 0.184672
+  type: 'test'
+  ...
+# Subtest: even palindrome embedded in non-palindromic surroundings
+ok 8 - even palindrome embedded in non-palindromic surroundings
+  ---
+  duration_ms: 0.229976
+  type: 'test'
+  ...
+# Subtest: all-same-character run: longest is the entire run
+ok 9 - all-same-character run: longest is the entire run
+  ---
+  duration_ms: 0.423387
+  type: 'test'
+  ...
+# Subtest: repeated-character run embedded between other characters
+ok 10 - repeated-character run embedded between other characters
+  ---
+  duration_ms: 0.413545
+  type: 'test'
+  ...
+# Subtest: two equal-length palindromes: earliest start wins
+ok 11 - two equal-length palindromes: earliest start wins
+  ---
+  duration_ms: 0.194602
+  type: 'test'
+  ...
+# Subtest: tie between an odd- and an even-length candidate of different lengths keeps the longer one, and equal-length ties keep the earlier start
+ok 12 - tie between an odd- and an even-length candidate of different lengths keeps the longer one, and equal-length ties keep the earlier start
+  ---
+  duration_ms: 0.132334
+  type: 'test'
+  ...
+# Subtest: tie where the later-starting candidate is found first during the scan still loses to the earlier start
+ok 13 - tie where the later-starting candidate is found first during the scan still loses to the earlier start
+  ---
+  duration_ms: 0.115891
+  type: 'test'
+  ...
+# Subtest: punctuation and spaces participate as ordinary characters
+ok 14 - punctuation and spaces participate as ordinary characters
+  ---
+  duration_ms: 0.095017
+  type: 'test'
+  ...
+# Subtest: punctuation-only palindrome
+ok 15 - punctuation-only palindrome
+  ---
+  duration_ms: 0.094444
+  type: 'test'
+  ...
+# Subtest: no palindrome longer than 1 among distinct punctuation
+ok 16 - no palindrome longer than 1 among distinct punctuation
+  ---
+  duration_ms: 0.090901
+  type: 'test'
+  ...
+# Subtest: BMP unicode palindrome (accented characters)
+ok 17 - BMP unicode palindrome (accented characters)
+  ---
+  duration_ms: 0.089587
+  type: 'test'
+  ...
+# Subtest: astral-plane emoji palindrome: each surrogate pair counts as ONE code point
+ok 18 - astral-plane emoji palindrome: each surrogate pair counts as ONE code point
+  ---
+  duration_ms: 0.183299
+  type: 'test'
+  ...
+# Subtest: astral-plane emoji: odd[] radius at the center index reflects code-point centering, not UTF-16 centering
+ok 19 - astral-plane emoji: odd[] radius at the center index reflects code-point centering, not UTF-16 centering
+  ---
+  duration_ms: 0.119892
+  type: 'test'
+  ...
+# Subtest: mixed BMP + astral: longest palindrome value round-trips exactly through code points
+ok 20 - mixed BMP + astral: longest palindrome value round-trips exactly through code points
+  ---
+  duration_ms: 0.142844
+  type: 'test'
+  ...
+# Subtest: non-palindromic astral-plane string still produces correctly-sized arrays with no crash
+ok 21 - non-palindromic astral-plane string still produces correctly-sized arrays with no crash
+  ---
+  duration_ms: 1.040172
+  type: 'test'
+  ...
+# Subtest: throws TypeError for non-string inputs
+ok 22 - throws TypeError for non-string inputs
+  ---
+  duration_ms: 0.588839
+  type: 'test'
+  ...
+# Subtest: does not throw for a valid empty string (distinct from missing/undefined argument)
+ok 23 - does not throw for a valid empty string (distinct from missing/undefined argument)
+  ---
+  duration_ms: 0.217231
+  type: 'test'
+  ...
+# Subtest: repeated calls on the same input are fully deterministic
+ok 24 - repeated calls on the same input are fully deterministic
+  ---
+  duration_ms: 0.157737
+  type: 'test'
+  ...
+# Subtest: input string is never mutated (strings are immutable in JS, but the code-point view must not leak external mutable state)
+ok 25 - input string is never mutated (strings are immutable in JS, but the code-point view must not leak external mutable state)
+  ---
+  duration_ms: 0.078648
+  type: 'test'
+  ...
+# Subtest: longest.value is always an actual palindrome matching start/length, across varied inputs
+ok 26 - longest.value is always an actual palindrome matching start/length, across varied inputs
+  ---
+  duration_ms: 0.222353
+  type: 'test'
+  ...
+# Subtest: deterministic randomized differential coverage: xorshift32(0xC0FFEE), >= 1000 short strings over a small alphabet, against an independent O(n^3) brute-force reference
+ok 27 - deterministic randomized differential coverage: xorshift32(0xC0FFEE), >= 1000 short strings over a small alphabet, against an independent O(n^3) brute-force reference
+  ---
+  duration_ms: 8.936809
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 150.512035
