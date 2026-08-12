@@ -125,16 +125,23 @@ structural-invariant check (across 16 varied hand-picked inputs) that
 block —
 `'deterministic randomized differential coverage: xorshift32(0xC0FFEE),
 >= 1000 short strings over a small alphabet, against an independent O(n^3)
-brute-force reference'` (exactly the PRNG algorithm and seed named in this
-repo's established differential-test convention; 1,200 trials run,
-exceeding the required 1,000) — driving a separately implemented,
-deliberately non-incremental **exhaustive O(n³) reference solver**
-(`referenceLongestPalindrome`, defined in the test file itself, checking
-every substring directly by code point) — structurally unrelated to the
-Manacher expansion-with-mirroring technique under test. The alphabet for
-this block deliberately mixes two BMP characters with one astral-plane
-emoji, so the differential coverage itself exercises code-point indexing,
-not just the dedicated Unicode tests.
+brute-force reference (longest) and an independent O(n^2)
+expand-around-center reference (odd[]/even[])'` (exactly the PRNG
+algorithm and seed named in this repo's established differential-test
+convention; 1,200 trials run, exceeding the required 1,000) — driving two
+separately implemented references, each structurally unrelated to the
+Manacher mirror-based construction under test: a deliberately
+non-incremental **exhaustive O(n³) reference solver**
+(`referenceLongestPalindrome`, checking every substring directly by code
+point) for the `longest` result, and a **direct O(n²)
+expand-around-every-center reference** (`referenceOddEven`, expanding
+outward from each center/gap with no `[l, r]`-mirror shortcut of any
+kind) that independently recomputes the full `odd[]` and `even[]` radius
+arrays and compares them element-by-element (`assert.deepEqual`) on every
+one of the 1,200 generated cases — not just the derived `longest` value.
+The alphabet for this block deliberately mixes two BMP characters with
+one astral-plane emoji, so the differential coverage itself exercises
+code-point indexing, not just the dedicated Unicode tests.
 
 An additional, uncommitted `fuzz.js` (not part of the submitted evidence,
 run locally for extra confidence before the committed suite was even
@@ -162,3 +169,21 @@ plus 11 explicit edge cases and 7 invalid-input types, all correct.
 - No external dependencies: `manacher.js` has no `require` at all; the
   test file only requires Node's built-in `node:test` and
   `node:assert/strict`.
+
+### Post-submission fix: the differential test now independently verifies `odd[]`/`even[]`, not just `longest`
+
+A verification follow-up on the original submission (commit `ed98edd`)
+correctly pointed out that the committed differential-coverage block
+compared only the `longest` result against
+`referenceLongestPalindrome`, and never independently recomputed and
+compared the `odd[]`/`even[]` radius arrays themselves — even though an
+equivalent odd/even check *did* exist in the uncommitted `fuzz.js` sweep,
+it was never part of the committed, evidence-linked test. This was a
+genuine gap against the task's own step 4 ("comparing both radius arrays
+and the longest result with an exhaustive reference implementation").
+Fixed by adding `referenceOddEven` — a direct O(n²)
+expand-around-every-center reference with no mirror/interval shortcut of
+any kind, so it shares no construction technique with the Manacher
+implementation under test — and asserting `result.odd`/`result.even`
+against it via `assert.deepEqual` on every one of the block's 1,200
+generated trials, alongside the pre-existing `longest` check.

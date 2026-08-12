@@ -302,7 +302,35 @@ function referenceLongestPalindrome(codePoints) {
   };
 }
 
-test('deterministic randomized differential coverage: xorshift32(0xC0FFEE), >= 1000 short strings over a small alphabet, against an independent O(n^3) brute-force reference', () => {
+// Independent O(n^2) reference for the odd[]/even[] radius arrays
+// themselves: a direct expand-around-every-center computation, with no
+// mirror/[l, r]-interval shortcut of any kind — structurally unrelated to
+// the O(n) Manacher construction under test, which is exactly what makes
+// this a meaningful cross-check rather than a restatement of the same
+// algorithm. odd[i]: expand outward from center i while both sides match.
+// even[i]: expand outward from the gap immediately before i (comparing
+// codePoints[i-1-e] against codePoints[i+e]) while both sides match.
+function referenceOddEven(codePoints) {
+  const n = codePoints.length;
+  const odd = new Array(n);
+  const even = new Array(n);
+  for (let i = 0; i < n; i++) {
+    let r = 1;
+    while (i - r >= 0 && i + r < n && codePoints[i - r] === codePoints[i + r]) {
+      r++;
+    }
+    odd[i] = r;
+
+    let e = 0;
+    while (i - 1 - e >= 0 && i + e < n && codePoints[i - 1 - e] === codePoints[i + e]) {
+      e++;
+    }
+    even[i] = e;
+  }
+  return { odd, even };
+}
+
+test('deterministic randomized differential coverage: xorshift32(0xC0FFEE), >= 1000 short strings over a small alphabet, against an independent O(n^3) brute-force reference (longest) and an independent O(n^2) expand-around-center reference (odd[]/even[])', () => {
   const rand = xorshift32(0xC0FFEE);
   const alphabet = Array.from('ab😀'); // small alphabet, mixing BMP and an astral-plane code point
   const TRIALS = 1200;
@@ -318,10 +346,13 @@ test('deterministic randomized differential coverage: xorshift32(0xC0FFEE), >= 1
     const result = analyzePalindromes(text);
     const codePoints = Array.from(text);
     const expected = referenceLongestPalindrome(codePoints);
+    const expectedOddEven = referenceOddEven(codePoints);
 
     assert.equal(result.longest.length, expected.length, `length mismatch for ${JSON.stringify(text)}`);
     assert.equal(result.longest.start, expected.start, `start mismatch for ${JSON.stringify(text)}`);
     assert.equal(result.longest.value, expected.value, `value mismatch for ${JSON.stringify(text)}`);
+    assert.deepEqual(result.odd, expectedOddEven.odd, `odd[] mismatch for ${JSON.stringify(text)}`);
+    assert.deepEqual(result.even, expectedOddEven.even, `even[] mismatch for ${JSON.stringify(text)}`);
     checked++;
   }
 
