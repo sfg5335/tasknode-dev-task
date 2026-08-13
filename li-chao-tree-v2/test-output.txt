@@ -1,0 +1,136 @@
+TAP version 13
+# Subtest: empty tree: query returns null, size is 0
+ok 1 - empty tree: query returns null, size is 0
+  ---
+  duration_ms: 0.82536
+  type: 'test'
+  ...
+# Subtest: single line: query returns its value/label everywhere in domain
+ok 2 - single line: query returns its value/label everywhere in domain
+  ---
+  duration_ms: 1.213614
+  type: 'test'
+  ...
+# Subtest: one line dominates everywhere (no crossing in domain)
+ok 3 - one line dominates everywhere (no crossing in domain)
+  ---
+  duration_ms: 0.294196
+  type: 'test'
+  ...
+# Subtest: crossing lines: winner changes on either side of the crossing point
+ok 4 - crossing lines: winner changes on either side of the crossing point
+  ---
+  duration_ms: 0.15616
+  type: 'test'
+  ...
+# Subtest: exact tie at the crossing point resolves to the earliest-inserted line
+ok 5 - exact tie at the crossing point resolves to the earliest-inserted line
+  ---
+  duration_ms: 0.159607
+  type: 'test'
+  ...
+# Subtest: duplicate (identical) lines: earliest insertion wins every query
+ok 6 - duplicate (identical) lines: earliest insertion wins every query
+  ---
+  duration_ms: 0.111256
+  type: 'test'
+  ...
+# Subtest: three-way tie at one point, regardless of insertion order or resulting tree depth
+ok 7 - three-way tie at one point, regardless of insertion order or resulting tree depth
+  ---
+  duration_ms: 0.200765
+  type: 'test'
+  ...
+# Subtest: parallel lines (equal slope, different intercept): the lower one always wins
+ok 8 - parallel lines (equal slope, different intercept): the lower one always wins
+  ---
+  duration_ms: 0.101486
+  type: 'test'
+  ...
+# Subtest: negative slope and intercept coefficients
+ok 9 - negative slope and intercept coefficients
+  ---
+  duration_ms: 0.193
+  type: 'test'
+  ...
+# Subtest: boundary points of the domain are queryable without error
+ok 10 - boundary points of the domain are queryable without error
+  ---
+  duration_ms: 0.394967
+  type: 'test'
+  ...
+# Subtest: single-point domain (minX === maxX)
+ok 11 - single-point domain (minX === maxX)
+  ---
+  duration_ms: 0.208078
+  type: 'test'
+  ...
+# Subtest: repeated queries at the same point are deterministic and side-effect-free
+ok 12 - repeated queries at the same point are deterministic and side-effect-free
+  ---
+  duration_ms: 0.193583
+  type: 'test'
+  ...
+# Subtest: size tracks only successful addLine calls, not failed/rejected ones
+ok 13 - size tracks only successful addLine calls, not failed/rejected ones
+  ---
+  duration_ms: 0.470377
+  type: 'test'
+  ...
+# Subtest: addLine returns `this` for chaining
+ok 14 - addLine returns `this` for chaining
+  ---
+  duration_ms: 0.098433
+  type: 'test'
+  ...
+# Subtest: label may be any value, including undefined, objects, and falsy values
+ok 15 - label may be any value, including undefined, objects, and falsy values
+  ---
+  duration_ms: 0.088592
+  type: 'test'
+  ...
+# Subtest: invalid constructor arguments throw the expected error types
+ok 16 - invalid constructor arguments throw the expected error types
+  ---
+  duration_ms: 0.279372
+  type: 'test'
+  ...
+# Subtest: invalid addLine arguments throw the expected error types
+ok 17 - invalid addLine arguments throw the expected error types
+  ---
+  duration_ms: 0.29645
+  type: 'test'
+  ...
+# Subtest: invalid query arguments throw the expected error types
+ok 18 - invalid query arguments throw the expected error types
+  ---
+  duration_ms: 0.178347
+  type: 'test'
+  ...
+# Subtest: query validates x even on an empty tree (before checking emptiness)
+ok 19 - query validates x even on an empty tree (before checking emptiness)
+  ---
+  duration_ms: 0.082651
+  type: 'test'
+  ...
+# Subtest: many lines in one tree resolve correctly at many query points (structural sanity)
+ok 20 - many lines in one tree resolve correctly at many query points (structural sanity)
+  ---
+  duration_ms: 0.354774
+  type: 'test'
+  ...
+# Subtest: deterministic randomized differential coverage: xorshift32(0xC0FFEE), >= 500 small trees (0-8 lines) against an independent linear-scan reference, >= 10 queries each
+ok 21 - deterministic randomized differential coverage: xorshift32(0xC0FFEE), >= 500 small trees (0-8 lines) against an independent linear-scan reference, >= 10 queries each
+  ---
+  duration_ms: 20.224454
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 104.76723
