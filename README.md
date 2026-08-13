@@ -1,5 +1,7 @@
 # tasknode-dev-task
 
+[![CI](https://github.com/sfg5335/tasknode-dev-task/actions/workflows/ci.yml/badge.svg)](https://github.com/sfg5335/tasknode-dev-task/actions/workflows/ci.yml)
+
 Code submitted as evidence for Personal (development/coding) tasks completed on [Task Node](https://tasknode.postfiat.org) by account **@user8833**.
 
 Each subdirectory corresponds to one completed Task Node task: a self-contained implementation plus its test suite. The commit or repo link for a given piece of work is what gets pasted back into that task's evidence submission on Task Node.
@@ -70,3 +72,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-11 | Implement and Test a Deterministic Manacher Palindrome Index (2.5 PFT) | [`manacher-palindrome-index/`](manacher-palindrome-index/) |
 | 2026-08-13 | Implement and Test a Deterministic Li Chao Tree, v2 (3 PFT) | [`li-chao-tree-v2/`](li-chao-tree-v2/) |
 | 2026-08-13 | Implement and Test Deterministic Stoer-Wagner Minimum Cut, v2 (3.2 PFT) | [`stoer-wagner-min-cut-v2/`](stoer-wagner-min-cut-v2/) |
+| 2026-08-13 | Add GitHub Actions CI Workflow to tasknode-dev-task Repo (2.5 PFT) | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) |
