@@ -73,3 +73,4 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-13 | Implement and Test a Deterministic Li Chao Tree, v2 (3 PFT) | [`li-chao-tree-v2/`](li-chao-tree-v2/) |
 | 2026-08-13 | Implement and Test Deterministic Stoer-Wagner Minimum Cut, v2 (3.2 PFT) | [`stoer-wagner-min-cut-v2/`](stoer-wagner-min-cut-v2/) |
 | 2026-08-13 | Add GitHub Actions CI Workflow to tasknode-dev-task Repo (2.5 PFT) | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) |
+| 2026-08-13 | Build and Test Dinic's Maximum Flow Algorithm (3 PFT) | [`dinic-max-flow/`](dinic-max-flow/) |
