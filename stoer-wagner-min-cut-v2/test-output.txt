@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: two-vertex graph: single edge is the only possible cut
+ok 1 - two-vertex graph: single edge is the only possible cut
+  ---
+  duration_ms: 2.103859
+  type: 'test'
+  ...
+# Subtest: two-vertex graph: no edge at all, min cut weight 0
+ok 2 - two-vertex graph: no edge at all, min cut weight 0
+  ---
+  duration_ms: 1.148894
+  type: 'test'
+  ...
+# Subtest: path graph: light edge is the minimum cut
+ok 3 - path graph: light edge is the minimum cut
+  ---
+  duration_ms: 0.395681
+  type: 'test'
+  ...
+# Subtest: longer path graph: minimum edge weight anywhere along the chain wins
+ok 4 - longer path graph: minimum edge weight anywhere along the chain wins
+  ---
+  duration_ms: 0.279202
+  type: 'test'
+  ...
+# Subtest: cycle graph: equal weights, min cut = 2x edge weight
+ok 5 - cycle graph: equal weights, min cut = 2x edge weight
+  ---
+  duration_ms: 0.158939
+  type: 'test'
+  ...
+# Subtest: triangle with equal weights: min cut isolates any single vertex
+ok 6 - triangle with equal weights: min cut isolates any single vertex
+  ---
+  duration_ms: 0.175617
+  type: 'test'
+  ...
+# Subtest: complete graph K4, unit weights: min cut isolates a single vertex
+ok 7 - complete graph K4, unit weights: min cut isolates a single vertex
+  ---
+  duration_ms: 0.153235
+  type: 'test'
+  ...
+# Subtest: complete graph K5, unit weights: min cut isolates a single vertex
+ok 8 - complete graph K5, unit weights: min cut isolates a single vertex
+  ---
+  duration_ms: 0.162475
+  type: 'test'
+  ...
+# Subtest: disconnected graph: min cut weight 0, isolated vertex on its own side
+ok 9 - disconnected graph: min cut weight 0, isolated vertex on its own side
+  ---
+  duration_ms: 0.278014
+  type: 'test'
+  ...
+# Subtest: fully disconnected graph (no edges at all): min cut weight 0
+ok 10 - fully disconnected graph (no edges at all): min cut weight 0
+  ---
+  duration_ms: 0.343948
+  type: 'test'
+  ...
+# Subtest: zero-weight edges: contribute nothing to any cut
+ok 11 - zero-weight edges: contribute nothing to any cut
+  ---
+  duration_ms: 0.139151
+  type: 'test'
+  ...
+# Subtest: all-zero-weight complete graph: min cut weight 0 regardless of partition
+ok 12 - all-zero-weight complete graph: min cut weight 0 regardless of partition
+  ---
+  duration_ms: 0.072155
+  type: 'test'
+  ...
+# Subtest: parallel edges are summed into a single effective weight
+ok 13 - parallel edges are summed into a single effective weight
+  ---
+  duration_ms: 0.134626
+  type: 'test'
+  ...
+# Subtest: parallel edges in a larger graph match the equivalent single-summed-edge graph
+ok 14 - parallel edges in a larger graph match the equivalent single-summed-edge graph
+  ---
+  duration_ms: 0.113473
+  type: 'test'
+  ...
+# Subtest: equal-weight competing cuts: the algorithm still returns a valid minimum (first phase to reach it wins deterministically)
+ok 15 - equal-weight competing cuts: the algorithm still returns a valid minimum (first phase to reach it wins deterministically)
+  ---
+  duration_ms: 0.15816
+  type: 'test'
+  ...
+# Subtest: repeatability: running the same input twice gives byte-identical output
+ok 16 - repeatability: running the same input twice gives byte-identical output
+  ---
+  duration_ms: 0.108865
+  type: 'test'
+  ...
+# Subtest: input edges array and its elements are never mutated
+ok 17 - input edges array and its elements are never mutated
+  ---
+  duration_ms: 0.088862
+  type: 'test'
+  ...
+# Subtest: classic Stoer-Wagner paper example (8 vertices): known minimum cut weight 4
+ok 18 - classic Stoer-Wagner paper example (8 vertices): known minimum cut weight 4
+  ---
+  duration_ms: 0.155793
+  type: 'test'
+  ...
+# Subtest: invalid input: vertexCount
+ok 19 - invalid input: vertexCount
+  ---
+  duration_ms: 0.521325
+  type: 'test'
+  ...
+# Subtest: invalid input: edges array shape
+ok 20 - invalid input: edges array shape
+  ---
+  duration_ms: 0.14363
+  type: 'test'
+  ...
+# Subtest: invalid input: individual edge fields
+ok 21 - invalid input: individual edge fields
+  ---
+  duration_ms: 0.388931
+  type: 'test'
+  ...
+# Subtest: valid edge case: weight 0 is accepted (not rejected as falsy)
+ok 22 - valid edge case: weight 0 is accepted (not rejected as falsy)
+  ---
+  duration_ms: 0.135011
+  type: 'test'
+  ...
+# Subtest: deterministic randomized differential coverage: xorshift32(0xC0FFEE), a seeded exhaustive oracle enumerating all cuts for >= 500 random graphs of up to eight vertices
+ok 23 - deterministic randomized differential coverage: xorshift32(0xC0FFEE), a seeded exhaustive oracle enumerating all cuts for >= 500 random graphs of up to eight vertices
+  ---
+  duration_ms: 15.692138
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 121.179149
