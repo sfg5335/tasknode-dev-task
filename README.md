@@ -67,5 +67,6 @@ Each subdirectory corresponds to one completed Task Node task: a self-contained 
 | 2026-08-11 | Implement and Test Deterministic NTT Polynomial Multiplication (3.2 PFT) | [`ntt-polynomial-multiplication/`](ntt-polynomial-multiplication/) |
 | 2026-08-11 | Implement and Test Weighted Isotonic Regression (3 PFT) | [`isotonic-regression/`](isotonic-regression/) |
 | 2026-08-11 | Implement and Test a Deterministic Minimum Enclosing Circle (3 PFT) | [`minimum-enclosing-circle/`](minimum-enclosing-circle/) |
+| 2026-08-11 | Implement and Test a Deterministic Manacher Palindrome Index (2.5 PFT) | [`manacher-palindrome-index/`](manacher-palindrome-index/) |
 | 2026-08-13 | Implement and Test a Deterministic Li Chao Tree, v2 (3 PFT) | [`li-chao-tree-v2/`](li-chao-tree-v2/) |
 | 2026-08-13 | Implement and Test Deterministic Stoer-Wagner Minimum Cut, v2 (3.2 PFT) | [`stoer-wagner-min-cut-v2/`](stoer-wagner-min-cut-v2/) |
